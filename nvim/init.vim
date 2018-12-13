@@ -81,10 +81,17 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "}, {'is_quit': 0, 'is_redraw': 1})\n".
                 \ "call denite#custom#action('file,directory', 'delete', {context ->".
                 \ "    denite#util#input_yesno(context['targets'][0]['action__path'].' is delete?') ? delete(context['targets'][0]['action__path'], 'rf') : ''".
-                \ "}, {'is_quit': 0, 'is_redraw': 1})\n",
+                \ "}, {'is_quit': 0, 'is_redraw': 1})\n".
+                \ "call denite#custom#var('menu', 'menus', {".
+                \ "    'recommend': {'description': 'Recommend commands', 'command_candidates': [".
+                \ "        ['DeniteBufferDir', 'Denite command:denite#helper#complete:DeniteBufferDir\\  -default-action=execute'],".
+                \ "        ['DeniteCursorWord', 'Denite command:denite#helper#complete:DeniteCursorWord\\  -default-action=execute'],".
+                \ "        ['SDelete', 'Denite command:startify#session_list:SDelete\\  -default-action=execute'],".
+                \ "    ]}".
+                \ "})",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite sources command<CR>",
+            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:denite#helper#complete:Denite\\  command:startify#session_list:SLoad\\  command:history -default-action=execute<CR>",
         \ },
         \ 'nixprime/cpsm': {
             \ 'build': 'sh -c "PY3=ON ./install.sh"'
