@@ -83,15 +83,21 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "    denite#util#input_yesno(context['targets'][0]['action__path'].' is delete?') ? delete(context['targets'][0]['action__path'], 'rf') : ''".
                 \ "}, {'is_quit': 0, 'is_redraw': 1})\n".
                 \ "call denite#custom#var('menu', 'menus', {".
-                \ "    'recommend': {'description': 'Recommend commands', 'command_candidates': [".
-                \ "        ['DeniteBufferDir', 'Denite command:denite#helper#complete:DeniteBufferDir\\  -default-action=execute'],".
-                \ "        ['DeniteCursorWord', 'Denite command:denite#helper#complete:DeniteCursorWord\\  -default-action=execute'],".
-                \ "        ['SDelete', 'Denite command:startify#session_list:SDelete\\  -default-action=execute'],".
-                \ "    ]}".
+                \ "    'Denite': {'description': 'Denite custom commands', 'command_candidates': [".
+                \ "        ['CursorWord', 'Denite command:denite#helper#complete:DeniteCursorWord\\  -default-action=execute'],".
+                \ "        ['BufferDir', 'Denite command:denite#helper#complete:DeniteBufferDir\\  -default-action=execute'],".
+                \ "        ['ProjectDir', 'Denite command:denite#helper#complete:DeniteProjectDir\\  -default-action=execute'],".
+                \ "    ]},".
+                \ "    'Startify': {'description': 'Session management', 'command_candidates': [".
+                \ "        ['Load', 'Denite command:startify#session_list:SLoad\\  -default-action=execute'],".
+                \ "        ['Save', 'Denite command:startify#session_list:SSave\\  command:new:SSave\\  -default-action=execute'],".
+                \ "        ['Delete', 'Denite command:startify#session_list:SDelete\\  -default-action=execute'],".
+                \ "        ['Close', 'SClose'],".
+                \ "    ]},".
                 \ "})",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:denite#helper#complete:Denite\\  command:startify#session_list:SLoad\\  command:history -default-action=execute<CR>",
+            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:denite#helper#complete:Denite\\  command:history -default-action=execute<CR>",
         \ },
         \ 'nixprime/cpsm': {
             \ 'build': 'sh -c "PY3=ON ./install.sh"'
