@@ -15,17 +15,19 @@ RUN apk add go
 
 # Language Settings
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN composer global require hirak/prestissimo
-RUN pip3 install --upgrade pip pynvim docker-compose lint
+RUN composer global config prefer-stable true && composer global config minimum-stability dev
+RUN composer global require hirak/prestissimo felixfbecker/language-server
+RUN composer global run-script --working-dir=/root/.composer/vendor/felixfbecker/language-server parse-stubs
+RUN pip3 install --upgrade pip pynvim docker-compose lint python-language-server
 RUN pip2 install --upgrade pip pynvim
-RUN npm -g install npm neovim tern
+RUN npm -g install npm neovim javascript-typescript-langserver
 RUN gem install neovim
+RUN go get -u golang.org/x/tools/cmd/golsp
 
 # Environment Settings
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 RUN git clone https://github.com/Shougo/dein.vim ~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 RUN go get -u github.com/monochromegane/the_platinum_searcher/...
-RUN go get -u github.com/nsf/gocode
 RUN curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 

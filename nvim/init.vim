@@ -72,7 +72,7 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "call denite#custom#var('grep', 'pattern_opt', [])\n".
                 \ "call denite#custom#var('grep', 'separator', ['--'])\n".
                 \ "call denite#custom#var('grep', 'final_opts', [])\n".
-                \ "call denite#custom#option('_', {'prompt': '>', 'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'empty': 0, 'matchers': 'matcher/cpsm'})\n".
+                \ "call denite#custom#option('_', {'prompt': '>', 'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'ignorecase': 0, 'matchers': 'matcher/cpsm'})\n".
                 \ "call denite#custom#source('grep', 'converters', ['converter/abbr_word'])\n".
                 \ "call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])\n".
                 \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n".
@@ -84,20 +84,19 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "}, {'is_quit': 0, 'is_redraw': 1})\n".
                 \ "call denite#custom#var('menu', 'menus', {".
                 \ "    'Denite': {'description': 'Denite custom commands', 'command_candidates': [".
-                \ "        ['CursorWord', 'Denite command:denite#helper#complete:DeniteCursorWord\\  -default-action=execute'],".
-                \ "        ['BufferDir', 'Denite command:denite#helper#complete:DeniteBufferDir\\  -default-action=execute'],".
-                \ "        ['ProjectDir', 'Denite command:denite#helper#complete:DeniteProjectDir\\  -default-action=execute'],".
+                \ "        ['CursorWord', 'Denite command:denite#helper#complete:DeniteCursorWord -default-action=execute'],".
+                \ "        ['BufferDir', 'Denite command:denite#helper#complete:DeniteBufferDir -default-action=execute'],".
+                \ "        ['ProjectDir', 'Denite command:denite#helper#complete:DeniteProjectDir -default-action=execute'],".
                 \ "    ]},".
                 \ "    'Startify': {'description': 'Session management', 'command_candidates': [".
-                \ "        ['Load', 'Denite command:startify#session_list:SLoad\\  -default-action=execute'],".
-                \ "        ['Save', 'Denite command:startify#session_list:SSave\\  command:new:SSave\\  -default-action=execute'],".
-                \ "        ['Delete', 'Denite command:startify#session_list:SDelete\\  -default-action=execute'],".
-                \ "        ['Close', 'SClose'],".
+                \ "        ['Load', 'Denite command:startify#session_list:SLoad -default-action=execute'],".
+                \ "        ['Save', 'Denite command:startify#session_list:SSave command:new:SSave -default-action=execute'],".
+                \ "        ['Delete', 'Denite command:startify#session_list:SDelete -default-action=execute'],".
                 \ "    ]},".
                 \ "})",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:denite#helper#complete:Denite\\  command:history -default-action=execute<CR>",
+            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:denite#helper#complete:Denite command:history -default-action=execute<CR>",
         \ },
         \ 'nixprime/cpsm': {
             \ 'build': 'sh -c "PY3=ON ./install.sh"'
@@ -107,6 +106,18 @@ if dein#load_state("~/.config/nvim/dein/")
             \ "hook_source":
                 \ "call deoplete#enable()\n".
                 \ "call deoplete#custom#option({'ignore_case': 1, 'matchers': ['matcher_cpsm']})\n",
+        \ },
+        \ 'autozimu/LanguageClient-neovim': {
+            \ 'build': 'bash install.sh',
+            \ 'rev': 'next',
+            \ "hook_add":
+                \ "let g:LanguageClient_serverCommands = {".
+                \ "    'python': ['pyls'],".
+                \ "    'go': ['golsp', '-mode', 'stdio'],".
+                \ "    'php': ['php', '/root/.composer/vendor/bin/php-language-server.php'],".
+                \ "    'javascript': ['javascript-typescript-stdio'],".
+                \ "    'typescript': ['javascript-typescript-stdio'],".
+                \ "}",
         \ },
         \ "Shougo/neosnippet.vim": {
             \ "hook_add":
@@ -118,23 +129,6 @@ if dein#load_state("~/.config/nvim/dein/")
         \ "Shougo/neco-vim": {
             \ "on_ft": "vim",
         \ },
-        \ "zchee/deoplete-jedi": {
-            \ "on_ft": "python",
-        \ },
-        \ "mhartington/nvim-typescript": {
-            \ "on_ft": "typescript",
-            \ "build": "./install.sh",
-        \ },
-        \ "carlitux/deoplete-ternjs": {
-            \ "on_ft": "javascript",
-        \ },
-        \ "zchee/deoplete-go": {
-            \ "on_ft": "go",
-            \ "build": "make",
-        \ },
-        \ "padawan-php/deoplete-padawan": {
-            \ "on_ft": "php",
-            \ "build": "composer install",
         \ },
     \ })
     call dein#end()
