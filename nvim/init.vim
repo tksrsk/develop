@@ -65,14 +65,14 @@ if dein#load_state("~/.config/nvim/dein/")
         \ },
         \ "Shougo/denite.nvim": {
             \ "hook_source":
-                \ "call denite#custom#var('file_rec', 'command', ['pt', '--follow', '--nocolor', '--nogroup', '-g=', ''])\n".
-                \ "call denite#custom#var('grep', 'command', ['pt'])\n".
-                \ "call denite#custom#var('grep', 'default_opts', ['--nogroup', '--nocolor', '--smart-case'])\n".
+                \ "call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])\n".
+                \ "call denite#custom#var('grep', 'command', ['rg'])\n".
+                \ "call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep', '--no-heading'])\n".
                 \ "call denite#custom#var('grep', 'recursive_opts', [])\n".
-                \ "call denite#custom#var('grep', 'pattern_opt', [])\n".
+                \ "call denite#custom#var('grep', 'pattern_opt', ['--regexp'])\n".
                 \ "call denite#custom#var('grep', 'separator', ['--'])\n".
                 \ "call denite#custom#var('grep', 'final_opts', [])\n".
-                \ "call denite#custom#option('_', {'prompt': '>', 'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'ignorecase': 0, 'matchers': 'matcher/cpsm'})\n".
+                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'ignorecase': 0, 'matchers': 'matcher/cpsm'})\n".
                 \ "call denite#custom#source('grep', 'converters', ['converter/abbr_word'])\n".
                 \ "call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])\n".
                 \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n".
@@ -115,8 +115,8 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "    'python': ['pyls'],".
                 \ "    'go': ['golsp', '-mode', 'stdio'],".
                 \ "    'php': ['php', '/root/.composer/vendor/bin/php-language-server.php'],".
-                \ "    'javascript': ['javascript-typescript-stdio'],".
-                \ "    'typescript': ['javascript-typescript-stdio'],".
+                \ "    'javascript.jsx': ['javascript-typescript-stdio'],".
+                \ "    'typescript': ['typescript-language-server', '--stdio'],".
                 \ "}",
         \ },
         \ "Shougo/neosnippet.vim": {
@@ -128,7 +128,6 @@ if dein#load_state("~/.config/nvim/dein/")
         \ "Shougo/neosnippet-snippets": {},
         \ "Shougo/neco-vim": {
             \ "on_ft": "vim",
-        \ },
         \ },
     \ })
     call dein#end()
