@@ -42,6 +42,7 @@ if dein#load_state("~/.config/nvim/dein/")
         \ "vim-airline/vim-airline": {
             \ "depends": "denite.nvim",
             \ "hook_add":
+                \ "set noshowmode\n".
                 \ "let g:airline_theme = 'onedark'\n".
                 \ "let g:airline#extensions#tabline#enabled = 1\n".
                 \ "let g:airline#extensions#tabline#show_buffers = 0\n".
@@ -72,7 +73,7 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "call denite#custom#var('grep', 'pattern_opt', ['--regexp'])\n".
                 \ "call denite#custom#var('grep', 'separator', ['--'])\n".
                 \ "call denite#custom#var('grep', 'final_opts', [])\n".
-                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'ignorecase': 0, 'matchers': 'matcher/cpsm'})\n".
+                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'matchers': 'matcher/cpsm'})\n".
                 \ "call denite#custom#source('grep', 'converters', ['converter/abbr_word'])\n".
                 \ "call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])\n".
                 \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n".
@@ -104,6 +105,7 @@ if dein#load_state("~/.config/nvim/dein/")
         \ "Shougo/deoplete.nvim": {
             \ "on_event": "InsertEnter",
             \ "hook_source":
+                \ "set completeopt=menuone\n".
                 \ "call deoplete#enable()\n".
                 \ "call deoplete#custom#option({'ignore_case': 1, 'matchers': ['matcher_cpsm']})\n",
         \ },
@@ -143,19 +145,16 @@ call dein#call_hook("source")
 "  General Settings
 "---------------------
 filetype plugin indent on
-syntax enable
+syntax on
 set hidden
 set noswapfile
 set nobomb
-set noshowmode
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 set fileformat=unix
-set ts=4 sw=4 et
+set tabstop=4 shiftwidth=4 expandtab
 set clipboard+=unnamedplus
-set completeopt=menuone
 set inccommand=nosplit
-set number relativenumber cursorline cursorcolumn
-set lazyredraw
+set scrolloff=999
 wshada!
