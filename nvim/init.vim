@@ -9,7 +9,6 @@ set runtimepath^=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state("~/.config/nvim/dein/")
     call dein#begin("~/.config/nvim/dein/")
-    call dein#add("w0rp/ale")
     call dein#load_dict({
         \ "Shougo/dein.vim": {},
         \ "tpope/vim-surround": {},
@@ -23,14 +22,7 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "let g:startify_session_persistence = 1\n".
                 \ "let g:startify_change_to_vcs_root = 0\n",
         \ },
-        \ "kana/vim-smartinput": {
-            \ "on_event": "InsertEnter",
-            \ "hook_source":
-                \ "call smartinput#map_to_trigger('i', '<space>', '<space>', '<space>')\n".
-                \ "call smartinput#map_to_trigger('i', '<bs>', '<bs>', '<bs>')\n".
-                \ "call smartinput#define_rule({'at': '[\\(\\[\\{]\\%#[\\)\\]\\}]', 'char': '<space>', 'input': '<space><space><left>'})\n".
-                \ "call smartinput#define_rule({'at': '[([{]\\s\\+\\%#\\s\\+[)\\]}]', 'char': '<bs>', 'input': '<c-o>diw'})\n",
-        \ },
+        \ "jiangmiao/auto-pairs": {},
         \ "sheerun/vim-polyglot": {
             \ "build": "bash ./build",
         \ },
@@ -97,7 +89,7 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "})",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:denite#helper#complete:Denite command:history -default-action=execute<CR>",
+            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:::history command:denite#helper#complete:Denite -default-action=execute<CR>",
         \ },
         \ 'nixprime/cpsm': {
             \ 'build': 'sh -c "PY3=ON ./install.sh"'
