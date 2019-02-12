@@ -28,7 +28,10 @@ if dein#load_state("~/.config/nvim/dein/")
         \ },
         \ "joshdick/onedark.vim": {
             \ "hook_add":
+                \ "syntax on\n".
                 \ "set termguicolors\n".
+                \ "let g:onedark_hide_endofbuffer = 1\n".
+                \ "let g:onedark_terminal_italics = 1\n".
                 \ "colorscheme onedark\n",
         \ },
         \ "vim-airline/vim-airline": {
@@ -89,13 +92,12 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "})",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:::history command:denite#helper#complete:Denite -default-action=execute<CR>",
+            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:denite#helper#complete:Denite -default-action=execute<CR>",
         \ },
         \ 'nixprime/cpsm': {
             \ 'build': 'sh -c "PY3=ON ./install.sh"'
         \ },
         \ "Shougo/deoplete.nvim": {
-            \ "on_event": "InsertEnter",
             \ "hook_source":
                 \ "set completeopt=menuone\n".
                 \ "call deoplete#enable()\n".
@@ -112,6 +114,9 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "    'javascript.jsx': ['javascript-typescript-stdio'],".
                 \ "    'typescript': ['typescript-language-server', '--stdio'],".
                 \ "}",
+        \ },
+        \ 'tbodt/deoplete-tabnine': {
+            \ 'build': './install.sh',
         \ },
         \ "Shougo/neosnippet.vim": {
             \ "hook_add":
@@ -137,7 +142,6 @@ call dein#call_hook("source")
 "  General Settings
 "---------------------
 filetype plugin indent on
-syntax on
 set hidden
 set noswapfile
 set nobomb
