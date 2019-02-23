@@ -68,7 +68,7 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "call denite#custom#var('grep', 'pattern_opt', ['--regexp'])\n".
                 \ "call denite#custom#var('grep', 'separator', ['--'])\n".
                 \ "call denite#custom#var('grep', 'final_opts', [])\n".
-                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'matchers': 'matcher/cpsm'})\n".
+                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'matchers': 'matcher/fruzzy'})\n".
                 \ "call denite#custom#source('grep', 'converters', ['converter/abbr_word'])\n".
                 \ "call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])\n".
                 \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n".
@@ -86,26 +86,29 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "    ]},".
                 \ "    'Startify': {'description': 'Session management', 'command_candidates': [".
                 \ "        ['Load', 'Denite command:startify#session_list:SLoad -default-action=execute'],".
-                \ "        ['Save', 'Denite command:startify#session_list:SSave command:new:SSave -default-action=execute'],".
+                \ "        ['Save', 'Denite command:startify#session_list:SSave command::SSave:new -default-action=execute'],".
                 \ "        ['Delete', 'Denite command:startify#session_list:SDelete -default-action=execute'],".
                 \ "    ]},".
                 \ "})",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "nnoremap <silent><tab> :<C-u>Denite -buffer-name=main command:denite#helper#complete:Denite -default-action=execute<CR>",
+            \ "hook_add": "noremap <silent><tab> :Denite -buffer-name=main command:denite#helper#complete:Denite -default-action=execute<CR>",
         \ },
-        \ 'nixprime/cpsm': {
-            \ 'build': 'sh -c "PY3=ON ./install.sh"'
+        \ "raghur/fruzzy": {
+            \ "hook_source":
+                \ "let g:fruzzy#usenative = 1\n".
+                \ "let g:fruzzy#sortonempty = 0",
+            \ "hook_post_update": "call fruzzy#install()",
         \ },
         \ "Shougo/deoplete.nvim": {
             \ "hook_source":
                 \ "set completeopt=menuone\n".
                 \ "call deoplete#enable()\n".
-                \ "call deoplete#custom#option({'ignore_case': 1, 'matchers': ['matcher_cpsm']})\n",
+                \ "call deoplete#custom#option({'ignore_case': 1})\n",
         \ },
-        \ 'autozimu/LanguageClient-neovim': {
-            \ 'build': 'bash install.sh',
-            \ 'rev': 'next',
+        \ "autozimu/LanguageClient-neovim": {
+            \ "build": "bash install.sh",
+            \ "rev": "next",
             \ "hook_add":
                 \ "let g:LanguageClient_serverCommands = {".
                 \ "    'python': ['pyls'],".
@@ -115,8 +118,8 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "    'typescript': ['typescript-language-server', '--stdio'],".
                 \ "}",
         \ },
-        \ 'tbodt/deoplete-tabnine': {
-            \ 'build': './install.sh',
+        \ "tbodt/deoplete-tabnine": {
+            \ "build": "./install.sh",
         \ },
         \ "Shougo/neosnippet.vim": {
             \ "hook_add":
