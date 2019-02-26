@@ -11,6 +11,7 @@ if dein#load_state("~/.config/nvim/dein/")
     call dein#begin("~/.config/nvim/dein/")
     call dein#load_dict({
         \ "Shougo/dein.vim": {},
+        \ "editorconfig/editorconfig-vim": {},
         \ "tpope/vim-surround": {},
         \ "tpope/vim-repeat": {},
         \ "alvan/vim-closetag": {},
@@ -125,7 +126,7 @@ if dein#load_state("~/.config/nvim/dein/")
             \ "hook_add":
                 \ "imap <C-k> <Plug>(neosnippet_expand_or_jump)\n".
                 \ "smap <C-k> <Plug>(neosnippet_expand_or_jump)\n".
-                \ "xmap <Cxk> <Plug>(neosnippet_expand_target)\n",
+                \ "xmap <C-k> <Plug>(neosnippet_expand_target)\n",
         \ },
         \ "Shougo/neosnippet-snippets": {},
         \ "Shougo/neco-vim": {
