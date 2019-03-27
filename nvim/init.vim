@@ -17,12 +17,6 @@ if dein#load_state("~/.config/nvim/dein/")
         \ "alvan/vim-closetag": {},
         \ "haya14busa/is.vim": {},
         \ "ryanoasis/vim-devicons": {},
-        \ "mhinz/vim-startify": {
-            \ "hook_add":
-                \ "let g:startify_session_dir = '~/.local/share/nvim/session'\n".
-                \ "let g:startify_session_persistence = 1\n".
-                \ "let g:startify_change_to_vcs_root = 0\n",
-        \ },
         \ "jiangmiao/auto-pairs": {},
         \ "sheerun/vim-polyglot": {
             \ "build": "bash ./build",
@@ -73,27 +67,16 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "call denite#custom#source('grep', 'converters', ['converter/abbr_word'])\n".
                 \ "call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])\n".
                 \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n".
-                \ "call denite#custom#action('file,directory', 'rename', {context ->".
-                \ "    rename(context['targets'][0]['action__path'], input('', context['targets'][0]['action__path'], 'file'))".
-                \ "}, {'is_quit': 0, 'is_redraw': 1})\n".
-                \ "call denite#custom#action('file,directory', 'delete', {context ->".
-                \ "    denite#util#input_yesno(context['targets'][0]['action__path'].' is delete?') ? delete(context['targets'][0]['action__path'], 'rf') : ''".
-                \ "}, {'is_quit': 0, 'is_redraw': 1})\n".
                 \ "call denite#custom#var('menu', 'menus', {".
                 \ "    'Denite': {'description': 'Denite custom commands', 'command_candidates': [".
                 \ "        ['CursorWord', 'Denite command:denite#helper#complete:DeniteCursorWord -default-action=execute'],".
                 \ "        ['BufferDir', 'Denite command:denite#helper#complete:DeniteBufferDir -default-action=execute'],".
                 \ "        ['ProjectDir', 'Denite command:denite#helper#complete:DeniteProjectDir -default-action=execute'],".
                 \ "    ]},".
-                \ "    'Startify': {'description': 'Session management', 'command_candidates': [".
-                \ "        ['Load', 'Denite command:startify#session_list:SLoad -default-action=execute'],".
-                \ "        ['Save', 'Denite command:startify#session_list:SSave command::SSave:new -default-action=execute'],".
-                \ "        ['Delete', 'Denite command:startify#session_list:SDelete -default-action=execute'],".
-                \ "    ]},".
                 \ "})",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "noremap <silent><tab> :Denite -buffer-name=main command:denite#helper#complete:Denite -default-action=execute<CR>",
+            \ "hook_add": "noremap <silent><tab> :Denite -buffer-name=main command:denite#helper#complete:Denite menu:Denite -default-action=execute<CR>",
         \ },
         \ "raghur/fruzzy": {
             \ "hook_source":
