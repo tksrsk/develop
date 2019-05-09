@@ -63,7 +63,7 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "call denite#custom#var('grep', 'pattern_opt', ['--regexp'])\n".
                 \ "call denite#custom#var('grep', 'separator', ['--'])\n".
                 \ "call denite#custom#var('grep', 'final_opts', [])\n".
-                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'matchers': 'matcher/fruzzy'})\n".
+                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1})\n".
                 \ "call denite#custom#source('grep', 'converters', ['converter/abbr_word'])\n".
                 \ "call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])\n".
                 \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n".
@@ -76,13 +76,7 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "})",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "noremap <silent><tab> :Denite -buffer-name=main command:denite#helper#complete:Denite menu:Denite -default-action=execute<CR>",
-        \ },
-        \ "raghur/fruzzy": {
-            \ "hook_source":
-                \ "let g:fruzzy#usenative = 1\n".
-                \ "let g:fruzzy#sortonempty = 0",
-            \ "hook_post_update": "call fruzzy#install()",
+            \ "hook_add": "noremap <silent><tab> :Denite -buffer-name=main command:denite#helper#complete:Denite menu:Denite command:::history -default-action=execute<CR>",
         \ },
         \ "Shougo/deoplete.nvim": {
             \ "hook_source":
@@ -96,7 +90,7 @@ if dein#load_state("~/.config/nvim/dein/")
             \ "hook_add":
                 \ "let g:LanguageClient_serverCommands = {".
                 \ "    'python': ['pyls'],".
-                \ "    'go': ['golsp', '-mode', 'stdio'],".
+                \ "    'go': ['bingo'],".
                 \ "    'php': ['php', '/root/.composer/vendor/bin/php-language-server.php'],".
                 \ "    'javascript.jsx': ['javascript-typescript-stdio'],".
                 \ "    'typescript': ['typescript-language-server', '--stdio'],".
