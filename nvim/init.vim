@@ -63,7 +63,7 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "call denite#custom#var('grep', 'pattern_opt', ['--regexp'])\n".
                 \ "call denite#custom#var('grep', 'separator', ['--'])\n".
                 \ "call denite#custom#var('grep', 'final_opts', [])\n".
-                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1})\n".
+                \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'split': 'floating'})\n".
                 \ "call denite#custom#source('grep', 'converters', ['converter/abbr_word'])\n".
                 \ "call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])\n".
                 \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n".
