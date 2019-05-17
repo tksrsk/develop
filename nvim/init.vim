@@ -25,8 +25,6 @@ if dein#load_state("~/.config/nvim/dein/")
             \ "hook_add":
                 \ "syntax on\n".
                 \ "set termguicolors\n".
-                \ "let g:onedark_hide_endofbuffer = 1\n".
-                \ "let g:onedark_terminal_italics = 1\n".
                 \ "colorscheme onedark\n",
         \ },
         \ "vim-airline/vim-airline": {
@@ -66,17 +64,10 @@ if dein#load_state("~/.config/nvim/dein/")
                 \ "call denite#custom#option('_', {'cursor_wrap': 1, 'auto_accel': 1, 'auto_resume': 1, 'split': 'floating'})\n".
                 \ "call denite#custom#source('grep', 'converters', ['converter/abbr_word'])\n".
                 \ "call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])\n".
-                \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n".
-                \ "call denite#custom#var('menu', 'menus', {".
-                \ "    'Denite': {'description': 'Denite custom commands', 'command_candidates': [".
-                \ "        ['CursorWord', 'Denite command:denite#helper#complete:DeniteCursorWord -default-action=execute'],".
-                \ "        ['BufferDir', 'Denite command:denite#helper#complete:DeniteBufferDir -default-action=execute'],".
-                \ "        ['ProjectDir', 'Denite command:denite#helper#complete:DeniteProjectDir -default-action=execute'],".
-                \ "    ]},".
-                \ "})",
+                \ "call denite#custom#map('_', '<esc>', '<denite:quit>')\n",
         \ },
         \ "tk-shirasaka/denite-utils": {
-            \ "hook_add": "noremap <silent><tab> :Denite -buffer-name=main command:denite#helper#complete:Denite menu:Denite command:::history -default-action=execute<CR>",
+            \ "hook_add": "noremap <silent><tab> :Denite -buffer-name=main command:Denite command command::history<CR>",
         \ },
         \ "Shougo/deoplete.nvim": {
             \ "hook_source":
