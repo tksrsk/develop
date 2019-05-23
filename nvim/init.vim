@@ -124,5 +124,7 @@ set fileformat=unix
 set tabstop=4 shiftwidth=4 expandtab
 set clipboard+=unnamedplus
 set inccommand=nosplit
+set wildoptions=pum
+set pumblend=20
 set scrolloff=999
 wshada!
