@@ -39,5 +39,4 @@ set inccommand=nosplit
 set wildoptions=pum
 set completeopt=menuone
 set pumblend=20
-set scrolloff=999
 wshada!
