@@ -91,7 +91,7 @@ call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', '
 
 [[plugins]]
 repo = 'tk-shirasaka/denite-utils'
-hook_add = 'noremap <silent><tab> :Denite -buffer-name=main command:Denite command command::history<CR>'
+hook_add = 'noremap <silent><tab> :Denite -buffer-name=main command:Denite command<CR>'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
