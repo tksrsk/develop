@@ -1,17 +1,20 @@
 [ftplugin]
 denite = '''
-nnoremap <silent><buffer><expr> <cr> denite#do_map('do_action')
-nnoremap <silent><buffer><expr> <tab> denite#do_map('choose_action')
-nnoremap <silent><buffer><expr> <c-l> denite#do_map('redraw')
+nnoremap <silent><buffer><expr> <cr>    denite#do_map('do_action')
+nnoremap <silent><buffer><expr> <tab>   denite#do_map('choose_action')
+nnoremap <silent><buffer><expr> <c-l>   denite#do_map('redraw')
+nnoremap <silent><buffer><expr> <esc>   denite#do_map('quit')
 nnoremap <silent><buffer><expr> <space> denite#do_map('toggle_select').'j'
-nnoremap <silent><buffer><expr> * denite#do_map('toggle_select_all')
-nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
-nnoremap <silent><buffer><expr> q denite#do_map('quit')
+nnoremap <silent><buffer><expr> *       denite#do_map('toggle_select_all')
+nnoremap <silent><buffer><expr> i       denite#do_map('open_filter_buffer')
 '''
 denite-filter = '''
-inoremap <silent><buffer><expr> <cr> denite#do_map('do_action')
-inoremap <silent><buffer><expr> <tab> denite#do_map('choose_action')
-inoremap <silent><buffer><expr> <c-l> denite#do_map('redraw')
+inoremap <silent><buffer><expr> <cr>    denite#do_map('do_action')
+inoremap <silent><buffer><expr> <tab>   denite#do_map('choose_action')
+inoremap <silent><buffer><expr> <c-l>   denite#do_map('redraw')
+
+nnoremap <silent><buffer><expr> <tab>   denite#do_map('choose_action')
+nmap     <silent><buffer>       <esc>   <Plug>(denite_filter_quit)
 '''
 
 [[plugins]]
