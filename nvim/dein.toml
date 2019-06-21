@@ -74,7 +74,7 @@ let g:vdebug_keymap = {
     \ 'eval_under_cursor': '<space>v?',
     \ 'eval_visual': '<space>v?',
 \ }
-let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/var/www/html/': '/path/to/repos/'}}
+let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/desktop/': $HOST_ROOT.'/Desktop/'}}
 '''
 
 [[plugins]]
@@ -87,7 +87,7 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#option('_', {'auto_resume': 1, 'start_filter': 1, 'split': 'floating'})
+call denite#custom#option('_', {'auto_resume': 1, 'auto_resize': 1, 'start_filter': 1, 'split': 'floating'})
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
 call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])
 '''
