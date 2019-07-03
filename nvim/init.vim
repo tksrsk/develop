@@ -38,5 +38,5 @@ set clipboard+=unnamedplus
 set inccommand=nosplit
 set wildoptions=pum
 set completeopt=menuone
-set pumblend=20
+set winblend=20 pumblend=20
 wshada!
