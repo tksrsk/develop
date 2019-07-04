@@ -36,9 +36,6 @@ repo = 'alvan/vim-closetag'
 repo = 'haya14busa/is.vim'
 
 [[plugins]]
-repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
 repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
@@ -89,7 +86,6 @@ call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#option('_', {'auto_resume': 1, 'auto_resize': 1, 'start_filter': 1, 'split': 'floating'})
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
-call denite#custom#source('file,file/rec,file/old,buffer,git/status,git/file', 'converters', ['devicons_denite_converter'])
 '''
 
 [[plugins]]
