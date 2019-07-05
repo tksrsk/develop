@@ -107,7 +107,7 @@ hook_add = '''
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'go': ['bingo'],
-    \ 'php': ['php', '/root/.composer/vendor/bin/php-language-server.php'],
+    \ 'php': ['intelephense', '--stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
 \ }

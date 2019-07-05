@@ -15,10 +15,8 @@ RUN pacman -S --noconfirm perl
 RUN pacman -S --noconfirm go
 
 # Language Settings
-RUN composer global config prefer-stable true && composer global config minimum-stability dev && composer global config repos.packagist composer https://packagist.jp
 RUN composer global require hirak/prestissimo
-RUN composer global require felixfbecker/language-server
-RUN composer global run-script --working-dir=/root/.composer/vendor/felixfbecker/language-server parse-stubs
+RUN npm install -g intelephense
 RUN pip3 install --upgrade pip pynvim python-language-server[all]
 RUN pip2 install --upgrade pip pynvim
 RUN npm install -g npm neovim javascript-typescript-langserver typescript-language-server
