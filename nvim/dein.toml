@@ -12,9 +12,7 @@ denite-filter = '''
 inoremap <silent><buffer><expr> <cr>    denite#do_map('do_action')
 inoremap <silent><buffer><expr> <tab>   denite#do_map('choose_action')
 inoremap <silent><buffer><expr> <c-l>   denite#do_map('redraw')
-
-nnoremap <silent><buffer><expr> <tab>   denite#do_map('choose_action')
-nmap     <silent><buffer>       <esc>   <Plug>(denite_filter_quit)
+imap     <silent><buffer>       <esc>   <Plug>(denite_filter_quit)
 '''
 
 [[plugins]]
@@ -110,12 +108,11 @@ let g:LanguageClient_serverCommands = {
     \ 'php': ['intelephense', '--stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
+    \ 'html': ['html-languageserver', '--stdio'],
+    \ 'css': ['css-languageserver', '--stdio'],
+    \ 'scss': ['css-languageserver', '--stdio'],
 \ }
 '''
-
-[[plugins]]
-repo = 'tbodt/deoplete-tabnine'
-build = './install.sh'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
