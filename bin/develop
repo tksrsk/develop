@@ -17,7 +17,6 @@ then
         -v $HOME/.config/develop/tmux.conf:/root/.tmux.conf \
         -v $HOME/.config/develop/fish/fishfile:/root/.config/fish/fishfile \
         -v $HOME/.config/develop/nvim/init.vim:/root/.config/nvim/init.vim \
-        -v $HOME/.config/develop/tern-config:/root/.tern-config \
         -v develop_volume:/root \
         -v /var/run/docker.sock:/var/run/docker.sock \
         develop tmux -2 -u
