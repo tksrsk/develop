@@ -54,6 +54,9 @@ let g:airline_powerline_fonts = 1
 '''
 
 [[plugins]]
+repo = 'edkolev/tmuxline.vim'
+
+[[plugins]]
 repo = 'joonty/vdebug'
 hook_add = '''
 let g:vdebug_keymap = {
@@ -107,8 +110,10 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'go': ['bingo'],
     \ 'php': ['intelephense', '--stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
+    \ 'typescript.tsx': ['typescript-language-server', '--stdio'],
     \ 'html': ['html-languageserver', '--stdio'],
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'scss': ['css-languageserver', '--stdio'],
