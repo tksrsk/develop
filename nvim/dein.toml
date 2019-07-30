@@ -41,15 +41,13 @@ repo = 'sheerun/vim-polyglot'
 build = 'bash ./build'
 
 [[plugins]]
-repo = 'joshdick/onedark.vim'
-hook_add = 'colorscheme onedark'
+repo = 'cocopon/iceberg.vim'
+hook_add = 'colorscheme iceberg'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
-let g:airline_theme = 'onedark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
+let g:airline_theme = 'iceberg'
 let g:airline_powerline_fonts = 1
 '''
 
@@ -60,17 +58,17 @@ repo = 'edkolev/tmuxline.vim'
 repo = 'joonty/vdebug'
 hook_add = '''
 let g:vdebug_keymap = {
-    \ 'run': '<space>vr',
-    \ 'run_to_cursor': '<space>vc',
-    \ 'step_over': '<space>vj',
-    \ 'step_into': '<space>vl',
-    \ 'step_out': '<space>vh',
-    \ 'close': '<space>vq',
-    \ 'detach': '<space>vd',
-    \ 'set_breakpoint': '<space>vb',
-    \ 'get_context': '<space>v*',
-    \ 'eval_under_cursor': '<space>v?',
-    \ 'eval_visual': '<space>v?',
+    \ 'run': '<space>r',
+    \ 'run_to_cursor': '<space>c',
+    \ 'step_over': '<space>j',
+    \ 'step_into': '<space>l',
+    \ 'step_out': '<space>h',
+    \ 'close': '<space>q',
+    \ 'detach': '<space>d',
+    \ 'set_breakpoint': '<space>b',
+    \ 'get_context': '<space>*',
+    \ 'eval_under_cursor': '<space>?',
+    \ 'eval_visual': '<space>?',
 \ }
 let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/desktop/': $HOST_ROOT.'/Desktop/'}}
 '''
@@ -108,7 +106,7 @@ rev = 'next'
 hook_add = '''
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
-    \ 'go': ['bingo'],
+    \ 'go': ['/root/go/bin/gopls'],
     \ 'php': ['intelephense', '--stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],

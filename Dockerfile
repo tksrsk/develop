@@ -20,7 +20,7 @@ RUN pip3 install --upgrade pip pynvim python-language-server[all]
 RUN pip2 install --upgrade pip pynvim
 RUN npm install -g npm neovim javascript-typescript-langserver typescript-language-server intelephense vscode-html-languageserver-bin vscode-css-languageserver-bin
 RUN gem install -N --no-user-install neovim
-RUN go get -u github.com/saibing/bingo
+RUN go get -u golang.org/x/tools/gopls
 
 # Environment Settings
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
