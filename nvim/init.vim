@@ -24,6 +24,7 @@ call dein#call_hook("source")
 "---------------------
 filetype plugin indent on
 syntax on
+set shell=zsh
 set termguicolors
 set hidden
 set noswapfile

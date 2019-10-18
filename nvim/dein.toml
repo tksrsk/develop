@@ -90,7 +90,7 @@ call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
 
 [[plugins]]
 repo = 'tk-shirasaka/denite-utils'
-hook_add = 'noremap <silent><tab> :Denite -buffer-name=main command:Denite command<CR>'
+hook_add = 'noremap <silent><tab> :Denite source command<CR>'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -99,6 +99,13 @@ call deoplete#enable()
 call deoplete#custom#option({'ignore_case': 1})
 call deoplete#custom#option('sources', {'denite-filter': ['denite']})
 '''
+
+[[plugins]]
+repo = 'zchee/deoplete-zsh'
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+hook_add = 'let g:deol#prompt_pattern = "% \|%$"'
 
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
