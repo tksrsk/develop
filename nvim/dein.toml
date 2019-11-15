@@ -42,13 +42,13 @@ repo = 'sheerun/vim-polyglot'
 build = 'bash ./build'
 
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
-hook_add = 'colorscheme iceberg'
+repo = 'joshdick/onedark.vim'
+hook_add = 'colorscheme onedark'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
-let g:airline_theme = 'iceberg'
+let g:airline_theme = 'onedark'
 let g:airline_powerline_fonts = 1
 '''
 
@@ -101,30 +101,25 @@ call deoplete#custom#option('sources', {'denite-filter': ['denite']})
 '''
 
 [[plugins]]
+repo = 'Shougo/deoplete-lsp'
+hook_source = '''
+set omnifunc=lsp#omnifunc
+call lsp#add_filetype_config({'filetype': ['vim'], 'name': 'vim', 'cmd': 'vim-language-server --stdio'})
+call lsp#add_filetype_config({'filetype': ['python'], 'name': 'pyls', 'cmd': 'pyls'})
+call lsp#add_filetype_config({'filetype': ['go'], 'name': 'gols', 'cmd': '/root/go/bin/gopls'})
+call lsp#add_filetype_config({'filetype': ['php'], 'name': 'intelephense', 'cmd': 'intelephense --stdio'})
+call lsp#add_filetype_config({'filetype': ['javascript', 'javascript.jsx'], 'name': 'javascript', 'cmd': 'javascript-typescript-stdio'})
+call lsp#add_filetype_config({'filetype': ['typescript', 'typescript.jsx'], 'name': 'typescript', 'cmd': 'typescript-language-server --stdio'})
+call lsp#add_filetype_config({'filetype': ['html'], 'name': 'html', 'cmd': 'html-languageserver --stdio'})
+call lsp#add_filetype_config({'filetype': ['css', 'scss'], 'name': 'css', 'cmd': 'css-languageserver --stdio'})
+'''
+
+[[plugins]]
 repo = 'zchee/deoplete-zsh'
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 hook_add = 'let g:deol#prompt_pattern = "% \|%$"'
-
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-build = 'bash install.sh'
-rev = 'next'
-hook_add = '''
-let g:LanguageClient_serverCommands = {
-    \ 'python': ['pyls'],
-    \ 'go': ['/root/go/bin/gopls'],
-    \ 'php': ['intelephense', '--stdio'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ 'typescript': ['typescript-language-server', '--stdio'],
-    \ 'typescript.tsx': ['typescript-language-server', '--stdio'],
-    \ 'html': ['html-languageserver', '--stdio'],
-    \ 'css': ['css-languageserver', '--stdio'],
-    \ 'scss': ['css-languageserver', '--stdio'],
-\ }
-'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
@@ -136,7 +131,3 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'Shougo/neco-vim'
-on_ft = 'vim'

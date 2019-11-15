@@ -18,7 +18,7 @@ RUN pacman -S --noconfirm go
 RUN composer global require hirak/prestissimo
 RUN pip3 install --upgrade pip pynvim python-language-server[all]
 RUN pip2 install --upgrade pip pynvim
-RUN npm install -g npm neovim javascript-typescript-langserver typescript-language-server intelephense vscode-html-languageserver-bin vscode-css-languageserver-bin
+RUN npm install -g npm neovim javascript-typescript-langserver typescript-language-server intelephense vscode-html-languageserver-bin vscode-css-languageserver-bin vim-language-server
 RUN gem install -N --no-user-install neovim
 RUN go get -u golang.org/x/tools/gopls
 
