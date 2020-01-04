@@ -26,16 +26,13 @@ repo = 'editorconfig/editorconfig-vim'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
 repo = 'tpope/vim-repeat'
 
 [[plugins]]
-repo = 'alvan/vim-closetag'
-
-[[plugins]]
 repo = 'haya14busa/is.vim'
-
-[[plugins]]
-repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
@@ -101,18 +98,22 @@ call deoplete#custom#option('sources', {'denite-filter': ['denite']})
 '''
 
 [[plugins]]
-repo = 'Shougo/deoplete-lsp'
+repo = 'neovim/nvim-lsp'
 hook_source = '''
-set omnifunc=lsp#omnifunc
-call lsp#add_filetype_config({'filetype': ['vim'], 'name': 'vim', 'cmd': 'vim-language-server --stdio'})
-call lsp#add_filetype_config({'filetype': ['python'], 'name': 'pyls', 'cmd': 'pyls'})
-call lsp#add_filetype_config({'filetype': ['go'], 'name': 'gols', 'cmd': '/root/go/bin/gopls'})
-call lsp#add_filetype_config({'filetype': ['php'], 'name': 'intelephense', 'cmd': 'intelephense --stdio'})
-call lsp#add_filetype_config({'filetype': ['javascript', 'javascript.jsx'], 'name': 'javascript', 'cmd': 'javascript-typescript-stdio'})
-call lsp#add_filetype_config({'filetype': ['typescript', 'typescript.jsx'], 'name': 'typescript', 'cmd': 'typescript-language-server --stdio'})
-call lsp#add_filetype_config({'filetype': ['html'], 'name': 'html', 'cmd': 'html-languageserver --stdio'})
-call lsp#add_filetype_config({'filetype': ['css', 'scss'], 'name': 'css', 'cmd': 'css-languageserver --stdio'})
+lua require'nvim_lsp'.bashls.setup{}
+lua require'nvim_lsp'.vimls.setup{}
+lua require'nvim_lsp'.pyls.setup{}
+lua require'nvim_lsp'.gopls.setup{}
+lua require'nvim_lsp'.intelephense.setup{ init_options = { licenceKey = ""; }; }
+lua require'nvim_lsp'.tsserver.setup{}
+lua require'nvim_lsp'.dockerls.setup{}
+"lua require'nvim_lsp'.htmlls.setup{}
+lua require'nvim_lsp'.cssls.setup{}
+"lua require'nvim_lsp'.jsonls.setup{}
 '''
+
+[[plugins]]
+repo = 'Shougo/deoplete-lsp'
 
 [[plugins]]
 repo = 'zchee/deoplete-zsh'
@@ -131,3 +132,13 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/echodoc.vim'
+hook_add = '''
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'floating'
+'''
+
+[[plugins]]
+repo = 'tk-shirasaka/ejdict.nvim'
