@@ -36,7 +36,7 @@ set fileformats=unix,dos,mac
 set fileformat=unix
 set tabstop=4 shiftwidth=4 expandtab
 set mouse=a
-set number relativenumber cursorline cursorcolumn
+set title number relativenumber cursorline cursorcolumn
 set clipboard+=unnamedplus
 set inccommand=nosplit
 set wildoptions=pum

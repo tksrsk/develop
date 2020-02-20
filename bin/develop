@@ -1,24 +1,16 @@
 #!/bin/sh
 
-CONTAINER=$(docker ps -f ancestor=develop -q)
-
-if [ -z $CONTAINER ]
-then
-    docker build --force-rm -t develop ~/.config/develop
-    docker run \
-        --rm \
-        -ti \
-        -e HOST_ROOT=$HOME \
-        -w $PWD \
-        -v $HOME:$HOME \
-        -v $HOME/.ssh:/root/.ssh \
-        -v $HOME/.gitconfig:/root/.gitconfig \
-        -v $HOME/.config/develop/gitconfig:/etc/gitconfig \
-        -v $HOME/.config/develop/tmux.conf:/root/.tmux.conf \
-        -v $HOME/.config/develop/nvim/init.vim:/root/.config/nvim/init.vim \
-        -v develop_volume:/root \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        develop tmux -2 -u
-else
-    docker exec -ti $CONTAINER tmux a
-fi
+docker build --force-rm -t develop ~/.config/develop
+docker run \
+    --rm \
+    -ti \
+    -e HOST_ROOT=$HOME \
+    -w $PWD \
+    -v $HOME:$HOME \
+    -v $HOME/.ssh:/root/.ssh \
+    -v $HOME/.gitconfig:/root/.gitconfig \
+    -v $HOME/.config/develop/gitconfig:/etc/gitconfig \
+    -v $HOME/.config/develop/nvim/init.vim:/root/.config/nvim/init.vim \
+    -v develop_volume:/root \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    develop nvim
