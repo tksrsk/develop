@@ -104,7 +104,7 @@ lua require'nvim_lsp'.gopls.setup{}
 lua require'nvim_lsp'.intelephense.setup{ init_options = { licenceKey = ""; }; }
 lua require'nvim_lsp'.tsserver.setup{}
 lua require'nvim_lsp'.dockerls.setup{}
-"lua require'nvim_lsp'.htmlls.setup{}
+lua require'nvim_lsp'.html.setup{}
 lua require'nvim_lsp'.cssls.setup{}
 lua require'nvim_lsp'.jsonls.setup{}
 lua require'nvim_lsp'.yamlls.setup{}
