@@ -65,7 +65,7 @@ let g:vdebug_keymap = {
     \ 'eval_under_cursor': '<space>?',
     \ 'eval_visual': '<space>?',
 \ }
-let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/desktop/': $HOST_ROOT.'/Desktop/'}}
+let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/project/': '/project/'}}
 '''
 
 [[plugins]]
@@ -78,7 +78,7 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#option('_', {'auto_resume': 1, 'start_filter': 1, 'split': 'floating', 'prompt': '$'})
+call denite#custom#option('_', {'auto_resume': 1, 'auto_resize': 1, 'start_filter': 1, 'split': 'floating', 'prompt': '$'})
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
 '''
 
@@ -90,9 +90,12 @@ hook_add = 'noremap <silent><tab> :Denite source command<CR>'
 repo = 'Shougo/deoplete.nvim'
 hook_source = '''
 call deoplete#enable()
-call deoplete#custom#option({'ignore_case': 1})
+call deoplete#custom#option({'ignore_case': 1, 'ignore_sources': {'_': ['around', 'file', 'member', 'omni']}})
 call deoplete#custom#option('sources', {'denite-filter': ['denite']})
 '''
+
+[[plugins]]
+repo = 'haorenW1025/diagnostic-nvim'
 
 [[plugins]]
 repo = 'neovim/nvim-lsp'
@@ -101,7 +104,7 @@ lua require'nvim_lsp'.bashls.setup{}
 lua require'nvim_lsp'.vimls.setup{}
 lua require'nvim_lsp'.pyls.setup{}
 lua require'nvim_lsp'.gopls.setup{}
-lua require'nvim_lsp'.intelephense.setup{ init_options = { licenceKey = ""; }; }
+lua require'nvim_lsp'.intelephense.setup{}
 lua require'nvim_lsp'.tsserver.setup{}
 lua require'nvim_lsp'.dockerls.setup{}
 lua require'nvim_lsp'.html.setup{}
@@ -119,17 +122,6 @@ repo = 'zchee/deoplete-zsh'
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 hook_add = 'let g:deol#prompt_pattern = "% \|%$"'
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-hook_add = '''
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-'''
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/echodoc.vim'

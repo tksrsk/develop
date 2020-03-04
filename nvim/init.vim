@@ -39,7 +39,5 @@ set mouse=a
 set title number relativenumber cursorline cursorcolumn
 set clipboard+=unnamedplus
 set inccommand=nosplit
-set wildoptions=pum
-set completeopt=menuone
-set winblend=20 pumblend=20
+set completeopt=noinsert,menuone,noselect
 wshada!
