@@ -13,6 +13,7 @@ RUN pacman -S --noconfirm nodejs npm
 RUN pacman -S --noconfirm ruby
 RUN pacman -S --noconfirm perl
 RUN pacman -S --noconfirm go
+RUN pacman -S --noconfirm dotnet-runtime
 
 # Language Settings
 RUN composer global require hirak/prestissimo
