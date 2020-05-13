@@ -25,11 +25,12 @@ call dein#call_hook("source")
 filetype plugin indent on
 syntax on
 set shell=zsh
+set ambiwidth=double
 set termguicolors
 set hidden
 set noswapfile
 set nobomb
-set noshowmode noshowcmd
+set noshowmode
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac

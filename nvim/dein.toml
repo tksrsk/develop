@@ -68,7 +68,7 @@ let g:vdebug_keymap = {
     \ 'eval_under_cursor': '<space>?',
     \ 'eval_visual': '<space>?',
 \ }
-let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/project/': '/project/'}}
+let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/project/': '/project/'}, 'sign_disabled': ''}
 '''
 
 [[plugins]]
@@ -81,13 +81,14 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#option('_', {'auto_resume': 1, 'auto_resize': 1, 'start_filter': 1, 'split': 'floating', 'prompt': '$'})
+call denite#custom#option('_', {'split': 'floating', 'prompt': '$'})
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
+
+noremap <silent><tab> :Denite source command<CR>
 '''
 
 [[plugins]]
 repo = 'tk-shirasaka/denite-utils'
-hook_add = 'noremap <silent><tab> :Denite source command<CR>'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
