@@ -93,9 +93,6 @@ call deoplete#custom#option('sources', {'denite-filter': ['denite']})
 '''
 
 [[plugins]]
-repo = 'haorenW1025/diagnostic-nvim'
-
-[[plugins]]
 repo = 'neovim/nvim-lsp'
 hook_source = '''
 lua require'nvim_lsp'.bashls.setup{}
@@ -110,6 +107,16 @@ lua require'nvim_lsp'.html.setup{}
 lua require'nvim_lsp'.cssls.setup{}
 lua require'nvim_lsp'.jsonls.setup{}
 lua require'nvim_lsp'.yamlls.setup{}
+'''
+
+[[plugins]]
+repo = 'haorenW1025/diagnostic-nvim'
+hook_source = '''
+lua << EOF
+local nvim_lsp = require'nvim_lsp'
+local diagnostic = require'diagnostic'
+nvim_lsp.util.default_config = vim.tbl_extend("force", nvim_lsp.util.default_config, { on_attach=diagnostic.on_attach })
+EOF
 '''
 
 [[plugins]]
@@ -134,7 +141,7 @@ repo = 'tk-shirasaka/ejdict.nvim'
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
-hook_source = '''
+hook_add = '''
 let g:vista_default_executive = 'nvim_lsp'
 '''
 
