@@ -8,6 +8,7 @@ nnoremap <silent><buffer><expr> <space> denite#do_map('toggle_select').'j'
 nnoremap <silent><buffer><expr> *       denite#do_map('toggle_select_all')
 nnoremap <silent><buffer><expr> i       denite#do_map('open_filter_buffer')
 nnoremap <silent><buffer><expr> u       denite#do_map('restore_sources')
+nnoremap <silent><buffer><expr> h       denite#do_map('move_up_path')
 '''
 
 [[plugins]]
@@ -49,19 +50,6 @@ let g:airline_powerline_fonts = 1
 [[plugins]]
 repo = 'joonty/vdebug'
 hook_add = '''
-let g:vdebug_keymap = {
-    \ 'run': '<space>r',
-    \ 'run_to_cursor': '<space>c',
-    \ 'step_over': '<space>j',
-    \ 'step_into': '<space>l',
-    \ 'step_out': '<space>h',
-    \ 'close': '<space>q',
-    \ 'detach': '<space>d',
-    \ 'set_breakpoint': '<space>b',
-    \ 'get_context': '<space>*',
-    \ 'eval_under_cursor': '<space>?',
-    \ 'eval_visual': '<space>?',
-\ }
 let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/project/': '/project/'}, 'sign_disabled': ''}
 '''
 
