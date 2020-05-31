@@ -18,13 +18,10 @@ repo = 'Shougo/dein.vim'
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'tpope/vim-surround'
+repo = 'machakann/vim-sandwich'
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
-
-[[plugins]]
-repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'haya14busa/is.vim'
@@ -109,6 +106,9 @@ EOF
 
 [[plugins]]
 repo = 'Shougo/deoplete-lsp'
+hook_source = '''
+call deoplete#lsp#enable()
+'''
 
 [[plugins]]
 repo = 'zchee/deoplete-zsh'
@@ -116,13 +116,6 @@ repo = 'zchee/deoplete-zsh'
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 hook_add = 'let g:deol#prompt_pattern = "% \|%$"'
-
-[[plugins]]
-repo = 'Shougo/echodoc.vim'
-hook_add = '''
-let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'floating'
-'''
 
 [[plugins]]
 repo = 'tk-shirasaka/ejdict.nvim'
