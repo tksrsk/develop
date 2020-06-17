@@ -8,7 +8,7 @@ nnoremap <silent><buffer><expr> <space> denite#do_map('toggle_select').'j'
 nnoremap <silent><buffer><expr> *       denite#do_map('toggle_select_all')
 nnoremap <silent><buffer><expr> i       denite#do_map('open_filter_buffer')
 nnoremap <silent><buffer><expr> u       denite#do_map('restore_sources')
-nnoremap <silent><buffer><expr> h       denite#do_map('move_up_path')
+nnoremap <silent><buffer><expr> -       denite#do_map('move_up_path')
 '''
 
 [[plugins]]
@@ -22,6 +22,12 @@ repo = 'machakann/vim-sandwich'
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+let g:EasyMotion_verbose = 0
+'''
 
 [[plugins]]
 repo = 'haya14busa/is.vim'
@@ -47,7 +53,7 @@ let g:airline_powerline_fonts = 1
 [[plugins]]
 repo = 'joonty/vdebug'
 hook_add = '''
-let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/project/': '/project/'}, 'sign_disabled': ''}
+let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/project/': '/project/'}}
 '''
 
 [[plugins]]
@@ -128,3 +134,4 @@ let g:vista_default_executive = 'nvim_lsp'
 
 [[plugins]]
 repo = 'kyazdani42/highlight.lua'
+merged = 0

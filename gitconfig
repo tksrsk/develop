@@ -8,3 +8,5 @@
     tool = vimdiff
 [difftool "vimdiff"]
     cmd = nvim -d $LOCAL $REMOTE
+[pull]
+    rebase = false

@@ -25,7 +25,6 @@ call dein#call_hook("source")
 filetype plugin indent on
 syntax on
 set shell=zsh
-set ambiwidth=double
 set termguicolors
 set hidden
 set noswapfile
@@ -38,6 +37,7 @@ set fileformat=unix
 set tabstop=4 shiftwidth=4 expandtab
 set mouse=a
 set title number relativenumber cursorline cursorcolumn
+set diffopt+=iwhite
 set clipboard+=unnamedplus
 set inccommand=nosplit
 set completeopt=noinsert,menuone,noselect
