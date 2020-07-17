@@ -44,6 +44,13 @@ colorscheme onedark
 '''
 
 [[plugins]]
+repo = 'norcalli/nvim-colorizer.lua'
+hook_add = '''
+set termguicolors
+lua require'colorizer'.setup{ '*' }
+'''
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
 let g:airline_theme = 'onedark'
@@ -66,7 +73,7 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#option('_', {'split': 'floating', 'prompt': '$'})
+call denite#custom#option('_', {'auto_resize': 1, 'split': 'floating', 'prompt': ''})
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
 
 noremap <silent><tab> :Denite source command<CR>
@@ -133,5 +140,33 @@ let g:vista_default_executive = 'nvim_lsp'
 '''
 
 [[plugins]]
-repo = 'kyazdani42/highlight.lua'
+repo = 'nvim-treesitter/nvim-treesitter'
 merged = 0
+hook_source = '''
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    highlight = { enable = true },
+    refactor = {
+        highlight_definitions = { enable = true },
+        highlight_current_scope = { enable = true },
+        smart_rename = { enable = true },
+        navigation = { enable = true },
+    },
+    incremental_selection = { enable = true },
+    textobjects = { enable = true },
+    ensure_installed = "all"
+}
+EOF
+'''
+
+[[plugins]]
+repo = 'tpope/vim-dadbod'
+
+[[plugins]]
+repo = 'kristijanhusak/vim-dadbod-ui'
+hook_add = '''
+let g:db_ui_use_nerd_fonts = 1
+'''
+
+[[plugins]]
+repo = 'kristijanhusak/vim-dadbod-completion'
