@@ -94,7 +94,7 @@ call deoplete#custom#option('sources', {'denite-filter': ['denite']})
 repo = 'neovim/nvim-lsp'
 hook_source = '''
 lua require'nvim_lsp'.bashls.setup{}
-lua require'nvim_lsp'.sumneko_lua.setup{}
+lua require'nvim_lsp'.sumneko_lua.setup{ cmd = { "lua-language-server" } }
 lua require'nvim_lsp'.vimls.setup{}
 lua require'nvim_lsp'.pyls_ms.setup{}
 lua require'nvim_lsp'.gopls.setup{}
