@@ -37,6 +37,6 @@ set mouse=a
 set title number relativenumber cursorline cursorcolumn
 set diffopt+=iwhite
 set clipboard+=unnamedplus
-set inccommand=nosplit
+set inccommand=split
 set completeopt=noinsert,menuone,noselect
 wshada!
