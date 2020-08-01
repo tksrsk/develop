@@ -143,6 +143,7 @@ let g:vista_default_executive = 'nvim_lsp'
 repo = 'nvim-treesitter/nvim-treesitter'
 merged = 0
 hook_source = '''
+set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 lua << EOF
 require'nvim-treesitter.configs'.setup {
     highlight = { enable = true },
@@ -154,10 +155,14 @@ require'nvim-treesitter.configs'.setup {
     },
     incremental_selection = { enable = true },
     textobjects = { enable = true },
-    ensure_installed = "all"
+    ensure_installed = "all",
+    playground = { enable = true }
 }
 EOF
 '''
+
+[[plugins]]
+repo = 'nvim-treesitter/playground'
 
 [[plugins]]
 repo = 'tpope/vim-dadbod'
