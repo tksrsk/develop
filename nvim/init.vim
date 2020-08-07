@@ -39,4 +39,5 @@ set diffopt+=iwhite
 set clipboard+=unnamedplus
 set inccommand=split
 set completeopt=noinsert,menuone,noselect
+set updatetime=50
 wshada!
