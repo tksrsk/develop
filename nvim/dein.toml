@@ -34,13 +34,12 @@ repo = 'haya14busa/is.vim'
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
-build = 'bash ./build'
 
 [[plugins]]
-repo = 'joshdick/onedark.vim'
+repo = 'sainnhe/edge'
 hook_add = '''
-let g:onedark_terminal_italics = 1
-colorscheme onedark
+let g:edge_enable_italic = 1
+colorscheme edge
 '''
 
 [[plugins]]
@@ -53,7 +52,7 @@ lua require'colorizer'.setup{ '*' }
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'edge'
 let g:airline_powerline_fonts = 1
 '''
 
