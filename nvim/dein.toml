@@ -91,7 +91,7 @@ call deoplete#custom#option('sources', {'denite-filter': ['denite']})
 '''
 
 [[plugins]]
-repo = 'neovim/nvim-lsp'
+repo = 'neovim/nvim-lspconfig'
 hook_source = '''
 lua << EOF
 local nvim_lsp = require'nvim_lsp'
@@ -139,7 +139,6 @@ let g:vista_default_executive = 'nvim_lsp'
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-merged = 0
 hook_source = '''
 set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 lua << EOF
