@@ -40,5 +40,5 @@ set clipboard+=unnamedplus
 set inccommand=split
 set completeopt=noinsert,menuone,noselect
 set updatetime=50
-set foldcolumn=auto:3 fillchars=foldopen:,foldclose:
+set foldcolumn=auto:3 fillchars=foldopen:▾,foldclose:▸
 wshada!
