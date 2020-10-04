@@ -144,22 +144,72 @@ set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 lua << EOF
 require'nvim-treesitter.configs'.setup {
     highlight = { enable = true },
+    incremental_selection = { enable = true },
+    ensure_installed = "all",
+}
+EOF
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-refactor'
+hook_source = '''
+lua << EOF
+require'nvim-treesitter.configs'.setup {
     refactor = {
         highlight_definitions = { enable = true },
         highlight_current_scope = { enable = true },
         smart_rename = { enable = true },
         navigation = { enable = true },
     },
-    incremental_selection = { enable = true },
-    textobjects = { enable = true },
-    ensure_installed = "all",
-    playground = { enable = true }
+}
+EOF
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-textobjects'
+hook_source = '''
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    textobjects = {
+        select = {
+            enable = true,
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+            },
+        },
+        swap = {
+            enable = true,
+            swap_next = { ["<leader>a"] = "@parameter.inner" },
+            swap_previous = { ["<leader>A"] = "@parameter.inner" },
+        },
+        move = {
+            enable = true,
+            goto_next_start = { ["]m"] = "@function.outer", ["]]"] = "@class.outer" },
+            goto_next_end = { ["]M"] = "@function.outer", ["]["] = "@class.outer" },
+            goto_previous_start = { ["[m"] = "@function.outer", ["[["] = "@class.outer" },
+            goto_previous_end = { ["[M"] = "@function.outer", ["[]"] = "@class.outer" },
+        },
+        lsp_interop = {
+            enable = true,
+            peek_definition_code = { ["df"] = "@function.outer", ["dF"] = "@class.outer" },
+        },
+    },
 }
 EOF
 '''
 
 [[plugins]]
 repo = 'nvim-treesitter/playground'
+hook_source = '''
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    playground = { enable = true }
+}
+EOF
+'''
 
 [[plugins]]
 repo = 'tpope/vim-dadbod'
