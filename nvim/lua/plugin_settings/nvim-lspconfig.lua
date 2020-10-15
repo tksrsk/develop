@@ -2,9 +2,9 @@
 
 local nvim_lsp = require'nvim_lsp'
 local diagnostic = require'diagnostic'
-local default_config = nvim_lsp.util.default_config
+local util = nvim_lsp.util
 
-default_config = vim.tbl_extend('force', default_config, { on_attach=diagnostic.on_attach })
+util.default_config = vim.tbl_extend('force', util.default_config, { on_attach=diagnostic.on_attach })
 
 nvim_lsp.bashls.setup {  }
 nvim_lsp.sumneko_lua.setup{ cmd = { 'lua-language-server' } }

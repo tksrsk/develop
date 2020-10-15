@@ -2,7 +2,7 @@
 local api = vim.api
 
 api.nvim_set_keymap('n', '<f5>', "<cmd>lua require'dap'.continue()<cr>", { silent = true, noremap = true })
-api.nvim_set_keymap('n', '<f9>', "<cmd>lua require'dap'.repl.open()<cr>", { silent = true, noremap = true })
+api.nvim_set_keymap('n', '<f9>', "<cmd>lua require'dap'.repl.toggle()<cr>", { silent = true, noremap = true })
 api.nvim_set_keymap('n', '<f10>', "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { silent = true, noremap = true })
 
 -- Configs
@@ -18,10 +18,16 @@ dap.configurations.php = {
     {
         type = 'php',
         request = 'launch',
-        name = 'Launch xdebug',
+        name = 'Listen for xdebug',
         hostname = '0.0.0.0',
         stopOnEntry = false,
         serverSourceRoot = '/project/',
         localSourceRoot = '/project/',
-    }
+    },
 }
+
+dap.repl.commands = vim.tbl_extend('force', dap.repl.commands, {
+    custom_commands = {
+        ['.restart'] = dap.restart,
+    }
+})

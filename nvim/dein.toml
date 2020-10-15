@@ -48,34 +48,18 @@ hook_add = "lua require'plugin_settings.nvim-colorizer'"
 
 [[plugins]]
 repo = 'hardcoreplayers/spaceline.vim'
+hook_add = "lua require'plugin_settings.spaceline'"
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-hook_source = '''
-call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep', '--no-heading'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#option('_', {'auto_resize': 1, 'split': 'floating', 'prompt': ''})
-call denite#custom#source('grep', { 'args': ['', '', '!'] })
-call denite#custom#source('deol', { 'args': ['-edit -split=floating'] })
-
-noremap <silent><tab> :Denite source command<CR>
-'''
+hook_source = "lua require'plugin_settings.denite'"
 
 [[plugins]]
 repo = 'tk-shirasaka/denite-utils'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-hook_source = '''
-call deoplete#enable()
-call deoplete#custom#option({'ignore_case': 1, 'ignore_sources': {'_': ['around', 'file', 'member', 'omni']}})
-call deoplete#custom#option('sources', {'denite-filter': ['denite']})
-'''
+hook_source = "lua require'plugin_settings.deoplete'"
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
@@ -135,3 +119,6 @@ hook_add = "lua require'plugin_settings.vim-dadbod-ui'"
 
 [[plugins]]
 repo = 'kristijanhusak/vim-dadbod-completion'
+
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
