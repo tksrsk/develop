@@ -44,23 +44,10 @@ colorscheme edge
 
 [[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
-hook_add = '''
-set termguicolors
-lua require'colorizer'.setup{ '*' }
-'''
+hook_add = "lua require'plugin_settings.nvim-colorizer'"
 
 [[plugins]]
-repo = 'vim-airline/vim-airline'
-hook_add = '''
-let g:airline_theme = 'edge'
-let g:airline_powerline_fonts = 1
-'''
-
-[[plugins]]
-repo = 'joonty/vdebug'
-hook_add = '''
-let g:vdebug_options = {'break_on_open': 0, 'port': 9000, 'server': '0.0.0.0', 'path_maps': {'/project/': '/project/'}}
-'''
+repo = 'hardcoreplayers/spaceline.vim'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -92,25 +79,7 @@ call deoplete#custom#option('sources', {'denite-filter': ['denite']})
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-hook_source = '''
-lua << EOF
-local nvim_lsp = require'nvim_lsp'
-local diagnostic = require'diagnostic'
-nvim_lsp.util.default_config = vim.tbl_extend("force", nvim_lsp.util.default_config, { on_attach=diagnostic.on_attach })
-nvim_lsp.bashls.setup{}
-nvim_lsp.sumneko_lua.setup{ cmd = { "lua-language-server" } }
-nvim_lsp.vimls.setup{}
-nvim_lsp.pyls_ms.setup{}
-nvim_lsp.gopls.setup{}
-nvim_lsp.intelephense.setup{}
-nvim_lsp.tsserver.setup{}
-nvim_lsp.dockerls.setup{}
-nvim_lsp.html.setup{}
-nvim_lsp.cssls.setup{}
-nvim_lsp.jsonls.setup{}
-nvim_lsp.yamlls.setup{}
-EOF
-'''
+hook_source = "lua require'plugin_settings.nvim-lspconfig'"
 
 [[plugins]]
 repo = 'nvim-lua/diagnostic-nvim'
@@ -139,86 +108,30 @@ let g:vista_default_executive = 'nvim_lsp'
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-hook_source = '''
-set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-    highlight = { enable = true },
-    incremental_selection = { enable = true },
-    ensure_installed = "all",
-}
-EOF
-'''
+hook_source = "lua require'plugin_settings.nvim-treesitter'"
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-refactor'
-hook_source = '''
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-    refactor = {
-        highlight_definitions = { enable = true },
-        highlight_current_scope = { enable = true },
-        smart_rename = { enable = true },
-        navigation = { enable = true },
-    },
-}
-EOF
-'''
+hook_source = "lua require'plugin_settings.nvim-treesitter-refactor'"
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-textobjects'
-hook_source = '''
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-    textobjects = {
-        select = {
-            enable = true,
-            keymaps = {
-                ["af"] = "@function.outer",
-                ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
-            },
-        },
-        swap = {
-            enable = true,
-            swap_next = { ["<leader>a"] = "@parameter.inner" },
-            swap_previous = { ["<leader>A"] = "@parameter.inner" },
-        },
-        move = {
-            enable = true,
-            goto_next_start = { ["]m"] = "@function.outer", ["]]"] = "@class.outer" },
-            goto_next_end = { ["]M"] = "@function.outer", ["]["] = "@class.outer" },
-            goto_previous_start = { ["[m"] = "@function.outer", ["[["] = "@class.outer" },
-            goto_previous_end = { ["[M"] = "@function.outer", ["[]"] = "@class.outer" },
-        },
-        lsp_interop = {
-            enable = true,
-            peek_definition_code = { ["df"] = "@function.outer", ["dF"] = "@class.outer" },
-        },
-    },
-}
-EOF
-'''
+hook_source = "lua require'plugin_settings.nvim-treesitter-textobjects'"
 
 [[plugins]]
 repo = 'nvim-treesitter/playground'
-hook_source = '''
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-    playground = { enable = true }
-}
-EOF
-'''
+hook_source = "lua require'plugin_settings.nvim-treesitter-playground'"
+
+[[plugins]]
+repo = 'mfussenegger/nvim-dap'
+hook_source = "lua require'plugin_settings.dap'"
 
 [[plugins]]
 repo = 'tpope/vim-dadbod'
 
 [[plugins]]
 repo = 'kristijanhusak/vim-dadbod-ui'
-hook_add = '''
-let g:db_ui_use_nerd_fonts = 1
-'''
+hook_add = "lua require'plugin_settings.vim-dadbod-ui'"
 
 [[plugins]]
 repo = 'kristijanhusak/vim-dadbod-completion'

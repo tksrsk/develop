@@ -15,6 +15,9 @@ RUN pacman -S --noconfirm perl
 RUN pacman -S --noconfirm go
 RUN pacman -S --noconfirm dotnet-runtime
 
+# Install DAP
+RUN curl https://github.com/felixfbecker/vscode-php-debug/releases/download/v1.13.0/php-debug.vsix -LO && mkdir /usr/local/bin/vscode-php-debug && unzip php-debug.vsix -d /usr/local/bin/vscode-php-debug && rm ./php-debug.vsix
+
 # Language Settings
 RUN composer global require hirak/prestissimo
 RUN pip install --upgrade pip pynvim
@@ -24,4 +27,3 @@ RUN gem install -N --no-user-install neovim
 # Environment Settings
 RUN git clone https://github.com/Shougo/dein.vim ~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-

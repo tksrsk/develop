@@ -6,6 +6,7 @@ if &compatible
 endif
 
 set runtimepath^=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=$HOST_ROOT/.config/develop/nvim
 
 if dein#load_state("~/.config/nvim/dein/")
     call dein#begin("~/.config/nvim/dein/")
@@ -40,5 +41,4 @@ set clipboard+=unnamedplus
 set inccommand=split
 set completeopt=noinsert,menuone,noselect
 set updatetime=50
-set foldcolumn=auto:3 fillchars=foldopen:▾,foldclose:▸
 wshada!
