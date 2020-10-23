@@ -1,0 +1,13 @@
+#!/bin/bash
+
+AUTHOR=$1
+NAME=$2
+VERSION=$3
+URL="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/${1}/vsextensions/${2}/${3}/vspackage"
+
+curl $URL -JL -o vspackage.gz
+gunzip vspackage.gz
+rm -rf /usr/local/bin/$2
+mkdir /usr/local/bin/$2
+unzip vspackage -d /usr/local/bin/$2
+rm  vspackage

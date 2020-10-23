@@ -2,6 +2,7 @@ FROM archlinux/base
 
 # Install packages
 ADD mirrorlist /etc/pacman.d/mirrorlist
+ADD dap /usr/local/bin/dap
 RUN curl https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -LO && chmod +x ./nvim.appimage && ./nvim.appimage --appimage-extract && rm ./nvim.appimage && mv squashfs-root /usr/local/bin/ && ln -s /usr/local/bin/squashfs-root/usr/bin/nvim /usr/local/bin/nvim
 RUN pacman -Syyu --noconfirm
 RUN pacman -S --noconfirm diffutils procps-ng openssh man-db gawk
@@ -16,7 +17,8 @@ RUN pacman -S --noconfirm go
 RUN pacman -S --noconfirm dotnet-runtime
 
 # Install DAP
-RUN curl https://github.com/felixfbecker/vscode-php-debug/releases/download/v1.13.0/php-debug.vsix -LO && mkdir /usr/local/bin/vscode-php-debug && unzip php-debug.vsix -d /usr/local/bin/vscode-php-debug && rm ./php-debug.vsix
+RUN dap felixfbecker php-debug 1.13.0
+RUN dap firefox-devtools vscode-firefox-debug 2.9.1
 
 # Language Settings
 RUN composer global require hirak/prestissimo
