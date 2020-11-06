@@ -122,3 +122,6 @@ repo = 'kristijanhusak/vim-dadbod-completion'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
+
+[[plugins]]
+repo = 'kyazdani42/nvim-tree.lua'
