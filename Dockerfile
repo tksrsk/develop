@@ -21,7 +21,6 @@ RUN dap felixfbecker php-debug 1.13.0
 RUN dap firefox-devtools vscode-firefox-debug 2.9.1
 
 # Language Settings
-RUN composer global require hirak/prestissimo
 RUN pip install --upgrade pip pynvim
 RUN npm install -g npm neovim
 RUN gem install -N --no-user-install neovim
