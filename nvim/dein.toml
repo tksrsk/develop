@@ -66,9 +66,6 @@ repo = 'neovim/nvim-lspconfig'
 hook_source = "lua require'plugin_settings.nvim-lspconfig'"
 
 [[plugins]]
-repo = 'nvim-lua/diagnostic-nvim'
-
-[[plugins]]
 repo = 'Shougo/deoplete-lsp'
 hook_source = '''
 call deoplete#lsp#enable()
