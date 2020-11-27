@@ -122,3 +122,4 @@ repo = 'kyazdani42/nvim-web-devicons'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
+hook_source = "lua require'plugin_settings.nvim-tree'"

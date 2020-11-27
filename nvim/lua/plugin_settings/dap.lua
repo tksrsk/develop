@@ -1,9 +1,15 @@
--- Keymaps
 local api = vim.api
 
-api.nvim_set_keymap('n', '<f5>', "<cmd>lua require'dap'.continue()<cr>", { silent = true, noremap = true })
-api.nvim_set_keymap('n', '<f9>', "<cmd>lua require'dap'.repl.toggle()<cr>", { silent = true, noremap = true })
-api.nvim_set_keymap('n', '<f10>', "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { silent = true, noremap = true })
+-- Menu
+api.nvim_command([[
+    amenu .ﲵ\ Toggle\ Console      :lua require'dap'.repl.toggle()<cr>
+    amenu .\ Toggle\ Breakpoint   :lua require'dap'.toggle_breakpoint()<cr>
+    amenu .\ Start\ /\ Continue   :lua require'dap'.continue()<cr>
+    amenu .\ Step\ Over           :lua require'dap'.step_over()<cr>
+    amenu .\ Step\ Into           :lua require'dap'.step_into()<cr>
+    amenu .\ Step\ Out            :lua require'dap'.step_out()<cr>
+    amenu .倫\ Step\ Back          :lua require'dap'.step_back()<cr>
+]])
 
 -- Configs
 local dap = require'dap'
