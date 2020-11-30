@@ -76,7 +76,7 @@ repo = 'zchee/deoplete-zsh'
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
-hook_add = 'let g:deol#prompt_pattern = "% \|%$"'
+hook_add = "lua require'plugin_settings.deol'"
 
 [[plugins]]
 repo = 'tk-shirasaka/ejdict.nvim'

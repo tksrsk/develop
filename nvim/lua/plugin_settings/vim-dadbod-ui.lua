@@ -2,7 +2,7 @@ local api = vim.api
 
 -- Menu
 api.nvim_command([[
-    amenu .\ DB\ Tool :DBUIToggle<cr>
+    amenu <silent> 10.10 .\ Toggle\ DB\ Tool  :DBUIToggle<cr>
 ]])
 
 -- Configs
