@@ -25,9 +25,7 @@ repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
-hook_add = '''
-let g:EasyMotion_verbose = 0
-'''
+hook_add = "lua require'plugin_settings.vim-easymotion'"
 
 [[plugins]]
 repo = 'haya14busa/is.vim'
@@ -37,10 +35,7 @@ repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 repo = 'sainnhe/edge'
-hook_add = '''
-let g:edge_enable_italic = 1
-colorscheme edge
-'''
+hook_add = "lua require'plugin_settings.edge'"
 
 [[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
@@ -56,6 +51,7 @@ hook_source = "lua require'plugin_settings.denite'"
 
 [[plugins]]
 repo = 'tk-shirasaka/denite-utils'
+hook_add = "lua require'plugin_settings.denite-utils'"
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -67,9 +63,7 @@ hook_source = "lua require'plugin_settings.nvim-lspconfig'"
 
 [[plugins]]
 repo = 'Shougo/deoplete-lsp'
-hook_source = '''
-call deoplete#lsp#enable()
-'''
+hook_source = "lua require'plugin_settings.deoplete-lsp'"
 
 [[plugins]]
 repo = 'zchee/deoplete-zsh'
@@ -83,9 +77,7 @@ repo = 'tk-shirasaka/ejdict.nvim'
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
-hook_add = '''
-let g:vista_default_executive = 'nvim_lsp'
-'''
+hook_add = "lua require'plugin_settings.vista'"
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'

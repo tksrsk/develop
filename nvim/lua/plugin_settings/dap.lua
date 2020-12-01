@@ -2,13 +2,13 @@ local api = vim.api
 
 -- Menu
 api.nvim_command([[
-    amenu <silent> 30.01 .ﲵ\ Toggle\ Console       :lua require'dap'.repl.toggle()<cr>
-    amenu <silent> 30.02 .\ Toggle\ Breakpoint    :lua require'dap'.toggle_breakpoint()<cr>
-    amenu <silent> 30.03 .\ Start\ /\ Continue    :lua require'dap'.continue()<cr>
-    amenu <silent> 30.04 .\ Step\ Over            :lua require'dap'.step_over()<cr>
-    amenu <silent> 30.05 .\ Step\ Into            :lua require'dap'.step_into()<cr>
-    amenu <silent> 30.06 .\ Step\ Out             :lua require'dap'.step_out()<cr>
-    amenu <silent> 30.07 .倫\ Step\ Back           :lua require'dap'.step_back()<cr>
+    amenu <silent> 40.01 .ﲵ\ Toggle\ Console       :lua require'dap'.repl.toggle()<cr>
+    amenu <silent> 40.02 .\ Toggle\ Breakpoint    :lua require'dap'.toggle_breakpoint()<cr>
+    amenu <silent> 40.03 .\ Start\ /\ Continue    :lua require'dap'.continue()<cr>
+    amenu <silent> 40.04 .\ Step\ Over            :lua require'dap'.step_over()<cr>
+    amenu <silent> 40.05 .\ Step\ Into            :lua require'dap'.step_into()<cr>
+    amenu <silent> 40.06 .\ Step\ Out             :lua require'dap'.step_out()<cr>
+    amenu <silent> 40.07 .倫\ Step\ Back           :lua require'dap'.step_back()<cr>
 ]])
 
 -- Configs

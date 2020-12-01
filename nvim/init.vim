@@ -8,6 +8,8 @@ endif
 set runtimepath^=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 set runtimepath^=$HOST_ROOT/.config/develop/nvim
 
+lua require'plugin_settings'
+
 if dein#load_state("~/.config/nvim/dein/")
     call dein#begin("~/.config/nvim/dein/")
     call dein#load_toml("$HOST_ROOT/.config/develop/nvim/dein.toml")

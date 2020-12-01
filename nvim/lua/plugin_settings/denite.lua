@@ -2,20 +2,13 @@ local api = vim.api
 
 -- Menu
 api.nvim_command([[
-    amenu <silent> 10.01 .\ Fast\ Grep            :Denite grep:::! -start-filter<cr>
-    amenu <silent> 10.02 .菱\ Reopen               :Denite -resume<cr>
-    amenu <silent> 10.03 .\ Next\ Item            :Denite -resume -cursor-pos=+1 -immediately<cr>
-    amenu <silent> 10.04 .\ Prev\ Item            :Denite -resume -cursor-pos=-1 -immediately<cr>
-    amenu <silent> 40.01 .\ Open\ LocationList    :lopen<cr>
-    amenu <silent> 40.02 .\ Next\ LocationList    :lnext<cr>
-    amenu <silent> 40.03 .\ Prev\ LocationList    :lprev<cr>
-    amenu <silent> 40.04 .\ Close\ LocationList   :lclose<cr>
-    amenu <silent> 50.01 .\ Open\ Quickfix        :copen<cr>
-    amenu <silent> 50.02 .\ Next\ Quickfix        :cnext<cr>
-    amenu <silent> 50.03 .\ Prev\ Quickfix        :cprev<cr>
-    amenu <silent> 50.04 .\ Close\ Quickfix       :cclose<cr>
-    amenu <silent> 99.01 .\ Help                  :Denite help -start-filter<cr>
-    amenu <silent> 99.02 .ﮠ\ Messages              :messages<cr>
+    amenu <silent> 20.01 .---\ Denite\ --- <nop>
+    amenu <silent> 20.02 .\ Fast\ Grep    :Denite grep:::! -start-filter<cr>
+    amenu <silent> 20.03 .菱\ Reopen       :Denite -resume<cr>
+    amenu <silent> 20.04 .\ Next\ Item    :Denite -resume -cursor-pos=+1 -immediately<cr>
+    amenu <silent> 20.05 .\ Prev\ Item    :Denite -resume -cursor-pos=-1 -immediately<cr>
+
+    amenu <silent> 99.01 .\ Help          :Denite help -start-filter<cr>
 ]])
 
 -- Keymaps
