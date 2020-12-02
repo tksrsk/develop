@@ -1,8 +1,6 @@
-local api = vim.api
-
 -- Menu
-api.nvim_command([[
-    amenu <silent> 10.01 .\ Vista :Vista!!<cr>
+vim.cmd([[
+    amenu <silent> 50.01 .\ Outline :Vista!!<cr>
 ]])
 
 -- Configs

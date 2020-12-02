@@ -13,6 +13,7 @@ nnoremap <silent><buffer><expr> -       denite#do_map('move_up_path')
 
 [[plugins]]
 repo = 'Shougo/dein.vim'
+hook_add = "lua require'plugin_settings.dein'"
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'

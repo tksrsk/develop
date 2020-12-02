@@ -1,18 +1,19 @@
 local api = vim.api
 
+-- Keymaps
+api.nvim_set_keymap('n', '<tab>', "<cmd>Denite source<cr>", { silent = true, noremap = true })
+
 -- Menu
-api.nvim_command([[
+vim.cmd([[
     amenu <silent> 20.01 .---\ Denite\ --- <nop>
-    amenu <silent> 20.02 .\ Fast\ Grep    :Denite grep:::! -start-filter<cr>
+    amenu <silent> 20.02 .\ Search        :DeniteCursorWord grep:::! -start-filter<cr>
     amenu <silent> 20.03 .菱\ Reopen       :Denite -resume<cr>
     amenu <silent> 20.04 .\ Next\ Item    :Denite -resume -cursor-pos=+1 -immediately<cr>
     amenu <silent> 20.05 .\ Prev\ Item    :Denite -resume -cursor-pos=-1 -immediately<cr>
 
     amenu <silent> 99.01 .\ Help          :Denite help -start-filter<cr>
+    amenu <silent> 99.02 .﬘\ Buffers       :Denite buffer -start-filter<cr>
 ]])
-
--- Keymaps
-api.nvim_set_keymap('n', '<tab>', "<cmd>Denite source command<cr>", { silent = true, noremap = true })
 
 -- Configs
 vim.call('denite#custom#var', 'file/rec', 'command', { 'rg', '--files', '--glob', '!.git' })

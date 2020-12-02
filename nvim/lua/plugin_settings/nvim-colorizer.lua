@@ -1,6 +1,3 @@
--- Options
-vim.o.termguicolors = true
-
 -- Configs
 local colorizer = require'colorizer'
 

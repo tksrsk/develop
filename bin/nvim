@@ -13,7 +13,7 @@ docker run \
     -v $HOME/.ssh:/root/.ssh \
     -v $HOME/.gitconfig:/root/.gitconfig \
     -v $HOME/.config/develop/gitconfig:/etc/gitconfig \
-    -v $HOME/.config/develop/nvim/init.vim:/root/.config/nvim/init.vim \
+    -v $HOME/.config/develop/nvim/init.lua:/root/.config/nvim/init.lua \
     -v $HOME/.config/develop/nvim/rplugin.vim:/root/.local/share/nvim/rplugin.vim \
     -v nvim:/root/.config/nvim/ \
     -v project:/project \

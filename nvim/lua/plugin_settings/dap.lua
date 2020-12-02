@@ -1,7 +1,5 @@
-local api = vim.api
-
 -- Menu
-api.nvim_command([[
+vim.cmd([[
     amenu <silent> 40.01 .ﲵ\ Toggle\ Console       :lua require'dap'.repl.toggle()<cr>
     amenu <silent> 40.02 .\ Toggle\ Breakpoint    :lua require'dap'.toggle_breakpoint()<cr>
     amenu <silent> 40.03 .\ Start\ /\ Continue    :lua require'dap'.continue()<cr>
