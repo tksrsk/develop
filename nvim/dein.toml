@@ -30,6 +30,7 @@ hook_add = "lua require'plugin_settings.vim-easymotion'"
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+merged = 0
 
 [[plugins]]
 repo = 'sainnhe/edge'
@@ -79,6 +80,7 @@ hook_add = "lua require'plugin_settings.vista'"
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
+merged = 0
 hook_source = "lua require'plugin_settings.nvim-treesitter'"
 
 [[plugins]]
