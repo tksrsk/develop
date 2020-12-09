@@ -1,8 +1,3 @@
-local api = vim.api
-
--- Keymaps
-api.nvim_set_keymap('n', '<tab>', "<cmd>Denite source<cr>", { silent = true, noremap = true })
-
 -- Menu
 vim.cmd([[
     amenu <silent> 20.01 .---\ Denite\ --- <nop>

@@ -29,9 +29,6 @@ repo = 'easymotion/vim-easymotion'
 hook_add = "lua require'plugin_settings.vim-easymotion'"
 
 [[plugins]]
-repo = 'haya14busa/is.vim'
-
-[[plugins]]
 repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
