@@ -45,8 +45,7 @@ vim.cmd([[
     amenu <silent> 99.24 .ﰈ\ Prev                  :cprev<cr>
     amenu <silent> 99.25 .\ Close                 :cclose<cr>
     amenu <silent> 99.31 .---\ Others\ ---         <nop>
-    amenu <silent> 99.32 .ﮠ\ Messages              :messages<cr>
-    amenu <silent> 99.33 .\ Save\ &\ Exit         :wqa<cr>
+    amenu <silent> 99.32 .\ Save\ &\ Exit         :wqa<cr>
 ]])
 
 -- Autocmd
