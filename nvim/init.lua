@@ -34,18 +34,8 @@ vim.cmd([[
 
 -- Menu
 vim.cmd([[
-    amenu <silent> 99.11 .---\ Location\ List\ --- <nop>
-    amenu <silent> 99.12 .\ Open                  :lopen<cr>
-    amenu <silent> 99.13 .\ Next                  :lnext<cr>
-    amenu <silent> 99.14 .丹\ Prev                 :lprev<cr>
-    amenu <silent> 99.15 .\ Close                 :lclose<cr>
-    amenu <silent> 99.21 .---\ Quickfix\ ---       <nop>
-    amenu <silent> 99.22 .\ Open                  :copen<cr>
-    amenu <silent> 99.23 .﯐\ Next                  :cnext<cr>
-    amenu <silent> 99.24 .ﰈ\ Prev                  :cprev<cr>
-    amenu <silent> 99.25 .\ Close                 :cclose<cr>
-    amenu <silent> 99.31 .---\ Others\ ---         <nop>
-    amenu <silent> 99.32 .\ Save\ &\ Exit         :wqa<cr>
+    amenu <silent> 99.11 .---\ Others\ --- <nop>
+    amenu <silent> 99.12 .\ Save\ &\ Exit :wqa<cr>
 ]])
 
 -- Autocmd

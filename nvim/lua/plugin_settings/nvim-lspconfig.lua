@@ -1,16 +1,20 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 50.11 .כֿ\ Hover       :lua vim.lsp.buf.hover()<cr>
-    amenu <silent> 50.12 .\ Format      :lua vim.lsp.buf.formatting()<cr>
-    amenu <silent> 50.13 .\ Definition  :lua vim.lsp.buf.definition()<cr>
-    amenu <silent> 50.14 .\ Reference   :lua vim.lsp.buf.references()<cr>
-    amenu <silent> 50.15 .\ Next\ Error :lua vim.lsp.diagnostic.goto_next()<cr>
-    amenu <silent> 50.16 .\ Prev\ Error :lua vim.lsp.diagnostic.goto_prev()<cr>
-
+    amenu <silent> 50.01 .---\ Symbols\ ---  <nop>
+    amenu <silent> 50.02 .פּ\ Workspace       :lua vim.lsp.buf.workspace_symbol()<cr>
+    amenu <silent> 50.03 .פּ\ Document        :lua vim.lsp.buf.document_symbol()<cr>
+    amenu <silent> 50.04 .---\ Lends\ ---    <nop>
+    amenu <silent> 50.05 .כֿ\ Hover           :lua vim.lsp.buf.hover()<cr>
+    amenu <silent> 50.06 .\ Actions         :lua vim.lsp.buf.code_action()<cr>
+    amenu <silent> 50.07 .\ Format          :lua vim.lsp.buf.formatting()<cr>
+    amenu <silent> 50.08 .\ Definition      :lua vim.lsp.buf.definition()<cr>
+    amenu <silent> 50.09 .\ Reference       :lua vim.lsp.buf.references()<cr>
+    amenu <silent> 50.10 .---\ Error\ ---    <nop>
+    amenu <silent> 50.11 .\ Next            :lua vim.lsp.diagnostic.goto_next()<cr>
+    amenu <silent> 50.12 .\ Prev            :lua vim.lsp.diagnostic.goto_prev()<cr>
 ]])
 
 -- Configs
-
 local lspconfig = require'lspconfig'
 
 lspconfig.bashls.setup({})

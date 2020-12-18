@@ -69,6 +69,13 @@ repo = 'Shougo/deoplete-lsp'
 hook_source = "lua require'plugin_settings.deoplete-lsp'"
 
 [[plugins]]
+repo = 'RishabhRD/popfix'
+
+[[plugins]]
+repo = 'RishabhRD/nvim-lsputils'
+hook_source = "lua require'plugin_settings.nvim-lsputils'"
+
+[[plugins]]
 repo = 'zchee/deoplete-zsh'
 
 [[plugins]]
@@ -77,10 +84,6 @@ hook_add = "lua require'plugin_settings.deol'"
 
 [[plugins]]
 repo = 'tk-shirasaka/ejdict.nvim'
-
-[[plugins]]
-repo = 'liuchengxu/vista.vim'
-hook_add = "lua require'plugin_settings.vista'"
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
