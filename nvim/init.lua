@@ -1,9 +1,4 @@
 -- Options
-vim.o.runtimepath = table.concat({
-    vim.o.runtimepath,
-    '~/.config/nvim/dein/repos/github.com/Shougo/dein.vim',
-    vim.env.HOST_ROOT .. '/.config/develop/nvim',
-}, ',')
 vim.o.shell = 'zsh'
 vim.o.hidden = true
 vim.o.swapfile = false
@@ -32,26 +27,53 @@ vim.cmd([[
     syntax on
 ]])
 
--- Menu
-vim.cmd([[
-    amenu <silent> 99.11 .---\ Others\ --- <nop>
-    amenu <silent> 99.12 .\ Save\ &\ Exit :wqa<cr>
-]])
-
 -- Autocmd
 vim.cmd([[
     au TextYankPost * silent! lua vim.highlight.on_yank { timeout=200 }
 ]])
 
 -- Loading Plugins
-if vim.call('dein#load_state', '~/.config/nvim/dein/') == 1 then
-    vim.call('dein#begin', '~/.config/nvim/dein/')
-    vim.call('dein#load_toml', '$HOST_ROOT/.config/develop/nvim/dein.toml')
-    vim.call('dein#end')
-    vim.call('dein#save_state')
-end
+vim.cmd([[
+    packadd packer.nvim
+]])
 
-if vim.call('dein#check_install') == 1 then
-    vim.call('dein#install')
-end
-vim.call('dein#call_hook', 'source')
+require'packer'.startup(function(use)
+    use {'wbthomason/packer.nvim', opt = true, config = "require'plugin_settings.packer'"}
+    use {vim.env.HOST_ROOT .. '/.config/develop/nvim', as = 'develop'}
+    use {'editorconfig/editorconfig-vim'}
+    use {'machakann/vim-sandwich'}
+    use {'jiangmiao/auto-pairs'}
+    use {'easymotion/vim-easymotion', config = "require'plugin_settings.vim-easymotion'"}
+    use {'diepm/vim-rest-console', config = "require'plugin_settings.vim-rest-console'"}
+    use {'sheerun/vim-polyglot'}
+    use {'sainnhe/edge', config = "require'plugin_settings.edge'"}
+    use {'norcalli/nvim-colorizer.lua', config = "require'plugin_settings.nvim-colorizer'"}
+    use {'hardcoreplayers/spaceline.vim', config = "require'plugin_settings.spaceline'"}
+    use {
+        {'Shougo/denite.nvim', config = "require'plugin_settings.denite'"},
+        {'tk-shirasaka/denite-utils'},
+    }
+    use {
+        {'Shougo/deoplete.nvim', config = "require'plugin_settings.deoplete'"},
+        {'Shougo/deoplete-lsp'}, {'zchee/deoplete-zsh'},
+    }
+    use {
+        {'neovim/nvim-lspconfig', config = "require'plugin_settings.nvim-lspconfig'"},
+        {'RishabhRD/nvim-lsputils'}, {'RishabhRD/popfix'},
+    }
+    use {'Shougo/deol.nvim', config = "require'plugin_settings.deol'"}
+    use {'tk-shirasaka/ejdict.nvim'}
+    use {
+        {'nvim-treesitter/nvim-treesitter', config = "require'plugin_settings.nvim-treesitter'"},
+        {'nvim-treesitter/nvim-treesitter-refactor'}, {'nvim-treesitter/nvim-treesitter-textobjects'}, {'nvim-treesitter/playground'},
+    }
+    use {'mfussenegger/nvim-dap', config = "require'plugin_settings.nvim-dap'"}
+    use {
+        {'tpope/vim-dadbod', config = "require'plugin_settings.vim-dadbod'"},
+        {'kristijanhusak/vim-dadbod-ui'}, {'kristijanhusak/vim-dadbod-completion'},
+    }
+    use {
+        {'kyazdani42/nvim-tree.lua', config = "require'plugin_settings.nvim-tree'"},
+        {'kyazdani42/nvim-web-devicons'},
+    }
+end)
