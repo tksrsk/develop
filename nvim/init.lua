@@ -38,7 +38,7 @@ vim.cmd([[
 ]])
 
 require'packer'.startup(function(use)
-    use {'wbthomason/packer.nvim', opt = true, config = "require'plugin_settings.packer'"}
+    use {'wbthomason/packer.nvim', opt = true, setup = "require'plugin_settings.packer'"}
     use {vim.env.HOST_ROOT .. '/.config/develop/nvim', as = 'develop'}
     use {'editorconfig/editorconfig-vim'}
     use {'machakann/vim-sandwich'}
@@ -57,10 +57,7 @@ require'packer'.startup(function(use)
         {'Shougo/deoplete.nvim', config = "require'plugin_settings.deoplete'"},
         {'Shougo/deoplete-lsp'}, {'zchee/deoplete-zsh'},
     }
-    use {
-        {'neovim/nvim-lspconfig', config = "require'plugin_settings.nvim-lspconfig'"},
-        {'RishabhRD/nvim-lsputils'}, {'RishabhRD/popfix'},
-    }
+    use {'neovim/nvim-lspconfig', config = "require'plugin_settings.nvim-lspconfig'"}
     use {'Shougo/deol.nvim', config = "require'plugin_settings.deol'"}
     use {'tk-shirasaka/ejdict.nvim'}
     use {

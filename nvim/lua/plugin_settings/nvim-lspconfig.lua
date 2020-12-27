@@ -1,17 +1,15 @@
 -- Menu
 vim.cmd([[
     amenu <silent> 50.01 .---\ Symbols\ ---  <nop>
-    amenu <silent> 50.02 .פּ\ Workspace       :lua vim.lsp.buf.workspace_symbol()<cr>
-    amenu <silent> 50.03 .פּ\ Document        :lua vim.lsp.buf.document_symbol()<cr>
+    amenu <silent> 50.02 .פּ\ Workspace       :Denite lsp/workspace_symbols -start-filter<cr>
+    amenu <silent> 50.03 .פּ\ Document        :Denite lsp/document_symbols -start-filter<cr>
     amenu <silent> 50.04 .---\ Lends\ ---    <nop>
     amenu <silent> 50.05 .כֿ\ Hover           :lua vim.lsp.buf.hover()<cr>
-    amenu <silent> 50.06 .\ Actions         :lua vim.lsp.buf.code_action()<cr>
+    amenu <silent> 50.06 .\ Actions         :Denite lsp/code_action -start-filter<cr>
     amenu <silent> 50.07 .\ Format          :lua vim.lsp.buf.formatting()<cr>
     amenu <silent> 50.08 .\ Definition      :lua vim.lsp.buf.definition()<cr>
-    amenu <silent> 50.09 .\ Reference       :lua vim.lsp.buf.references()<cr>
-    amenu <silent> 50.10 .---\ Error\ ---    <nop>
-    amenu <silent> 50.11 .\ Next            :lua vim.lsp.diagnostic.goto_next()<cr>
-    amenu <silent> 50.12 .\ Prev            :lua vim.lsp.diagnostic.goto_prev()<cr>
+    amenu <silent> 50.09 .\ Reference       :Denite lsp/references -start-filter<cr>
+    amenu <silent> 50.10 .\ Diagnostics     :Denite lsp/diagnostics -start-filter<cr>
 ]])
 
 -- Configs
@@ -34,24 +32,3 @@ lspconfig.html.setup({})
 lspconfig.cssls.setup({})
 lspconfig.jsonls.setup({})
 lspconfig.yamlls.setup({})
-
--- Utils
-local options = {
-    mode = 'editor',
-    numbering = true,
-    list = { border = false },
-    preview = { border = false },
-}
-
-vim.g.lsp_utils_location_opts = options
-vim.g.lsp_utils_symbols_opts = options
-
--- Settings
-vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
-vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
-vim.lsp.handlers['textDocument/definition'] = require'lsputil.locations'.definition_handler
-vim.lsp.handlers['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
-vim.lsp.handlers['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
-vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
-vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
-vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
