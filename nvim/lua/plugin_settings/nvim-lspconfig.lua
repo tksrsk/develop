@@ -5,7 +5,7 @@ vim.cmd([[
     amenu <silent> 50.03 .פּ\ Document        :Denite lsp/document_symbols -start-filter<cr>
     amenu <silent> 50.04 .---\ Lends\ ---    <nop>
     amenu <silent> 50.05 .כֿ\ Hover           :lua vim.lsp.buf.hover()<cr>
-    amenu <silent> 50.06 .\ Actions         :Denite lsp/code_action -start-filter<cr>
+    amenu <silent> 50.06 .\ Actions         :Denite lsp/code_actions -start-filter<cr>
     amenu <silent> 50.07 .\ Format          :lua vim.lsp.buf.formatting()<cr>
     amenu <silent> 50.08 .\ Definition      :lua vim.lsp.buf.definition()<cr>
     amenu <silent> 50.09 .\ Reference       :Denite lsp/references -start-filter<cr>
