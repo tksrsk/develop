@@ -19,10 +19,10 @@ lspconfig.bashls.setup({})
 lspconfig.clangd.setup({})
 lspconfig.sumneko_lua.setup({
     settings = { Lua = { diagnostics = { enable = true, globals = { "vim" } } } },
-    cmd = 'lua-language-server'
+    cmd = { '/project/lsp/lua-language-server/bin/Linux/lua-language-server', '-E', '/project/lsp/lua-language-server/main.lua' }
 })
 lspconfig.vimls.setup({})
-lspconfig.pyls_ms.setup({})
+lspconfig.pyls.setup({})
 lspconfig.gopls.setup({})
 lspconfig.intelephense.setup({})
 lspconfig.tsserver.setup({})

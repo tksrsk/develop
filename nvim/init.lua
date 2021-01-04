@@ -46,6 +46,7 @@ require'packer'.startup(function(use)
     use {'easymotion/vim-easymotion', config = "require'plugin_settings.vim-easymotion'"}
     use {'diepm/vim-rest-console', config = "require'plugin_settings.vim-rest-console'"}
     use {'sheerun/vim-polyglot'}
+    use {'rhysd/git-messenger.vim', config = "require'plugin_settings.git-messenger'"}
     use {'sainnhe/edge', config = "require'plugin_settings.edge'"}
     use {'norcalli/nvim-colorizer.lua', config = "require'plugin_settings.nvim-colorizer'"}
     use {'hardcoreplayers/spaceline.vim', config = "require'plugin_settings.spaceline'"}
