@@ -16,8 +16,8 @@ RUN pacman -S --noconfirm go
 
 # Build Neovim
 RUN git clone --depth 1 https://github.com/neovim/neovim /project/Neovim/neovim && \
-        cd /project/Neovim/neovim && \
-        make install
+    cd /project/Neovim/neovim && \
+    make install
 
 # Neovim Clients
 RUN pip install --upgrade pip pynvim
@@ -41,6 +41,7 @@ RUN npm install -g vim-language-server
 RUN pip install python-language-server[all]
 RUN npm install -g intelephense
 RUN npm install -g typescript typescript-language-server
+RUN npm install -g --unsafe-perm sql-language-server
 RUN npm install -g dockerfile-language-server-nodejs
 RUN npm install -g vscode-html-languageserver-bin
 RUN npm install -g vscode-css-languageserver-bin

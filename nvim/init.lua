@@ -37,41 +37,41 @@ vim.cmd([[
     packadd packer.nvim
 ]])
 
-require'packer'.startup(function(use)
-    use {'wbthomason/packer.nvim', opt = true, setup = "require'plugin_settings.packer'"}
+require('packer').startup(function(use)
+    use {'wbthomason/packer.nvim', opt = true, setup = "require('plugin_settings.packer')"}
     use {vim.env.HOST_ROOT .. '/.config/develop/nvim', as = 'develop'}
     use {'editorconfig/editorconfig-vim'}
     use {'machakann/vim-sandwich'}
     use {'jiangmiao/auto-pairs'}
-    use {'easymotion/vim-easymotion', config = "require'plugin_settings.vim-easymotion'"}
-    use {'diepm/vim-rest-console', config = "require'plugin_settings.vim-rest-console'"}
+    use {'easymotion/vim-easymotion', config = "require('plugin_settings.vim-easymotion')"}
+    use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
-    use {'rhysd/git-messenger.vim', config = "require'plugin_settings.git-messenger'"}
-    use {'sainnhe/edge', config = "require'plugin_settings.edge'"}
-    use {'norcalli/nvim-colorizer.lua', config = "require'plugin_settings.nvim-colorizer'"}
-    use {'hardcoreplayers/spaceline.vim', config = "require'plugin_settings.spaceline'"}
+    use {'rhysd/git-messenger.vim', config = "require('plugin_settings.git-messenger')"}
+    use {'sainnhe/edge', config = "require('plugin_settings.edge')"}
+    use {'norcalli/nvim-colorizer.lua', config = "require('plugin_settings.nvim-colorizer')"}
+    use {'hardcoreplayers/spaceline.vim', config = "require('plugin_settings.spaceline')"}
     use {
-        {'Shougo/denite.nvim', config = "require'plugin_settings.denite'"},
+        {'Shougo/denite.nvim', config = "require('plugin_settings.denite')"},
         {'tk-shirasaka/denite-utils'},
     }
     use {
-        {'Shougo/deoplete.nvim', config = "require'plugin_settings.deoplete'"},
+        {'Shougo/deoplete.nvim', config = "require('plugin_settings.deoplete')"},
         {'Shougo/deoplete-lsp'}, {'zchee/deoplete-zsh'},
     }
-    use {'neovim/nvim-lspconfig', config = "require'plugin_settings.nvim-lspconfig'"}
-    use {'Shougo/deol.nvim', config = "require'plugin_settings.deol'"}
+    use {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"}
+    use {'Shougo/deol.nvim', config = "require('plugin_settings.deol')"}
     use {'tk-shirasaka/ejdict.nvim'}
     use {
-        {'nvim-treesitter/nvim-treesitter', config = "require'plugin_settings.nvim-treesitter'"},
+        {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.nvim-treesitter')"},
         {'nvim-treesitter/nvim-treesitter-refactor'}, {'nvim-treesitter/nvim-treesitter-textobjects'}, {'nvim-treesitter/playground'},
     }
-    use {'mfussenegger/nvim-dap', config = "require'plugin_settings.nvim-dap'"}
+    use {'mfussenegger/nvim-dap', config = "require('plugin_settings.nvim-dap')"}
     use {
-        {'tpope/vim-dadbod', config = "require'plugin_settings.vim-dadbod'"},
+        {'tpope/vim-dadbod', config = "require('plugin_settings.vim-dadbod')"},
         {'kristijanhusak/vim-dadbod-ui'}, {'kristijanhusak/vim-dadbod-completion'},
     }
     use {
-        {'kyazdani42/nvim-tree.lua', config = "require'plugin_settings.nvim-tree'"},
+        {'kyazdani42/nvim-tree.lua', config = "require('plugin_settings.nvim-tree')"},
         {'kyazdani42/nvim-web-devicons'},
     }
 end)

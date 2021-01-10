@@ -13,7 +13,7 @@ vim.cmd([[
 ]])
 
 -- Configs
-local lspconfig = require'lspconfig'
+local lspconfig = require('lspconfig')
 
 lspconfig.bashls.setup({})
 lspconfig.clangd.setup({})
@@ -26,7 +26,14 @@ lspconfig.pyls.setup({})
 lspconfig.gopls.setup({})
 lspconfig.intelephense.setup({})
 lspconfig.tsserver.setup({})
-lspconfig.angularls.setup({})
+lspconfig.angularls.setup({
+    on_new_config = function(config, root_dir)
+        config.cmd = { 'node', root_dir .. '/node_modules/@angular/language-server/index.js', '--stdio', '--tsProbeLocations', root_dir , '--ngProbeLocations', root_dir }
+    end,
+})
+lspconfig.sqlls.setup({
+    cmd = { 'sql-language-server', 'up', '--method', 'stdio' }
+})
 lspconfig.dockerls.setup({})
 lspconfig.html.setup({})
 lspconfig.cssls.setup({})

@@ -5,7 +5,7 @@ vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- Configs
-local configs = require'nvim-treesitter.configs'
+local configs = require('nvim-treesitter.configs')
 
 configs.setup {
     highlight = {

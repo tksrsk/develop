@@ -1,4 +1,4 @@
 -- Configs
-local colorizer = require'colorizer'
+local colorizer = require('colorizer')
 
 colorizer.setup({ '*' }, { css = true })
