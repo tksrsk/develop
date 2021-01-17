@@ -49,7 +49,7 @@ require('packer').startup(function(use)
     use {'rhysd/git-messenger.vim', config = "require('plugin_settings.git-messenger')"}
     use {'sainnhe/edge', config = "require('plugin_settings.edge')"}
     use {'norcalli/nvim-colorizer.lua', config = "require('plugin_settings.nvim-colorizer')"}
-    use {'hardcoreplayers/spaceline.vim', config = "require('plugin_settings.spaceline')"}
+    use {'datwaft/bubbly.nvim ', config = "require('plugin_settings.bubbly')"}
     use {
         {'Shougo/denite.nvim', config = "require('plugin_settings.denite')"},
         {'tk-shirasaka/denite-utils'},
