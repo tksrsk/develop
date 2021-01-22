@@ -17,8 +17,11 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.inccommand = 'split'
 vim.o.completeopt = 'noinsert,menuone,noselect'
 vim.o.termguicolors = true
+vim.wo.signcolumn = 'auto:3'
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.list = true
+vim.wo.listchars = 'tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%'
 
 -- Setting
 vim.cmd([[
@@ -46,10 +49,13 @@ require('packer').startup(function(use)
     use {'easymotion/vim-easymotion', config = "require('plugin_settings.vim-easymotion')"}
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
-    use {'rhysd/git-messenger.vim', config = "require('plugin_settings.git-messenger')"}
     use {'sainnhe/edge', config = "require('plugin_settings.edge')"}
     use {'norcalli/nvim-colorizer.lua', config = "require('plugin_settings.nvim-colorizer')"}
     use {'datwaft/bubbly.nvim ', config = "require('plugin_settings.bubbly')"}
+    use {
+        {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.gitsigns')"},
+        {'nvim-lua/plenary.nvim'}
+    }
     use {
         {'Shougo/denite.nvim', config = "require('plugin_settings.denite')"},
         {'tk-shirasaka/denite-utils'},
@@ -63,7 +69,7 @@ require('packer').startup(function(use)
     use {'tk-shirasaka/ejdict.nvim'}
     use {
         {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.nvim-treesitter')"},
-        {'nvim-treesitter/nvim-treesitter-refactor'}, {'nvim-treesitter/nvim-treesitter-textobjects'}, {'nvim-treesitter/playground'},
+        {'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground'},
     }
     use {'mfussenegger/nvim-dap', config = "require('plugin_settings.nvim-dap')"}
     use {

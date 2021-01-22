@@ -4,4 +4,6 @@ vim.cmd([[
 ]])
 
 -- Configs
+vim.g.vrc_debug = 1
 vim.g.vrc_curl_opts = {['-i'] = '', ['-s'] = ''}
+vim.g.vrc_auto_format_response_patterns = { json = 'jq' }
