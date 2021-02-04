@@ -1,0 +1,1 @@
+setlocal eventignore=CursorHold

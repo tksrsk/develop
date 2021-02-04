@@ -41,7 +41,7 @@ RUN npm install -g vim-language-server
 RUN pip install python-language-server[all]
 RUN npm install -g intelephense
 RUN npm install -g typescript typescript-language-server
-RUN npm install -g --unsafe-perm sql-language-server
+RUN go get github.com/lighttiger2505/sqls
 RUN npm install -g dockerfile-language-server-nodejs
 RUN npm install -g vscode-html-languageserver-bin
 RUN npm install -g vscode-css-languageserver-bin

@@ -4,7 +4,6 @@ vim.g.bubbly_statusline = {
     'truncate',
     'path',
     'branch',
-    'signify',
     'builtinlsp.diagnostic_count',
     'builtinlsp.current_function',
 
@@ -16,7 +15,7 @@ vim.g.bubbly_statusline = {
 vim.g.bubbly_palette = {
     background = '#2c2e34',
     foreground = '#c5cdd9',
-    black = '#3e4249', --
+    black = '#3e4249',
     red = '#ec7279',
     green = '#a0c980',
     yellow = '#deb974',

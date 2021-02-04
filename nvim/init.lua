@@ -62,7 +62,7 @@ require('packer').startup(function(use)
     }
     use {
         {'Shougo/deoplete.nvim', config = "require('plugin_settings.deoplete')"},
-        {'Shougo/deoplete-lsp'}, {'zchee/deoplete-zsh'},
+        {'deoplete-plugins/deoplete-lsp'}, {'deoplete-plugins/deoplete-zsh'},
     }
     use {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"}
     use {'Shougo/deol.nvim', config = "require('plugin_settings.deol')"}

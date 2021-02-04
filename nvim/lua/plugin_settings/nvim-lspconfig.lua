@@ -1,15 +1,7 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 50.01 .---\ Symbols\ ---  <nop>
-    amenu <silent> 50.02 .פּ\ Workspace       :Denite lsp/workspace_symbols -start-filter<cr>
-    amenu <silent> 50.03 .פּ\ Document        :Denite lsp/document_symbols -start-filter<cr>
-    amenu <silent> 50.04 .---\ Lends\ ---    <nop>
-    amenu <silent> 50.05 .כֿ\ Hover           :lua vim.lsp.buf.hover()<cr>
-    amenu <silent> 50.06 .\ Actions         :Denite lsp/code_actions -start-filter<cr>
-    amenu <silent> 50.07 .\ Format          :lua vim.lsp.buf.formatting()<cr>
-    amenu <silent> 50.08 .\ Definition      :lua vim.lsp.buf.definition()<cr>
-    amenu <silent> 50.09 .\ Reference       :Denite lsp/references -start-filter<cr>
-    amenu <silent> 50.10 .\ Diagnostics     :Denite lsp/diagnostics -start-filter<cr>
+    amenu <silent> 50.01 .כֿ\ Hover           :lua vim.lsp.buf.hover()<cr>
+    amenu <silent> 50.02 .\ Format          :lua vim.lsp.buf.formatting()<cr>
 ]])
 
 -- Configs
@@ -31,8 +23,8 @@ lspconfig.angularls.setup({
         config.cmd = { 'node', root_dir .. '/node_modules/@angular/language-server/index.js', '--stdio', '--tsProbeLocations', root_dir , '--ngProbeLocations', root_dir }
     end,
 })
-lspconfig.sqlls.setup({
-    cmd = { 'sql-language-server', 'up', '--method', 'stdio' }
+lspconfig.sqls.setup({
+    cmd = { vim.env.HOME .. '/go/bin/sqls' }
 })
 lspconfig.dockerls.setup({})
 lspconfig.html.setup({})
