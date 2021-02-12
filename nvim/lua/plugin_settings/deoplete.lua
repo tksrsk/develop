@@ -1,4 +1,6 @@
 -- Configs
+vim.g['deoplete#lsp#use_icons_for_candidates'] = true
+
 vim.call('deoplete#enable')
 vim.call('deoplete#lsp#enable')
 vim.call('deoplete#custom#option', {

@@ -46,15 +46,15 @@ require('packer').startup(function(use)
     use {'editorconfig/editorconfig-vim'}
     use {'machakann/vim-sandwich'}
     use {'jiangmiao/auto-pairs'}
-    use {'easymotion/vim-easymotion', config = "require('plugin_settings.vim-easymotion')"}
+    use {'phaazon/hop.nvim', config = "require('plugin_settings.hop')"}
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
     use {'sainnhe/edge', config = "require('plugin_settings.edge')"}
     use {'norcalli/nvim-colorizer.lua', config = "require('plugin_settings.nvim-colorizer')"}
     use {'datwaft/bubbly.nvim ', config = "require('plugin_settings.bubbly')"}
     use {
-        {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.gitsigns')"},
-        {'nvim-lua/plenary.nvim'}
+        {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
+        {'nvim-lua/plenary.nvim', 'f-person/git-blame.nvim'}
     }
     use {
         {'Shougo/denite.nvim', config = "require('plugin_settings.denite')"},
@@ -62,7 +62,7 @@ require('packer').startup(function(use)
     }
     use {
         {'Shougo/deoplete.nvim', config = "require('plugin_settings.deoplete')"},
-        {'deoplete-plugins/deoplete-lsp'}, {'deoplete-plugins/deoplete-zsh'},
+        {'deoplete-plugins/deoplete-lsp', 'deoplete-plugins/deoplete-zsh'},
     }
     use {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"}
     use {'Shougo/deol.nvim', config = "require('plugin_settings.deol')"}
