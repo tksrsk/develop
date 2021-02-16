@@ -2,6 +2,7 @@
 vim.cmd([[
     amenu <silent> 50.01 .כֿ\ Hover           :lua vim.lsp.buf.hover()<cr>
     amenu <silent> 50.02 .\ Format          :lua vim.lsp.buf.formatting()<cr>
+    amenu <silent> 50.03 .\ Rename          :lua vim.lsp.buf.rename()<cr>
 ]])
 
 -- Configs
