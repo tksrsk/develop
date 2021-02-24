@@ -12,7 +12,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.mouse = 'r'
 vim.o.mousemodel = 'popup'
-vim.o.diffopt = table.concat({ vim.o.diffopt, 'iwhite' }, ',')
+vim.o.diffopt = table.concat({ vim.o.diffopt, 'iwhite', 'indent-heuristic' }, ',')
 vim.o.clipboard = 'unnamedplus'
 vim.o.inccommand = 'split'
 vim.o.completeopt = 'noinsert,menuone,noselect'
@@ -44,8 +44,10 @@ require('packer').startup(function(use)
     use {'wbthomason/packer.nvim', opt = true, setup = "require('plugin_settings.packer')"}
     use {vim.env.HOST_ROOT .. '/.config/develop/nvim', as = 'develop'}
     use {'editorconfig/editorconfig-vim'}
-    use {'machakann/vim-sandwich'}
-    use {'jiangmiao/auto-pairs'}
+    use {
+        {'blackcauldron7/surround.nvim', config = "require('plugin_settings.surround')"},
+        {'windwp/nvim-autopairs'}
+    }
     use {'phaazon/hop.nvim', config = "require('plugin_settings.hop')"}
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
