@@ -1,6 +1,6 @@
 -- Options
 vim.o.fillchars = 'foldopen:▾,foldclose:▸'
-vim.wo.foldcolumn = 'auto:3'
+vim.wo.foldcolumn = 'auto:4'
 vim.wo.foldmethod = 'expr'
 vim.wo.foldnestmax = 4
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
