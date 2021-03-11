@@ -1,5 +1,5 @@
 -- Options
-vim.o.fillchars = 'foldopen:▾,foldclose:▸'
+vim.o.fillchars = 'foldopen:▾,foldclose:▸,eob: '
 vim.wo.foldcolumn = 'auto:4'
 vim.wo.foldmethod = 'expr'
 vim.wo.foldnestmax = 4
