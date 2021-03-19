@@ -49,5 +49,5 @@ RUN npm install -g vscode-json-languageserver
 RUN npm install -g yaml-language-server
 
 # Install DAP
-RUN dap felixfbecker php-debug 1.13.0
-RUN dap firefox-devtools vscode-firefox-debug 2.9.1
+RUN dap felixfbecker php-debug 1.14.9
+RUN dap firefox-devtools vscode-firefox-debug 2.9.2

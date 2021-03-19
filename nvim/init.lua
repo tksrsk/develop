@@ -46,7 +46,7 @@ require('packer').startup(function(use)
     use {'editorconfig/editorconfig-vim'}
     use {
         {'blackcauldron7/surround.nvim', config = "require('plugin_settings.surround')"},
-        {'windwp/nvim-autopairs'}
+        {'windwp/nvim-autopairs', 'windwp/nvim-ts-autotag'}
     }
     use {'phaazon/hop.nvim', config = "require('plugin_settings.hop')"}
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
