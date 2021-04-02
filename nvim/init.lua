@@ -56,7 +56,7 @@ require('packer').startup(function(use)
     use {'datwaft/bubbly.nvim ', config = "require('plugin_settings.bubbly')"}
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
-        {'nvim-lua/plenary.nvim', 'f-person/git-blame.nvim'}
+        {'nvim-lua/plenary.nvim'}
     }
     use {
         {'Shougo/denite.nvim', config = "require('plugin_settings.denite')"},
