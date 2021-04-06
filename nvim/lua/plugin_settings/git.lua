@@ -1,13 +1,5 @@
 -- Gitsigns
 require('gitsigns').setup({
-    signs = {
-        add = { show_count = true },
-        change = { show_count = true },
-        delete = { show_count = true },
-        topdelete = { show_count = true },
-        changedelete = { show_count = true },
-    },
-    linehl = true,
     current_line_blame = true,
     current_line_blame_formatter = function(_, blame_info)
         local text

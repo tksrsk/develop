@@ -1,1 +1,0 @@
-setlocal eventignore=CursorHold

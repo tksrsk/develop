@@ -73,7 +73,10 @@ require('packer').startup(function(use)
     use {'tk-shirasaka/ejdict.nvim'}
     use {
         {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.nvim-treesitter')"},
-        {'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground', 'tk-shirasaka/nvim-treesitter-sql'},
+        {
+            'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground',
+            'tk-shirasaka/nvim-treesitter-sql', 'p00f/nvim-ts-rainbow', 'romgrk/nvim-treesitter-context',
+        },
     }
     use {'mfussenegger/nvim-dap', config = "require('plugin_settings.nvim-dap')"}
     use {

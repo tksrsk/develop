@@ -68,5 +68,6 @@ configs.setup {
         },
     },
     playground = { enable = true },
+    rainbow = { enable = true },
     ensure_installed = 'all',
 }
