@@ -51,9 +51,11 @@ require('packer').startup(function(use)
     use {'phaazon/hop.nvim', config = "require('plugin_settings.hop')"}
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
-    use {'sainnhe/edge', config = "require('plugin_settings.edge')"}
-    use {'norcalli/nvim-colorizer.lua', config = "require('plugin_settings.nvim-colorizer')"}
-    use {'datwaft/bubbly.nvim ', config = "require('plugin_settings.bubbly')"}
+    use {
+        {'Th3Whit3Wolf/onebuddy', config = "require('plugin_settings.color')"},
+        {'tjdevries/colorbuddy.vim', 'norcalli/nvim-colorizer.lua'},
+    }
+    use {'hoob3rt/lualine.nvim', config = "require('plugin_settings.statusline')"}
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
         {'nvim-lua/plenary.nvim'}
