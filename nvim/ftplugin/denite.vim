@@ -6,4 +6,5 @@ nnoremap <silent><buffer><expr> <space> denite#do_map('toggle_select').'j'
 nnoremap <silent><buffer><expr> *       denite#do_map('toggle_select_all')
 nnoremap <silent><buffer><expr> i       denite#do_map('open_filter_buffer')
 nnoremap <silent><buffer><expr> u       denite#do_map('restore_sources')
+nnoremap <silent><buffer><expr> p       denite#do_map('toggle_auto_action', 'preview')
 nnoremap <silent><buffer><expr> -       denite#do_map('move_up_path')
