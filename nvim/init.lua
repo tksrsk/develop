@@ -52,10 +52,9 @@ require('packer').startup(function(use)
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
     use {
-        {'Th3Whit3Wolf/onebuddy', config = "require('plugin_settings.color')"},
-        {'tjdevries/colorbuddy.vim', 'norcalli/nvim-colorizer.lua'},
+        {'folke/tokyonight.nvim', config = "require('plugin_settings.ui')"},
+        {'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim'},
     }
-    use {'hoob3rt/lualine.nvim', config = "require('plugin_settings.statusline')"}
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
         {'nvim-lua/plenary.nvim'}
