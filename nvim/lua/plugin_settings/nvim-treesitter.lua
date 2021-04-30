@@ -9,10 +9,7 @@ vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 local configs = require('nvim-treesitter.configs')
 
 configs.setup {
-    highlight = {
-        enable = true,
-        use_languagetree = true,
-    },
+    highlight = { enable = true },
     incremental_selection = { enable = true },
     indent = { enable = true },
     refactor = {

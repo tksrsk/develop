@@ -17,6 +17,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.inccommand = 'split'
 vim.o.completeopt = 'noinsert,menuone,noselect'
 vim.o.termguicolors = true
+vim.o.timeoutlen = 0
 vim.wo.signcolumn = 'auto:3'
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -48,12 +49,11 @@ require('packer').startup(function(use)
         {'blackcauldron7/surround.nvim', config = "require('plugin_settings.surround')"},
         {'windwp/nvim-autopairs', 'windwp/nvim-ts-autotag'}
     }
-    use {'phaazon/hop.nvim', config = "require('plugin_settings.hop')"}
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
     use {
         {'folke/tokyonight.nvim', config = "require('plugin_settings.ui')"},
-        {'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim'},
+        {'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'folke/which-key.nvim', 'phaazon/hop.nvim'},
     }
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
@@ -77,7 +77,10 @@ require('packer').startup(function(use)
             'tk-shirasaka/nvim-treesitter-sql', 'p00f/nvim-ts-rainbow', 'romgrk/nvim-treesitter-context',
         },
     }
-    use {'mfussenegger/nvim-dap', config = "require('plugin_settings.nvim-dap')"}
+    use {
+        {'mfussenegger/nvim-dap', config = "require('plugin_settings.nvim-dap')"},
+        {'rcarriga/nvim-dap-ui'}
+    }
     use {
         {'tpope/vim-dadbod', config = "require('plugin_settings.vim-dadbod')"},
         {'kristijanhusak/vim-dadbod-ui'}, {'kristijanhusak/vim-dadbod-completion'},
