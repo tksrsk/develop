@@ -23,3 +23,6 @@ require('lualine').setup({
 
 -- Which Key
 require('which-key').setup({ show_help = false })
+
+-- Foldsign
+require('foldsigns').setup()

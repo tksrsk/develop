@@ -53,7 +53,7 @@ require('packer').startup(function(use)
     use {'sheerun/vim-polyglot'}
     use {
         {'folke/tokyonight.nvim', config = "require('plugin_settings.ui')"},
-        {'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'folke/which-key.nvim', 'phaazon/hop.nvim'},
+        {'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'folke/which-key.nvim', 'phaazon/hop.nvim', 'lewis6991/foldsigns.nvim'},
     }
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
