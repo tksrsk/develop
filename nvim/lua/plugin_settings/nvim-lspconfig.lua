@@ -7,28 +7,32 @@ vim.cmd([[
 
 -- Configs
 local lspconfig = require('lspconfig')
+local servers = require('lspinstall').installed_servers()
 
-lspconfig.bashls.setup({})
-lspconfig.clangd.setup({})
-lspconfig.sumneko_lua.setup({
-    settings = { Lua = { diagnostics = { enable = true, globals = { "vim" } } } },
-    cmd = { '/project/lsp/lua-language-server/bin/Linux/lua-language-server', '-E', '/project/lsp/lua-language-server/main.lua' }
-})
-lspconfig.vimls.setup({})
-lspconfig.pyls.setup({})
-lspconfig.gopls.setup({})
-lspconfig.intelephense.setup({})
-lspconfig.tsserver.setup({})
-lspconfig.angularls.setup({
-    on_new_config = function(config, root_dir)
-        config.cmd = { 'node', root_dir .. '/node_modules/@angular/language-server/index.js', '--stdio', '--tsProbeLocations', root_dir , '--ngProbeLocations', root_dir }
-    end,
-})
-lspconfig.sqls.setup({
-    cmd = { vim.env.HOME .. '/go/bin/sqls' }
-})
-lspconfig.dockerls.setup({})
-lspconfig.html.setup({})
-lspconfig.cssls.setup({})
-lspconfig.jsonls.setup({})
-lspconfig.yamlls.setup({})
+require('lspinstall').setup()
+
+table.insert(servers, 'clangd')
+table.insert(servers, 'yamlls')
+table.insert(servers, 'sqls')
+
+for _, server in pairs(servers) do
+    local config = {}
+    if server == 'lua' then
+        config.settings = {
+            Lua = {
+                diagnostics = { globals = { "vim" } },
+                workspace = {
+                    library = {
+                        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                    },
+                },
+            },
+        }
+    end
+    if server == 'sqls' then
+        config.cmd = { vim.env.HOME .. '/go/bin/sqls' }
+    end
+
+    lspconfig[server].setup(config)
+end

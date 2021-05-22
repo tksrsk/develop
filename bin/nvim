@@ -14,7 +14,7 @@ docker run \
     -v $HOME/.gitconfig:/root/.gitconfig \
     -v $HOME/.config/develop/resources:/resources \
     -v $HOME/.config/develop/gitconfig:/etc/gitconfig \
-    -v $HOME/.config/develop/nvim/init.lua:/root/.config/nvim/init.lua \
+    -v $HOME/.config/develop/nvim:/root/.config/nvim \
     -v nvim:/root/.local/share/nvim/ \
     -v project:/project \
     -v /var/run/docker.sock:/var/run/docker.sock \

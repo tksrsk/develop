@@ -43,7 +43,6 @@ vim.cmd([[
 
 require('packer').startup(function(use)
     use {'wbthomason/packer.nvim', opt = true, setup = "require('plugin_settings.packer')"}
-    use {vim.env.HOST_ROOT .. '/.config/develop/nvim', as = 'develop'}
     use {'editorconfig/editorconfig-vim'}
     use {
         {'blackcauldron7/surround.nvim', config = "require('plugin_settings.surround')"},
@@ -67,7 +66,10 @@ require('packer').startup(function(use)
         {'Shougo/deoplete.nvim', config = "require('plugin_settings.deoplete')"},
         {'deoplete-plugins/deoplete-lsp', 'deoplete-plugins/deoplete-zsh'},
     }
-    use {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"}
+    use {
+        {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"},
+        {'kabouzeid/nvim-lspinstall'},
+    }
     use {'Shougo/deol.nvim', config = "require('plugin_settings.deol')"}
     use {'tk-shirasaka/ejdict.nvim'}
     use {

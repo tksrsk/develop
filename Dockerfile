@@ -29,23 +29,7 @@ RUN git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # Install LSP
-RUN npm install -g bash-language-server
-RUN git clone --depth 1 https://github.com/sumneko/lua-language-server /project/lsp/lua-language-server && \
-    cd /project/lsp/lua-language-server && \
-    git submodule update --init --recursive && \
-    cd 3rd/luamake && \
-    ninja -f ninja/linux.ninja && \
-    cd ../.. && \
-    ./3rd/luamake/luamake rebuild
-RUN npm install -g vim-language-server
-RUN pip install python-language-server[all]
-RUN npm install -g intelephense
-RUN npm install -g typescript typescript-language-server
 RUN go get github.com/lighttiger2505/sqls
-RUN npm install -g dockerfile-language-server-nodejs
-RUN npm install -g vscode-html-languageserver-bin
-RUN npm install -g vscode-css-languageserver-bin
-RUN npm install -g vscode-json-languageserver
 RUN npm install -g yaml-language-server
 
 # Install DAP
