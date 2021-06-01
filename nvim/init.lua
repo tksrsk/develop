@@ -1,28 +1,28 @@
 -- Options
-vim.o.shell = 'zsh'
-vim.o.hidden = true
-vim.o.swapfile = false
-vim.o.bomb = false
-vim.o.encoding = 'utf-8'
-vim.o.fileencodings = 'utf-8,iso-2022-jp,euc-jp,sjis'
-vim.o.fileformats = 'unix,dos,mac'
-vim.o.fileformat = 'unix'
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = true
-vim.o.mouse = 'r'
-vim.o.mousemodel = 'popup'
-vim.o.diffopt = table.concat({ vim.o.diffopt, 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic' }, ',')
-vim.o.clipboard = 'unnamedplus'
-vim.o.inccommand = 'split'
-vim.o.completeopt = 'noinsert,menuone,noselect'
-vim.o.termguicolors = true
-vim.o.timeoutlen = 0
-vim.wo.signcolumn = 'auto:3'
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.list = true
-vim.wo.listchars = 'tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%'
+vim.opt.shell = 'zsh'
+vim.opt.hidden = true
+vim.opt.swapfile = false
+vim.opt.bomb = false
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencodings = {'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis'}
+vim.opt.fileformats = {'unix', 'dos', 'mac'}
+vim.opt.fileformat = 'unix'
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.mouse = 'r'
+vim.opt.mousemodel = 'popup'
+vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic' })
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.inccommand = 'split'
+vim.opt.completeopt = {'noinsert', 'menuone', 'noselect'}
+vim.opt.termguicolors = true
+vim.opt.timeoutlen = 0
+vim.opt.signcolumn = 'auto:3'
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.list = true
+vim.opt.listchars = 'tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%'
 
 -- Setting
 vim.cmd([[

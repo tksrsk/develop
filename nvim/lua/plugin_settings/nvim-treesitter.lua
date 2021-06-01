@@ -1,9 +1,9 @@
 -- Options
-vim.o.fillchars = 'foldopen:▾,foldclose:▸,eob: '
-vim.wo.foldcolumn = 'auto:4'
-vim.wo.foldmethod = 'expr'
-vim.wo.foldnestmax = 4
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.fillchars = 'foldopen:▾,foldclose:▸,eob: '
+vim.opt.foldcolumn = 'auto:4'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldnestmax = 4
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- Configs
 local configs = require('nvim-treesitter.configs')

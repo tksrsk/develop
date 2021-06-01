@@ -19,6 +19,7 @@ require('lualine').setup({
             { 'diagnostics', sources = { 'nvim_lsp' } },
         }
     },
+    extensions = { 'nvim-tree' },
 })
 
 -- Which Key
