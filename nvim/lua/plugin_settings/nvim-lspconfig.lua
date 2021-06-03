@@ -36,3 +36,10 @@ for _, server in pairs(servers) do
 
     lspconfig[server].setup(config)
 end
+
+-- Lsp trouble
+require('trouble').setup({
+    mode = "document",
+    auto_open = true,
+    auto_close = true,
+})

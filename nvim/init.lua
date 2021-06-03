@@ -68,7 +68,7 @@ require('packer').startup(function(use)
     }
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"},
-        {'kabouzeid/nvim-lspinstall'},
+        {'kabouzeid/nvim-lspinstall', 'folke/trouble.nvim'},
     }
     use {'Shougo/deol.nvim', config = "require('plugin_settings.deol')"}
     use {'tk-shirasaka/ejdict.nvim'}

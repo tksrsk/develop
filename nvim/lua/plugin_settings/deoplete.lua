@@ -5,11 +5,11 @@ vim.call('deoplete#enable')
 vim.call('deoplete#lsp#enable')
 vim.call('deoplete#custom#option', {
     max_list = 100,
-    ignore_case = true,
     ignore_sources = { ['_'] =  { 'around', 'member', 'omni' } },
     nofile_complete_filetypes = { 'denite-filter', 'zsh' }
 })
 vim.call('deoplete#custom#option', 'sources', { ['denite-filter'] = { 'denite' } })
+vim.call('deoplete#custom#source', '_', { ignore_case = true })
 vim.call('deoplete#custom#source', 'lsp', { mark = '', rank = 100 })
 vim.call('deoplete#custom#source', 'denite', { mark = '', rank = 100 })
 vim.call('deoplete#custom#source', 'zsh', { mark = '', rank = 100 })
