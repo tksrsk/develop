@@ -25,5 +25,8 @@ require('lualine').setup({
 -- Which Key
 require('which-key').setup({ show_help = false })
 
+-- Hop
+require('hop').setup({ create_hl_autocmd = false })
+
 -- Foldsign
 require('foldsigns').setup()
