@@ -4,14 +4,14 @@ vim.api.nvim_set_keymap('n', '<leader>j', "<cmd>lua require'hop'.hint_lines()<cr
 vim.api.nvim_set_keymap('n', '<leader>f', "<cmd>lua require'hop'.hint_char1()<cr>", {})
 
 -- Colorscheme
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme neon]])
 
 -- Colorizer
 require('colorizer').setup({ '*' }, { css = true })
 
 -- Statusline
 require('lualine').setup({
-    options = { theme = 'tokyonight' },
+    options = { theme = 'neon' },
     sections = {
         lualine_b = {
             'branch',

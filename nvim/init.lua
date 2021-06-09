@@ -16,7 +16,6 @@ vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-he
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.inccommand = 'split'
 vim.opt.completeopt = {'noinsert', 'menuone', 'noselect'}
-vim.opt.termguicolors = true
 vim.opt.timeoutlen = 0
 vim.opt.signcolumn = 'auto:3'
 vim.opt.number = true
@@ -51,7 +50,7 @@ require('packer').startup(function(use)
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
     use {
-        {'folke/tokyonight.nvim', config = "require('plugin_settings.ui')"},
+        {'rafamadriz/neon', config = "require('plugin_settings.ui')"},
         {'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'folke/which-key.nvim', 'phaazon/hop.nvim', 'lewis6991/foldsigns.nvim'},
     }
     use {
