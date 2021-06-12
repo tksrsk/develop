@@ -4,7 +4,7 @@ vim.api.nvim_set_keymap('n', '<leader>j', "<cmd>lua require'hop'.hint_lines()<cr
 vim.api.nvim_set_keymap('n', '<leader>f', "<cmd>lua require'hop'.hint_char1()<cr>", {})
 
 -- Colorscheme
-vim.cmd([[colorscheme neon]])
+require('neon').colorscheme()
 
 -- Colorizer
 require('colorizer').setup({ '*' }, { css = true })
