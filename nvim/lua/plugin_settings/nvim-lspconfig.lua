@@ -11,7 +11,6 @@ local servers = require('lspinstall').installed_servers()
 
 require('lspinstall').setup()
 
-table.insert(servers, 'clangd')
 table.insert(servers, 'yamlls')
 table.insert(servers, 'sqls')
 

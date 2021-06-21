@@ -1,7 +1,9 @@
 -- Hop
-vim.api.nvim_set_keymap('n', '<leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
-vim.api.nvim_set_keymap('n', '<leader>j', "<cmd>lua require'hop'.hint_lines()<cr>", {})
-vim.api.nvim_set_keymap('n', '<leader>f', "<cmd>lua require'hop'.hint_char1()<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>b', ":HopWordBC<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>w', ":HopWordAC<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>k', ":HopLineBC<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>j', ":HopLineAC<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>f', ":HopChar1<cr>", {})
 
 -- Colorscheme
 require('neon').colorscheme()
@@ -30,3 +32,6 @@ require('hop').setup({ create_hl_autocmd = false })
 
 -- Foldsign
 require('foldsigns').setup()
+
+-- Numb
+require('numb').setup()

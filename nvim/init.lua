@@ -45,13 +45,16 @@ require('packer').startup(function(use)
     use {'editorconfig/editorconfig-vim'}
     use {
         {'blackcauldron7/surround.nvim', config = "require('plugin_settings.surround')"},
-        {'windwp/nvim-autopairs', 'windwp/nvim-ts-autotag'}
+        {'steelsojka/pears.nvim'}
     }
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {'sheerun/vim-polyglot'}
     use {
         {'rafamadriz/neon', config = "require('plugin_settings.ui')"},
-        {'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'folke/which-key.nvim', 'phaazon/hop.nvim', 'lewis6991/foldsigns.nvim'},
+        {
+            'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'folke/which-key.nvim', 'phaazon/hop.nvim',
+            'lewis6991/foldsigns.nvim', 'nacro90/numb.nvim',
+        },
     }
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},

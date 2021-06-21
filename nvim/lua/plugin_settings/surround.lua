@@ -2,7 +2,7 @@
 require('surround').setup({})
 
 -- Auto pairs
-require('nvim-autopairs').setup({})
-
--- Auto tag
-require('nvim-ts-autotag').setup()
+require('pears').setup(function(conf)
+    conf.preset('html')
+    conf.preset('tag_matching')
+end)
