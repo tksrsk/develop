@@ -1,8 +1,8 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 40.01 .\ Breakpoint          :lua require('dap').toggle_breakpoint()<cr>
-    amenu <silent> 40.02 .\ Start\ /\ Continue  :lua require('dap').continue()<cr>
-    amenu <silent> 40.03 .懶\ Goto               :lua require('dap').run_to_cursor()<cr>
+    amenu <silent> 40.01 .\ Breakpoint          <cmd>lua require('dap').toggle_breakpoint()<cr>
+    amenu <silent> 40.02 .\ Start\ /\ Continue  <cmd>lua require('dap').continue()<cr>
+    amenu <silent> 40.03 .懶\ Goto               <cmd>lua require('dap').run_to_cursor()<cr>
 ]])
 
 -- Configs

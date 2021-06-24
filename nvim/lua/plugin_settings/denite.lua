@@ -1,9 +1,9 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 20.01 .\ Open          :Denite source<cr>
-    amenu <silent> 20.02 .菱\ Reopen       :Denite -resume<cr>
-    amenu <silent> 20.03 .\ Next\ Item    :Denite -resume -cursor-pos=+1 -immediately<cr>
-    amenu <silent> 20.04 .\ Prev\ Item    :Denite -resume -cursor-pos=-1 -immediately<cr>
+    amenu <silent> 20.01 .\ Open          <cmd>Denite source<cr>
+    amenu <silent> 20.02 .菱\ Reopen       <cmd>Denite -resume<cr>
+    amenu <silent> 20.03 .\ Next\ Item    <cmd>Denite -resume -cursor-pos=+1 -immediately<cr>
+    amenu <silent> 20.04 .\ Prev\ Item    <cmd>Denite -resume -cursor-pos=-1 -immediately<cr>
 ]])
 
 -- Configs

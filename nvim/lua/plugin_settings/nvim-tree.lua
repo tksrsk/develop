@@ -1,6 +1,6 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 10.11 .\ Exproler  :NvimTreeToggle<cr>
+    amenu <silent> 10.11 .\ Exproler  <cmd>NvimTreeToggle<cr>
 ]])
 
 -- Configs

@@ -1,6 +1,6 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 10.01 .\ DB    :DBUIToggle<cr>
+    amenu <silent> 10.01 .\ DB    <cmd>DBUIToggle<cr>
 ]])
 
 -- Configs
