@@ -9,6 +9,15 @@ vim.cmd([[
 local lspconfig = require('lspconfig')
 local servers = require('lspinstall').installed_servers()
 
+lspconfig.util.default_config = vim.tbl_extend(
+    'force',
+    lspconfig.util.default_config,
+    {
+        on_attach = function()
+            require('lsp_signature').on_attach()
+        end,
+    }
+)
 require('lspinstall').setup()
 
 table.insert(servers, 'yamlls')
@@ -41,4 +50,9 @@ require('trouble').setup({
     mode = "document",
     auto_open = true,
     auto_close = true,
+})
+
+-- Goto Preview
+require('goto-preview').setup({
+    default_mappings = true,
 })

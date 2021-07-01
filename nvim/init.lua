@@ -16,19 +16,11 @@ vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-he
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.inccommand = 'split'
 vim.opt.completeopt = {'noinsert', 'menuone', 'noselect'}
-vim.opt.timeoutlen = 0
 vim.opt.signcolumn = 'auto:3'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.list = true
 vim.opt.listchars = 'tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%'
-
--- Setting
-vim.cmd([[
-    wshada!
-    filetype plugin indent on
-    syntax on
-]])
 
 -- Autocmd
 vim.cmd([[
@@ -63,12 +55,15 @@ require('packer').startup(function(use)
         {'tk-shirasaka/denite-utils'},
     }
     use {
-        {'Shougo/deoplete.nvim', config = "require('plugin_settings.deoplete')"},
-        {'deoplete-plugins/deoplete-lsp', 'deoplete-plugins/deoplete-zsh'},
+        {'hrsh7th/nvim-compe', config = "require('plugin_settings.completion')"},
+        {'onsails/lspkind-nvim', 'tamago324/compe-zsh', 'kristijanhusak/vim-dadbod-completion'},
     }
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"},
-        {'kabouzeid/nvim-lspinstall', 'folke/trouble.nvim'},
+        {
+            'kabouzeid/nvim-lspinstall', 'ahmedkhalf/lsp-rooter.nvim', 'folke/trouble.nvim',
+            'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview'
+        },
     }
     use {'Shougo/deol.nvim', config = "require('plugin_settings.deol')"}
     use {'tk-shirasaka/ejdict.nvim'}
@@ -85,7 +80,7 @@ require('packer').startup(function(use)
     }
     use {
         {'tpope/vim-dadbod', config = "require('plugin_settings.vim-dadbod')"},
-        {'kristijanhusak/vim-dadbod-ui'}, {'kristijanhusak/vim-dadbod-completion'},
+        {'kristijanhusak/vim-dadbod-ui'},
     }
     use {
         {'kyazdani42/nvim-tree.lua', config = "require('plugin_settings.nvim-tree')"},

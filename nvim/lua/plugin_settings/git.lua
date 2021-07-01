@@ -1,5 +1,6 @@
 -- Gitsigns
 require('gitsigns').setup({
+    attach_to_untracked = false,
     current_line_blame = true,
     current_line_blame_formatter = function(_, blame_info)
         local text
@@ -16,6 +17,7 @@ require('gitsigns').setup({
             )
         end
 
-        return {{ '    '..text, 'Comment'}}
-    end
+        return {{ '    '..text, 'GitSignsCurrentLineBlame'}}
+    end,
+    word_diff = true,
 })

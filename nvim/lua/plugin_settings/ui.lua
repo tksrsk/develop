@@ -1,8 +1,8 @@
 -- Hop
 vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>HopWordBC<cr>", {})
 vim.api.nvim_set_keymap('n', '<leader>w', "<cmd>HopWordAC<cr>", {})
-vim.api.nvim_set_keymap('n', '<leader>k', "<cmd>HopLineBC<cr>", {})
-vim.api.nvim_set_keymap('n', '<leader>j', "<cmd>HopLineAC<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>k', "<cmd>HopLineStartBC<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>j', "<cmd>HopLineStartAC<cr>", {})
 vim.api.nvim_set_keymap('n', '<leader>f', "<cmd>HopChar1<cr>", {})
 
 -- Colorscheme
