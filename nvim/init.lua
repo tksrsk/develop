@@ -43,7 +43,7 @@ require('packer').startup(function(use)
         {'rafamadriz/neon', config = "require('plugin_settings.ui')"},
         {
             'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'folke/which-key.nvim', 'phaazon/hop.nvim',
-            'lewis6991/foldsigns.nvim', 'nacro90/numb.nvim',
+            'lewis6991/foldsigns.nvim', 'nacro90/numb.nvim', 'yamatsum/nvim-cursorline', 'mfussenegger/nvim-ts-hint-textobject',
         },
     }
     use {
@@ -61,7 +61,7 @@ require('packer').startup(function(use)
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"},
         {
-            'kabouzeid/nvim-lspinstall', 'ahmedkhalf/lsp-rooter.nvim', 'folke/trouble.nvim',
+            'williamboman/nvim-lsp-installer', 'ahmedkhalf/lsp-rooter.nvim', 'folke/trouble.nvim',
             'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview'
         },
     }

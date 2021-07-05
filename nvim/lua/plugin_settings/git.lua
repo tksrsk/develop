@@ -17,7 +17,7 @@ require('gitsigns').setup({
             )
         end
 
-        return {{ '    '..text, 'GitSignsCurrentLineBlame'}}
+        return {{ '  '..text, 'GitSignsCurrentLineBlame'}}
     end,
     word_diff = true,
 })

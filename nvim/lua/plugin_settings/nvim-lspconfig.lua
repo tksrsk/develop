@@ -6,29 +6,16 @@ vim.cmd([[
 ]])
 
 -- Configs
-local lspconfig = require('lspconfig')
-local servers = require('lspinstall').installed_servers()
-
-lspconfig.util.default_config = vim.tbl_extend(
-    'force',
-    lspconfig.util.default_config,
-    {
-        on_attach = function()
-            require('lsp_signature').on_attach()
-        end,
-    }
-)
-require('lspinstall').setup()
-
-table.insert(servers, 'yamlls')
-table.insert(servers, 'sqls')
+local servers = require('nvim-lsp-installer').get_installed_servers()
+local on_attach = function() require('lsp_signature').on_attach() end
 
 for _, server in pairs(servers) do
-    local config = {}
-    if server == 'lua' then
-        config.settings = {
+    local opts = { on_attach = on_attach }
+
+    if server.name == 'sumneko_lua' then
+        opts.settings = {
             Lua = {
-                diagnostics = { globals = { "vim" } },
+                diagnostics = { globals = { 'vim' } },
                 workspace = {
                     library = {
                         [vim.fn.expand('$VIMRUNTIME/lua')] = true,
@@ -38,16 +25,15 @@ for _, server in pairs(servers) do
             },
         }
     end
-    if server == 'sqls' then
-        config.cmd = { vim.env.HOME .. '/go/bin/sqls' }
-    end
 
-    lspconfig[server].setup(config)
+    server:setup(opts)
 end
+
+require('lspconfig').sqls.setup({ on_attach = on_attach, cmd = { vim.env.HOME .. '/go/bin/sqls' }})
 
 -- Lsp trouble
 require('trouble').setup({
-    mode = "document",
+    mode = 'document',
     auto_open = true,
     auto_close = true,
 })

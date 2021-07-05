@@ -68,10 +68,4 @@ vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='DiffAdd', nu
 vim.fn.sign_define('DapStopped', {text='', texthl='', linehl='DiffChange', numhl='DiffChange'})
 
 -- Dap UI
-require('dapui').setup({
-  icons = {
-    expanded = "",
-    collapsed = "",
-    circular = "↺"
-  }
-})
+require('dapui').setup()
