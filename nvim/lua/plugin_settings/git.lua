@@ -1,3 +1,8 @@
+-- Menu
+vim.cmd([[
+    amenu <silent> 10.51 .\ Git   <cmd>Neogit<cr>
+]])
+
 -- Gitsigns
 require('gitsigns').setup({
     attach_to_untracked = false,
@@ -20,4 +25,10 @@ require('gitsigns').setup({
         return {{ '  '..text, 'GitSignsCurrentLineBlame'}}
     end,
     word_diff = true,
+})
+
+-- Neogit
+require('neogit').setup({
+    disable_commit_confirmation = true,
+    integrations = { diffview = true },
 })

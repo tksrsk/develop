@@ -48,7 +48,7 @@ require('packer').startup(function(use)
     }
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
-        {'nvim-lua/plenary.nvim'}
+        {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim'}
     }
     use {
         {'Shougo/denite.nvim', config = "require('plugin_settings.denite')"},

@@ -7,10 +7,9 @@ vim.cmd([[
 
 -- Configs
 local servers = require('nvim-lsp-installer').get_installed_servers()
-local on_attach = function() require('lsp_signature').on_attach() end
 
 for _, server in pairs(servers) do
-    local opts = { on_attach = on_attach }
+    local opts = {}
 
     if server.name == 'sumneko_lua' then
         opts.settings = {
@@ -29,7 +28,8 @@ for _, server in pairs(servers) do
     server:setup(opts)
 end
 
-require('lspconfig').sqls.setup({ on_attach = on_attach, cmd = { vim.env.HOME .. '/go/bin/sqls' }})
+require('lspconfig').sqls.setup({ cmd = { vim.env.HOME .. '/go/bin/sqls' }})
+
 
 -- Lsp trouble
 require('trouble').setup({
@@ -37,6 +37,9 @@ require('trouble').setup({
     auto_open = true,
     auto_close = true,
 })
+
+-- Lsp Signature
+require('lsp_signature').setup()
 
 -- Goto Preview
 require('goto-preview').setup({
