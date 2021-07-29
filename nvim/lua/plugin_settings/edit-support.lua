@@ -8,4 +8,6 @@ require('pears').setup(function(conf)
 end)
 
 -- Commented
-require('commented').setup()
+require('commented').setup({
+    prefer_block_comment = true,
+})
