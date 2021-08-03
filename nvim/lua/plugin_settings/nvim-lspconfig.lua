@@ -28,9 +28,6 @@ for _, server in pairs(servers) do
     server:setup(opts)
 end
 
-require('lspconfig').sqls.setup({ cmd = { vim.env.HOME .. '/go/bin/sqls' }})
-
-
 -- Lsp trouble
 require('trouble').setup({
     mode = 'document',

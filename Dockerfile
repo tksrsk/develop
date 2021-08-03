@@ -23,9 +23,6 @@ RUN gem install -N --no-user-install neovim
 RUN git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-# Install LSP
-RUN go get github.com/lighttiger2505/sqls
-
 # Install DAP
 RUN dap felixfbecker php-debug 1.14.9
 RUN dap firefox-devtools vscode-firefox-debug 2.9.2

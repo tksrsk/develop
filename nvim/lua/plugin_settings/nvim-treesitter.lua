@@ -4,11 +4,10 @@ vim.opt.foldcolumn = 'auto:4'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldnestmax = 4
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.scrolloff = 5
 
 -- Configs
-local configs = require('nvim-treesitter.configs')
-
-configs.setup {
+require('nvim-treesitter.configs').setup({
     highlight = { enable = true },
     incremental_selection = { enable = true },
     indent = { enable = true },
@@ -38,4 +37,10 @@ configs.setup {
     playground = { enable = true },
     rainbow = { enable = true },
     ensure_installed = 'all',
-}
+})
+
+-- Treesitter Context
+require('treesitter-context').setup({
+    enable = true,
+    throttle = true,
+})
