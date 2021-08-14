@@ -11,3 +11,6 @@ end)
 require('commented').setup({
     prefer_block_comment = true,
 })
+
+-- Project
+require('project_nvim').setup()

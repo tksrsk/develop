@@ -36,7 +36,10 @@ require('packer').startup(function(use)
     use {'wbthomason/packer.nvim', opt = true, setup = "require('plugin_settings.packer')"}
     use {
         {'editorconfig/editorconfig-vim', config = "require('plugin_settings.edit-support')"},
-        {'sheerun/vim-polyglot', 'blackcauldron7/surround.nvim', 'steelsojka/pears.nvim', 'winston0410/commented.nvim'}
+        {
+            'sheerun/vim-polyglot', 'blackcauldron7/surround.nvim', 'steelsojka/pears.nvim',
+            'winston0410/commented.nvim', 'ahmedkhalf/project.nvim'
+        }
     }
     use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
     use {
