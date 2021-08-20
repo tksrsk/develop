@@ -62,7 +62,7 @@ require('packer').startup(function(use)
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"},
         {
-            'williamboman/nvim-lsp-installer', 'ahmedkhalf/lsp-rooter.nvim', 'folke/trouble.nvim',
+            'williamboman/nvim-lsp-installer', 'folke/trouble.nvim',
             'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview'
         },
     }
