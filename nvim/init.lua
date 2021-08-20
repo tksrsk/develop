@@ -1,12 +1,10 @@
 -- Options
 vim.opt.shell = 'zsh'
-vim.opt.hidden = true
 vim.opt.swapfile = false
-vim.opt.bomb = false
 vim.opt.encoding = 'utf-8'
-vim.opt.fileencodings = {'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis'}
-vim.opt.fileformats = {'unix', 'dos', 'mac'}
+vim.opt.fileencodings = { 'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis' }
 vim.opt.fileformat = 'unix'
+vim.opt.fileformats = { 'unix', 'dos', 'mac' }
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -15,7 +13,7 @@ vim.opt.mousemodel = 'popup'
 vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic' })
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.inccommand = 'split'
-vim.opt.completeopt = {'noinsert', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'noinsert', 'menuone', 'noselect' }
 vim.opt.signcolumn = 'auto:3'
 vim.opt.number = true
 vim.opt.relativenumber = true
