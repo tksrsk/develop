@@ -39,7 +39,7 @@ require('packer').startup(function(use)
             'winston0410/commented.nvim', 'ahmedkhalf/project.nvim'
         }
     }
-    use {'diepm/vim-rest-console', config = "require('plugin_settings.vim-rest-console')"}
+    use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
     use {
         {'rafamadriz/neon', config = "require('plugin_settings.ui')"},
         {
