@@ -1,14 +1,4 @@
--- Hop
-vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>HopWordBC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>HopWordAC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>k', '<cmd>HopLineStartBC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>j', '<cmd>HopLineStartAC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>HopChar1AC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>HopChar1BC<cr>', {})
-vim.api.nvim_set_keymap('o', 'm', "<cmd>lua require('tsht').nodes()<cr>", {})
-vim.api.nvim_set_keymap('v', 'm', ":lua require('tsht').nodes()<cr>", { noremap = true })
-
--- Colorscheme
+-- Neon
 require('neon').colorscheme()
 
 -- Highlight
@@ -26,7 +16,7 @@ vim.fn.sign_define('LspDiagnosticsSignHint', { text = '', texthl = 'LspDiagno
 -- Colorizer
 require('colorizer').setup({ '*' }, { css = true })
 
--- Statusline
+-- Lualine
 require('lualine').setup({
     options = { theme = 'neon' },
     sections = {
@@ -39,14 +29,16 @@ require('lualine').setup({
     extensions = { 'nvim-tree' },
 })
 
--- Which Key
-require('which-key').setup({ show_help = false })
+-- Foldsigns
+require('foldsigns').setup()
 
 -- Hop
 require('hop').setup({ create_hl_autocmd = false })
-
--- Foldsign
-require('foldsigns').setup()
-
--- Numb
-require('numb').setup()
+vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>HopWordBC<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>HopWordAC<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>k', '<cmd>HopLineStartBC<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>j', '<cmd>HopLineStartAC<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>HopChar1AC<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>HopChar1BC<cr>', {})
+vim.api.nvim_set_keymap('o', 'm', "<cmd>lua require('tsht').nodes()<cr>", {})
+vim.api.nvim_set_keymap('v', 'm', ":lua require('tsht').nodes()<cr>", { noremap = true })

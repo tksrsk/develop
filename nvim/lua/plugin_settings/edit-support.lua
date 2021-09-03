@@ -14,3 +14,9 @@ require('commented').setup({
 
 -- Project
 require('project_nvim').setup()
+
+-- Which Key
+require('which-key').setup({ show_help = false })
+
+-- Numb
+require('numb').setup()

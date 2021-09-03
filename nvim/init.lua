@@ -36,20 +36,20 @@ require('packer').startup(function(use)
         {'editorconfig/editorconfig-vim', config = "require('plugin_settings.edit-support')"},
         {
             'sheerun/vim-polyglot', 'blackcauldron7/surround.nvim', 'steelsojka/pears.nvim',
-            'winston0410/commented.nvim', 'ahmedkhalf/project.nvim'
+            'winston0410/commented.nvim', 'ahmedkhalf/project.nvim', 'folke/which-key.nvim', 'nacro90/numb.nvim',
         }
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
     use {
         {'rafamadriz/neon', config = "require('plugin_settings.ui')"},
         {
-            'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'folke/which-key.nvim', 'phaazon/hop.nvim',
-            'lewis6991/foldsigns.nvim', 'nacro90/numb.nvim', 'yamatsum/nvim-cursorline', 'mfussenegger/nvim-ts-hint-textobject',
+            'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'lewis6991/foldsigns.nvim',
+            'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-ts-hint-textobject',
         },
     }
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
-        {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim'}
+        {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim'},
     }
     use {
         {'Shougo/denite.nvim', config = "require('plugin_settings.denite')"},
