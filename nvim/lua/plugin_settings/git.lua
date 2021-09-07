@@ -32,3 +32,7 @@ require('neogit').setup({
     disable_commit_confirmation = true,
     integrations = { diffview = true },
 })
+
+require('diffview').setup({
+    enhanced_diff_hl = true,
+})
