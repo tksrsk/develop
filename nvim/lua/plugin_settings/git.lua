@@ -1,6 +1,6 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 10.51 .\ Git   <cmd>Neogit<cr>
+    amenu <silent> 10.21 Tools.Git  <cmd>Neogit<cr>
 ]])
 
 -- Gitsigns

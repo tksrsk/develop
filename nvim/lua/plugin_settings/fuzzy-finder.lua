@@ -1,9 +1,9 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 20.01 .\ Open          <cmd>Denite source<cr>
-    amenu <silent> 20.02 .菱\ Reopen       <cmd>Denite -resume<cr>
-    amenu <silent> 20.03 .\ Next\ Item    <cmd>Denite -resume -cursor-pos=+1 -immediately<cr>
-    amenu <silent> 20.04 .\ Prev\ Item    <cmd>Denite -resume -cursor-pos=-1 -immediately<cr>
+    amenu <silent> 20.01 Fuzzy\ Finder.Open         <cmd>Denite source<cr>
+    amenu <silent> 20.02 Fuzzy\ Finder.Reopen       <cmd>Denite -resume<cr>
+    amenu <silent> 20.03 Fuzzy\ Finder.Next\ Item   <cmd>Denite -resume -cursor-pos=+1 -immediately<cr>
+    amenu <silent> 20.04 Fuzzy\ Finder.Prev\ Item   <cmd>Denite -resume -cursor-pos=-1 -immediately<cr>
 ]])
 
 -- Configs

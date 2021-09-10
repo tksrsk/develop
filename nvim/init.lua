@@ -52,7 +52,7 @@ require('packer').startup(function(use)
         {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim'},
     }
     use {
-        {'Shougo/denite.nvim', config = "require('plugin_settings.denite')"},
+        {'Shougo/denite.nvim', config = "require('plugin_settings.fuzzy-finder')"},
         {'tk-shirasaka/denite-utils'},
     }
     use {
@@ -60,7 +60,7 @@ require('packer').startup(function(use)
         {'onsails/lspkind-nvim', 'tamago324/compe-zsh', 'kristijanhusak/vim-dadbod-completion'},
     }
     use {
-        {'neovim/nvim-lspconfig', config = "require('plugin_settings.nvim-lspconfig')"},
+        {'neovim/nvim-lspconfig', config = "require('plugin_settings.lsp')"},
         {
             'williamboman/nvim-lsp-installer', 'folke/trouble.nvim',
             'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview'
@@ -69,22 +69,22 @@ require('packer').startup(function(use)
     use {'Shougo/deol.nvim', config = "require('plugin_settings.deol')"}
     use {'tk-shirasaka/ejdict.nvim'}
     use {
-        {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.nvim-treesitter')"},
+        {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.treesitter')"},
         {
             'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground',
             'tk-shirasaka/nvim-treesitter-sql', 'p00f/nvim-ts-rainbow', 'romgrk/nvim-treesitter-context',
         },
     }
     use {
-        {'mfussenegger/nvim-dap', config = "require('plugin_settings.nvim-dap')"},
+        {'mfussenegger/nvim-dap', config = "require('plugin_settings.debugger')"},
         {'rcarriga/nvim-dap-ui'}
     }
     use {
-        {'tpope/vim-dadbod', config = "require('plugin_settings.vim-dadbod')"},
+        {'tpope/vim-dadbod', config = "require('plugin_settings.dbms')"},
         {'kristijanhusak/vim-dadbod-ui'},
     }
     use {
-        {'kyazdani42/nvim-tree.lua', config = "require('plugin_settings.nvim-tree')"},
+        {'kyazdani42/nvim-tree.lua', config = "require('plugin_settings.exploler')"},
         {'kyazdani42/nvim-web-devicons'},
     }
 end)
