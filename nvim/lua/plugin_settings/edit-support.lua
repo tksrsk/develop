@@ -10,6 +10,7 @@ end)
 -- Commented
 require('commented').setup({
     prefer_block_comment = true,
+    hooks = { before_comment = require("ts_context_commentstring.internal").update_commentstring },
 })
 
 -- Project
