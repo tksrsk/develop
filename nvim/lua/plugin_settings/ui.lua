@@ -42,3 +42,9 @@ vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>HopChar1AC<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>HopChar1BC<cr>', {})
 vim.api.nvim_set_keymap('o', 'm', "<cmd>lua require('tsht').nodes()<cr>", {})
 vim.api.nvim_set_keymap('v', 'm', ":lua require('tsht').nodes()<cr>", { noremap = true })
+
+-- Indent Blankline
+require("indent_blankline").setup {
+    buftype_exclude = { 'terminal', 'nofile' },
+    show_current_context = true,
+}

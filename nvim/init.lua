@@ -18,7 +18,7 @@ vim.opt.signcolumn = 'auto:3'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.list = true
-vim.opt.listchars = 'tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%'
+vim.opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', precedes = '«', nbsp = '%' }
 
 -- Autocmd
 vim.cmd([[
@@ -45,6 +45,7 @@ require('packer').startup(function(use)
         {
             'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'lewis6991/foldsigns.nvim',
             'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-ts-hint-textobject',
+            'lukas-reineke/indent-blankline.nvim',
         },
     }
     use {
