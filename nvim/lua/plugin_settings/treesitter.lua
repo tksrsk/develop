@@ -6,7 +6,7 @@ vim.opt.foldopen = 'all'
 vim.opt.foldclose = 'all'
 vim.opt.foldnestmax = 4
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 1
 
 -- Extends
 local persers = require("nvim-treesitter.parsers").get_parser_configs()
@@ -56,4 +56,5 @@ require('nvim-treesitter.configs').setup({
 require('treesitter-context').setup({
     enable = true,
     throttle = true,
+    max_lines = 1,
 })
