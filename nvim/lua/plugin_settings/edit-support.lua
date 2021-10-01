@@ -14,7 +14,10 @@ require('commented').setup({
 })
 
 -- Project
-require('project_nvim').setup()
+require('project_nvim').setup({
+    ignore_lsp = { 'bashls', 'sqls' },
+    silent_chdir = false,
+})
 
 -- Which Key
 require('which-key').setup({ show_help = false })

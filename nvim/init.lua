@@ -1,5 +1,4 @@
 -- Options
-vim.opt.shell = 'zsh'
 vim.opt.swapfile = false
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencodings = { 'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis' }
@@ -13,7 +12,6 @@ vim.opt.mousemodel = 'popup'
 vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic' })
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.inccommand = 'split'
-vim.opt.completeopt = { 'noinsert', 'menuone', 'noselect' }
 vim.opt.signcolumn = 'auto:3'
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -57,8 +55,11 @@ require('packer').startup(function(use)
         {'tk-shirasaka/denite-utils'},
     }
     use {
-        {'hrsh7th/nvim-compe', config = "require('plugin_settings.completion')"},
-        {'onsails/lspkind-nvim', 'tamago324/compe-zsh', 'kristijanhusak/vim-dadbod-completion'},
+        {'hrsh7th/nvim-cmp', config = "require('plugin_settings.completion')"},
+        {
+            'onsails/lspkind-nvim', 'hrsh7th/vim-vsnip', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-nvim-lua',
+            'kristijanhusak/vim-dadbod-completion', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
+        },
     }
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.lsp')"},
@@ -67,7 +68,7 @@ require('packer').startup(function(use)
             'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview'
         },
     }
-    use {'Shougo/deol.nvim', config = "require('plugin_settings.deol')"}
+    use {'akinsho/toggleterm.nvim', config = "require('plugin_settings.terminal')"}
     use {'tk-shirasaka/ejdict.nvim'}
     use {
         {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.treesitter')"},

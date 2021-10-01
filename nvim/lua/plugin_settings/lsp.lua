@@ -1,8 +1,8 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 50.01 Language\ Support.Hover    <cmd>lua vim.lsp.buf.hover()<cr>
-    amenu <silent> 50.02 Language\ Support.Format   <cmd>lua vim.lsp.buf.formatting()<cr>
-    amenu <silent> 50.03 Language\ Support.Rename   <cmd>lua vim.lsp.buf.rename()<cr>
+    amenu <silent> 40.01 Language\ Support.Hover    <cmd>lua vim.lsp.buf.hover()<cr>
+    amenu <silent> 40.02 Language\ Support.Format   <cmd>lua vim.lsp.buf.formatting()<cr>
+    amenu <silent> 40.03 Language\ Support.Rename   <cmd>lua vim.lsp.buf.rename()<cr>
 ]])
 
 -- Configs
