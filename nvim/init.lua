@@ -74,7 +74,7 @@ require('packer').startup(function(use)
         {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.treesitter')"},
         {
             'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground',
-            'tk-shirasaka/nvim-treesitter-sql', 'p00f/nvim-ts-rainbow', 'romgrk/nvim-treesitter-context', 'JoosepAlviste/nvim-ts-context-commentstring', 
+            'tk-shirasaka/nvim-treesitter-sql', 'p00f/nvim-ts-rainbow', 'romgrk/nvim-treesitter-context', 'JoosepAlviste/nvim-ts-context-commentstring',
         },
     }
     use {
