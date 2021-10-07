@@ -1,11 +1,13 @@
 -- Neon
-require('neon').colorscheme()
-
--- Highlight
-local highlight = require('neon.utils').highlight
-highlight('GitSignsCurrentLineBlame', { fg = 'gray', sp = 'lightgreen', style = 'underline' })
-highlight('TSDefinition', { sp = 'lightblue', style = 'undercurl' })
-highlight('TSDefinitionUsage', { sp = 'orange', style = 'undercurl' })
+local onedark = require('onedark')
+onedark.setup({
+    hlgroups = {
+        GitSignsCurrentLineBlame = { sp = '${green}', style = 'underline' },
+        TSDefinition = { sp = '${blue}', style = 'undercurl' },
+        TSDefinitionUsage = { sp = '${yellow}', style = 'undercurl' },
+    }
+})
+onedark.load()
 
 -- Signs
 vim.fn.sign_define('LspDiagnosticsSignError', { text = '', texthl = 'LspDiagnosticsSignError' })
@@ -18,7 +20,7 @@ require('colorizer').setup({ '*' }, { css = true })
 
 -- Lualine
 require('lualine').setup({
-    options = { theme = 'neon' },
+    options = { theme = 'onedark' },
     sections = {
         lualine_b = {
             'branch',
