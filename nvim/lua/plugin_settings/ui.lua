@@ -1,6 +1,7 @@
 -- Neon
 local onedark = require('onedark')
 onedark.setup({
+    highlight_cursorline = true,
     hlgroups = {
         GitSignsCurrentLineBlame = { sp = '${green}', style = 'underline' },
         TSDefinition = { sp = '${blue}', style = 'undercurl' },
