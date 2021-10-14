@@ -43,7 +43,7 @@ require('packer').startup(function(use)
         {
             'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'lewis6991/foldsigns.nvim',
             'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-ts-hint-textobject',
-            'lukas-reineke/indent-blankline.nvim',
+            'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim',
         },
     }
     use {

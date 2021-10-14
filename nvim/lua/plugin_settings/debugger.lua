@@ -3,6 +3,7 @@ vim.cmd([[
     amenu <silent> 30.01 Debugger.Breakpoint            <cmd>lua require('dap').toggle_breakpoint()<cr>
     amenu <silent> 30.02 Debugger.Start\ /\ Continue    <cmd>lua require('dap').continue()<cr>
     amenu <silent> 30.03 Debugger.Goto                  <cmd>lua require('dap').run_to_cursor()<cr>
+    amenu <silent> 30.03 Debugger.Dashboard             <cmd>lua require("dapui").toggle()<cr>
 ]])
 
 -- Configs
@@ -20,6 +21,7 @@ dap.configurations.php = {
         request = 'launch',
         name = 'Listen for xdebug',
         hostname = '0.0.0.0',
+        port = 9000,
         stopOnEntry = false,
         serverSourceRoot = '/project/',
         localSourceRoot = '/project/',
@@ -63,9 +65,6 @@ dap.repl.commands = vim.tbl_extend('force', dap.repl.commands, {
         ['.restart'] = dap.restart,
     }
 })
-
-vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='DiffAdd', numhl='DiffAdd'})
-vim.fn.sign_define('DapStopped', {text='', texthl='', linehl='DiffChange', numhl='DiffChange'})
 
 -- Dap UI
 require('dapui').setup()

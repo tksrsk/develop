@@ -1,7 +1,9 @@
 -- Neon
 local onedark = require('onedark')
 onedark.setup({
-    highlight_cursorline = true,
+    options = {
+        highlight_cursorline = true,
+    },
     hlgroups = {
         GitSignsCurrentLineBlame = { sp = '${green}', style = 'underline' },
         TSDefinition = { sp = '${blue}', style = 'undercurl' },
@@ -15,6 +17,8 @@ vim.fn.sign_define('LspDiagnosticsSignError', { text = '', texthl = 'LspDiagn
 vim.fn.sign_define('LspDiagnosticsSignWarning', { text = '', texthl = 'LspDiagnosticsSignWarning' })
 vim.fn.sign_define('LspDiagnosticsSignInformation', { text = '', texthl = 'LspDiagnosticsSignInformation' })
 vim.fn.sign_define('LspDiagnosticsSignHint', { text = '', texthl = 'LspDiagnosticsSignHint' })
+vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='DiffAdd', numhl='DiffAdd'})
+vim.fn.sign_define('DapStopped', {text='', texthl='', linehl='DiffDelete', numhl='DiffDelete'})
 
 -- Colorizer
 require('colorizer').setup({ '*' }, { css = true })
@@ -51,3 +55,6 @@ require("indent_blankline").setup {
     buftype_exclude = { 'terminal', 'nofile' },
     show_current_context = true,
 }
+
+-- Marks
+require('marks').setup({})
