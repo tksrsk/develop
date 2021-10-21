@@ -1,6 +1,6 @@
--- Neon
-local onedark = require('onedark')
-onedark.setup({
+-- Onedarkpro
+local onedarkpro = require('onedarkpro')
+onedarkpro.setup({
     options = {
         highlight_cursorline = true,
     },
@@ -10,7 +10,7 @@ onedark.setup({
         TSDefinitionUsage = { sp = '${yellow}', style = 'undercurl' },
     }
 })
-onedark.load()
+onedarkpro.load()
 
 -- Signs
 vim.fn.sign_define('LspDiagnosticsSignError', { text = '', texthl = 'LspDiagnosticsSignError' })

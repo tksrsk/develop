@@ -39,7 +39,7 @@ require('packer').startup(function(use)
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
     use {
-        {'olimorris/onedark.nvim', config = "require('plugin_settings.ui')"},
+        {'olimorris/onedarkpro.nvim', config = "require('plugin_settings.ui')"},
         {
             'norcalli/nvim-colorizer.lua', 'hoob3rt/lualine.nvim', 'lewis6991/foldsigns.nvim',
             'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-ts-hint-textobject',
