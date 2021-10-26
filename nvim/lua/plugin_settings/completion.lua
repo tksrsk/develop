@@ -12,8 +12,8 @@ require('cmp').setup({
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         { name = 'vim-dadbod-completion' },
-        { name = 'path' };
-        { name = 'buffer' };
+        { name = 'path' },
+        { name = 'buffer' },
     },
     experimental = {
         native_menu = true,
