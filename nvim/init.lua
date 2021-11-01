@@ -65,7 +65,7 @@ require('packer').startup(function(use)
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.lsp')"},
         {
             'williamboman/nvim-lsp-installer', 'folke/trouble.nvim',
-            'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview'
+            'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview',
         },
     }
     use {'akinsho/toggleterm.nvim', config = "require('plugin_settings.terminal')"}
