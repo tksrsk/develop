@@ -2,7 +2,7 @@
 local onedarkpro = require('onedarkpro')
 onedarkpro.setup({
     options = {
-        highlight_cursorline = true,
+        cursorline = true,
     },
     hlgroups = {
         GitSignsCurrentLineBlame = { sp = '${green}', style = 'underline' },
