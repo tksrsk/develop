@@ -6,7 +6,6 @@ vim.cmd([[
 -- Configs
 require('nvim-tree').setup({
     auto_close = true,
-    open_on_tab = true,
     hijack_cursor = true,
     update_cwd = true,
     diagnostics = { enable = true },

@@ -4,6 +4,7 @@ vim.opt.encoding = 'utf-8'
 vim.opt.fileencodings = { 'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis' }
 vim.opt.fileformat = 'unix'
 vim.opt.fileformats = { 'unix', 'dos', 'mac' }
+vim.opt.timeoutlen = 0
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -43,7 +44,7 @@ require('packer').startup(function(use)
         {
             'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'lewis6991/foldsigns.nvim',
             'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-ts-hint-textobject',
-            'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim',
+            'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim', 'luukvbaal/stabilize.nvim',
         },
     }
     use {

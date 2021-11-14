@@ -5,7 +5,7 @@ onedarkpro.setup({
         cursorline = true,
     },
     hlgroups = {
-        GitSignsCurrentLineBlame = { sp = '${green}', style = 'underline' },
+        GitSignsCurrentLineBlame = { fg = '${comment}', sp = '${green}', style = 'underline' },
         TSDefinition = { sp = '${blue}', style = 'undercurl' },
         TSDefinitionUsage = { sp = '${yellow}', style = 'undercurl' },
     }
@@ -58,3 +58,8 @@ require("indent_blankline").setup {
 
 -- Marks
 require('marks').setup({})
+
+-- Stabilize
+require('stabilize').setup({
+    nested = 'User LspDiagnosticsChanged'
+})
