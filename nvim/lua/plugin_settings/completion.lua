@@ -17,5 +17,6 @@ require('cmp').setup({
     },
     experimental = {
         native_menu = true,
+        ghost_text = true,
     },
 })
