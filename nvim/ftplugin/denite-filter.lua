@@ -3,7 +3,7 @@ require('cmp').setup.buffer({
         {
             name = 'buffer',
             opts = {
-                keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%([\-\/]\w*\)*\)]],
+                keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%([\-\/\.]\w*\)*\)]],
                 get_bufnrs = function ()
                     for _, win in ipairs(vim.api.nvim_list_wins()) do
                         local buf = vim.api.nvim_win_get_buf(win)
