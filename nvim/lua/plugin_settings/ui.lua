@@ -25,7 +25,7 @@ require('colorizer').setup({ '*' }, { css = true })
 
 -- Lualine
 require('lualine').setup({
-    options = { theme = 'onedark' },
+    options = { theme = 'onedarkpro' },
     sections = {
         lualine_b = {
             'branch',
