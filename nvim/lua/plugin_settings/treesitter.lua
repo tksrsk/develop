@@ -1,10 +1,5 @@
 -- Options
-vim.opt.fillchars = { foldopen = '▾', foldclose = '▸', eob = ' ' }
-vim.opt.foldcolumn = 'auto:4'
-vim.opt.foldmethod = 'expr'
-vim.opt.foldnestmax = 4
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.scrolloff = 1
 
 -- Configs
 require('nvim-treesitter.configs').setup({
