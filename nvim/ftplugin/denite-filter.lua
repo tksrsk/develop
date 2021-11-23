@@ -2,7 +2,7 @@ require('cmp').setup.buffer({
     sources = {
         {
             name = 'buffer',
-            opts = {
+            option = {
                 keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%([\-\/\.]\w*\)*\)]],
                 get_bufnrs = function ()
                     for _, win in ipairs(vim.api.nvim_list_wins()) do
