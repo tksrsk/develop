@@ -49,7 +49,7 @@ require('packer').startup(function(use)
         {'olimorris/onedarkpro.nvim', config = "require('plugin_settings.ui')"},
         {
             'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'lewis6991/foldsigns.nvim',
-            'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-ts-hint-textobject',
+            'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-treehopper',
             'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim', 'luukvbaal/stabilize.nvim',
         },
     }

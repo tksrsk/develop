@@ -3,6 +3,8 @@ local onedarkpro = require('onedarkpro')
 onedarkpro.setup({
     options = {
         cursorline = true,
+        terminal_colors = true,
+        alt_normal_color = true,
     },
     hlgroups = {
         GitSignsCurrentLineBlame = { fg = '${comment}', sp = '${green}', style = 'underline' },
