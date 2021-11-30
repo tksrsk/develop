@@ -40,8 +40,8 @@ require('packer').startup(function(use)
     use {
         {'editorconfig/editorconfig-vim', config = "require('plugin_settings.edit-support')"},
         {
-            'sheerun/vim-polyglot', 'blackcauldron7/surround.nvim', 'steelsojka/pears.nvim',
-            'winston0410/commented.nvim', 'ahmedkhalf/project.nvim', 'folke/which-key.nvim', 'nacro90/numb.nvim',
+            'blackcauldron7/surround.nvim', 'steelsojka/pears.nvim', 'winston0410/commented.nvim',
+            'ahmedkhalf/project.nvim', 'folke/which-key.nvim', 'nacro90/numb.nvim',
         }
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}

@@ -4,7 +4,7 @@ onedarkpro.setup({
     options = {
         cursorline = true,
         terminal_colors = true,
-        alt_normal_color = true,
+        window_unfocussed_color = true,
     },
     hlgroups = {
         GitSignsCurrentLineBlame = { fg = '${comment}', sp = '${green}', style = 'underline' },
