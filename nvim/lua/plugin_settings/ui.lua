@@ -28,13 +28,6 @@ require('colorizer').setup({ '*' }, { css = true })
 -- Lualine
 require('lualine').setup({
     options = { theme = 'onedarkpro' },
-    sections = {
-        lualine_b = {
-            'branch',
-            'diff',
-            { 'diagnostics', sources = { 'nvim_lsp' } },
-        }
-    },
     extensions = { 'nvim-tree' },
 })
 
