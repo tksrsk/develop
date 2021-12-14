@@ -30,7 +30,7 @@ end
 
 -- Lsp trouble
 require('trouble').setup({
-    mode = 'document',
+    mode = 'document_diagnostics',
     auto_open = true,
     auto_close = true,
 })
