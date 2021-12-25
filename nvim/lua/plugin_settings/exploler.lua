@@ -8,7 +8,10 @@ require('nvim-tree').setup({
     auto_close = true,
     hijack_cursor = true,
     update_cwd = true,
-    diagnostics = { enable = true },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+    },
     update_focused_file = {
         enable = true,
     },
