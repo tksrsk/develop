@@ -24,3 +24,6 @@ require('which-key').setup({ show_help = false })
 
 -- Numb
 require('numb').setup()
+
+-- Matchparen
+require('matchparen').setup()

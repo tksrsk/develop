@@ -42,6 +42,7 @@ require('packer').startup(function(use)
         {
             'blackcauldron7/surround.nvim', 'steelsojka/pears.nvim', 'winston0410/commented.nvim',
             'ahmedkhalf/project.nvim', 'folke/which-key.nvim', 'nacro90/numb.nvim',
+            'monkoose/matchparen.nvim',
         }
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
@@ -95,5 +96,9 @@ require('packer').startup(function(use)
     use {
         {'kyazdani42/nvim-tree.lua', config = "require('plugin_settings.exploler')"},
         {'kyazdani42/nvim-web-devicons'},
+    }
+    use {
+        {'nvim-orgmode/orgmode', config = "require('plugin_settings.orgmode')"},
+        {'akinsho/org-bullets.nvim', 'lukas-reineke/headlines.nvim'}
     }
 end)
