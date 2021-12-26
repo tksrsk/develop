@@ -65,8 +65,9 @@ require('packer').startup(function(use)
     use {
         {'hrsh7th/nvim-cmp', config = "require('plugin_settings.completion')"},
         {
-            'onsails/lspkind-nvim', 'hrsh7th/vim-vsnip', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-nvim-lua',
-            'kristijanhusak/vim-dadbod-completion', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
+            'onsails/lspkind-nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-nvim-lua',
+            'dcampos/nvim-snippy', 'dcampos/cmp-snippy', 'kristijanhusak/vim-dadbod-completion',
+            'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
         },
     }
     use {

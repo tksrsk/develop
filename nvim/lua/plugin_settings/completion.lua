@@ -2,7 +2,7 @@
 require('cmp').setup({
     snippet = {
       expand = function(args)
-        vim.fn['vsnip#anonymous'](args.body)
+        require('snippy').expand_snippet(args.body)
       end,
     },
     formatting = {
@@ -11,6 +11,7 @@ require('cmp').setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
+        { name = 'snippy' },
         { name = 'vim-dadbod-completion' },
         { name = 'path' },
         { name = 'buffer' },
@@ -18,5 +19,18 @@ require('cmp').setup({
     experimental = {
         native_menu = true,
         ghost_text = true,
+    },
+})
+
+-- Snippy
+require('snippy').setup({
+    mappings = {
+        is = {
+            ['<tab>'] = 'expand_or_advance',
+            ['<s-tab>'] = 'previous',
+        },
+        nx = {
+            ['<leader>x'] = 'cut_text',
+        },
     },
 })

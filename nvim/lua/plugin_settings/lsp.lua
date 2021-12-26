@@ -7,9 +7,10 @@ vim.cmd([[
 
 -- Configs
 local servers = require('nvim-lsp-installer').get_installed_servers()
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 for _, server in pairs(servers) do
-    local opts = {}
+    local opts = { capabilities = capabilities }
 
     if server.name == 'sumneko_lua' then
         opts.settings = {
