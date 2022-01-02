@@ -11,6 +11,7 @@ require('gitsigns').setup({
         relative_time = true,
     },
     word_diff = true,
+    preview_config = { border = 'solid' },
 })
 
 -- Neogit
