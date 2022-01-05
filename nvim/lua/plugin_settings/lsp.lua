@@ -37,7 +37,9 @@ require('trouble').setup({
 })
 
 -- Lsp Signature
-require('lsp_signature').setup()
+require('lsp_signature').setup({
+    handler_opts = { border = 'solid' }
+})
 
 -- Goto Preview
 require('goto-preview').setup({
