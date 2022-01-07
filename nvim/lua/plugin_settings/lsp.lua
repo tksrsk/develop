@@ -1,11 +1,16 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 40.01 Language\ Support.Hover    <cmd>lua vim.lsp.buf.hover()<cr>
-    amenu <silent> 40.02 Language\ Support.Format   <cmd>lua vim.lsp.buf.formatting()<cr>
-    amenu <silent> 40.03 Language\ Support.Rename   <cmd>lua vim.lsp.buf.rename()<cr>
+    amenu <silent> 40.01 LSP.Hover              <cmd>lua vim.lsp.buf.hover()<cr>
+    amenu <silent> 40.02 LSP.Format             <cmd>lua vim.lsp.buf.formatting()<cr>
+    amenu <silent> 40.03 LSP.Rename             <cmd>lua vim.lsp.buf.rename()<cr>
+    amenu <silent> 40.04 LSP.Code\ action       <cmd>lua vim.lsp.buf.code_action()<cr>
+    amenu <silent> 40.11 LSP.Diagnostic.Loclist <cmd>lua vim.diagnostic.setloclist()<cr>
+    amenu <silent> 40.11 LSP.Diagnostic.Prev    <cmd>lua vim.diagnostic.goto_prev()<cr>
+    amenu <silent> 40.12 LSP.Diagnostic.Next    <cmd>lua vim.diagnostic.goto_prev()<cr>
 ]])
 
 -- Configs
+vim.diagnostic.config({ virtual_text = false })
 local servers = require('nvim-lsp-installer').get_installed_servers()
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -28,13 +33,6 @@ for _, server in pairs(servers) do
 
     server:setup(opts)
 end
-
--- Lsp trouble
-require('trouble').setup({
-    mode = 'document_diagnostics',
-    auto_open = true,
-    auto_close = true,
-})
 
 -- Lsp Signature
 require('lsp_signature').setup({

@@ -42,7 +42,7 @@ require('packer').startup(function(use)
         {
             'blackcauldron7/surround.nvim', 'steelsojka/pears.nvim', 'winston0410/commented.nvim',
             'ahmedkhalf/project.nvim', 'folke/which-key.nvim', 'nacro90/numb.nvim',
-            'monkoose/matchparen.nvim',
+            'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf',
         }
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
@@ -52,6 +52,7 @@ require('packer').startup(function(use)
             'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'lewis6991/foldsigns.nvim',
             'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-treehopper',
             'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim', 'luukvbaal/stabilize.nvim',
+            'kevinhwang91/nvim-hlslens',
         },
     }
     use {
@@ -73,8 +74,7 @@ require('packer').startup(function(use)
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.lsp')"},
         {
-            'williamboman/nvim-lsp-installer', 'folke/trouble.nvim',
-            'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview',
+            'williamboman/nvim-lsp-installer', 'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview',
         },
     }
     use {'akinsho/toggleterm.nvim', config = "require('plugin_settings.terminal')"}
