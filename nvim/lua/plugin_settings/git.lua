@@ -1,6 +1,7 @@
 -- Menu
 vim.cmd([[
-    amenu <silent> 10.21 Tools.Git  <cmd>Neogit<cr>
+    amenu <silent> 50.01 Git.Status     <cmd>Neogit<cr>
+    amenu <silent> 50.02 Git.History    <cmd> DiffviewFileHistory<cr>
 ]])
 
 -- Gitsigns

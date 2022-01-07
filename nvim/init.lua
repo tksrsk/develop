@@ -6,7 +6,7 @@ vim.opt.expandtab = true
 vim.opt.fileencodings = { 'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis' }
 vim.opt.fileformat = 'unix'
 vim.opt.fileformats = { 'unix', 'dos', 'mac' }
-vim.opt.fillchars = { foldopen = '▾', foldclose = '▸', eob = ' ' }
+vim.opt.fillchars = { foldopen = '▾', foldclose = '▸', eob = ' ', diff = '' }
 vim.opt.foldcolumn = 'auto:4'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldnestmax = 4
