@@ -29,6 +29,10 @@ for _, server in pairs(servers) do
                 },
             },
         }
+    elseif server.name == 'sqls' then
+        opts.on_attach = function (client, bufnr)
+            require('sqls').on_attach(client, bufnr)
+        end
     end
 
     server:setup(opts)

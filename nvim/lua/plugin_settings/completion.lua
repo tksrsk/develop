@@ -12,7 +12,6 @@ require('cmp').setup({
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         { name = 'snippy' },
-        { name = 'vim-dadbod-completion' },
         { name = 'path' },
         { name = 'buffer' },
     },

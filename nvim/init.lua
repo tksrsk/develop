@@ -52,7 +52,7 @@ require('packer').startup(function(use)
             'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'lewis6991/foldsigns.nvim',
             'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-treehopper',
             'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim', 'luukvbaal/stabilize.nvim',
-            'kevinhwang91/nvim-hlslens',
+            'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim',
         },
     }
     use {
@@ -67,7 +67,7 @@ require('packer').startup(function(use)
         {'hrsh7th/nvim-cmp', config = "require('plugin_settings.completion')"},
         {
             'onsails/lspkind-nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-nvim-lua',
-            'dcampos/nvim-snippy', 'dcampos/cmp-snippy', 'kristijanhusak/vim-dadbod-completion',
+            'dcampos/nvim-snippy', 'dcampos/cmp-snippy', 'honza/vim-snippets',
             'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
         },
     }
@@ -90,10 +90,7 @@ require('packer').startup(function(use)
         {'mfussenegger/nvim-dap', config = "require('plugin_settings.debugger')"},
         {'rcarriga/nvim-dap-ui'}
     }
-    use {
-        {'tpope/vim-dadbod', config = "require('plugin_settings.dbms')"},
-        {'kristijanhusak/vim-dadbod-ui'},
-    }
+    use {'nanotee/sqls.nvim', config = "require('plugin_settings.dbms')"}
     use {
         {'kyazdani42/nvim-tree.lua', config = "require('plugin_settings.exploler')"},
         {'kyazdani42/nvim-web-devicons'},

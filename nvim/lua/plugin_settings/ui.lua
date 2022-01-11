@@ -56,3 +56,6 @@ require('marks').setup({})
 
 -- Stabilize
 require('stabilize').setup()
+
+-- Dressing
+require('dressing').setup()
