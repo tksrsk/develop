@@ -59,3 +59,7 @@ require('stabilize').setup()
 
 -- Dressing
 require('dressing').setup()
+
+-- Pretty Fold
+require('pretty-fold').setup({})
+require('pretty-fold.preview').setup({})

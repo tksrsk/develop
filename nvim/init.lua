@@ -52,7 +52,7 @@ require('packer').startup(function(use)
             'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'lewis6991/foldsigns.nvim',
             'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-treehopper',
             'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim', 'luukvbaal/stabilize.nvim',
-            'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim',
+            'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim', 'anuvyklack/pretty-fold.nvim',
         },
     }
     use {
