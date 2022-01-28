@@ -4,7 +4,6 @@ onedarkpro.setup({
     options = {
         cursorline = true,
         terminal_colors = true,
-        window_unfocussed_color = true,
     },
     hlgroups = {
         GitSignsCurrentLineBlame = { fg = '${comment}', sp = '${green}', style = 'underline' },
@@ -29,6 +28,9 @@ require('colorizer').setup({ '*' }, { css = true })
 require('lualine').setup({
     options = { theme = 'onedarkpro' },
     extensions = { 'nvim-tree' },
+    sections = {
+        lualine_c = {'filename', 'lsp_progress'}
+    }
 })
 
 -- Foldsigns

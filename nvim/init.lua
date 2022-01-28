@@ -49,10 +49,10 @@ require('packer').startup(function(use)
     use {
         {'olimorris/onedarkpro.nvim', config = "require('plugin_settings.ui')"},
         {
-            'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'lewis6991/foldsigns.nvim',
-            'yamatsum/nvim-cursorline', 'phaazon/hop.nvim', 'mfussenegger/nvim-treehopper',
-            'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim', 'luukvbaal/stabilize.nvim',
-            'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim', 'anuvyklack/pretty-fold.nvim',
+            'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'arkav/lualine-lsp-progress',
+            'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline', 'phaazon/hop.nvim',
+            'mfussenegger/nvim-treehopper', 'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim',
+            'luukvbaal/stabilize.nvim', 'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim', 'anuvyklack/pretty-fold.nvim',
         },
     }
     use {
@@ -88,7 +88,7 @@ require('packer').startup(function(use)
     }
     use {
         {'mfussenegger/nvim-dap', config = "require('plugin_settings.debugger')"},
-        {'rcarriga/nvim-dap-ui'}
+        {'Pocco81/DAPInstall.nvim', 'rcarriga/nvim-dap-ui'}
     }
     use {'nanotee/sqls.nvim', config = "require('plugin_settings.dbms')"}
     use {
