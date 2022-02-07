@@ -10,15 +10,12 @@ require('cmp').setup({
     },
     sources = {
         { name = 'nvim_lsp' },
-        { name = 'nvim_lua' },
         { name = 'snippy' },
         { name = 'path' },
         { name = 'buffer' },
     },
-    experimental = {
-        native_menu = true,
-        ghost_text = true,
-    },
+    experimental = { ghost_text = true },
+    view = { entries = 'native' }
 })
 
 -- Snippy

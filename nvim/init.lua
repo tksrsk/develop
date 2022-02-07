@@ -47,7 +47,7 @@ require('packer').startup(function(use)
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
     use {
-        {'olimorris/onedarkpro.nvim', config = "require('plugin_settings.ui')"},
+        {'navarasu/onedark.nvim', config = "require('plugin_settings.ui')"},
         {
             'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'arkav/lualine-lsp-progress',
             'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline', 'phaazon/hop.nvim',
@@ -66,9 +66,8 @@ require('packer').startup(function(use)
     use {
         {'hrsh7th/nvim-cmp', config = "require('plugin_settings.completion')"},
         {
-            'onsails/lspkind-nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-nvim-lua',
-            'dcampos/nvim-snippy', 'dcampos/cmp-snippy', 'honza/vim-snippets',
-            'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
+            'onsails/lspkind-nvim', 'hrsh7th/cmp-nvim-lsp', 'dcampos/nvim-snippy',
+            'dcampos/cmp-snippy', 'honza/vim-snippets', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
         },
     }
     use {

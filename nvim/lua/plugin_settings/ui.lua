@@ -1,17 +1,7 @@
 -- Onedarkpro
-local onedarkpro = require('onedarkpro')
-onedarkpro.setup({
-    options = {
-        cursorline = true,
-        terminal_colors = true,
-    },
-    hlgroups = {
-        GitSignsCurrentLineBlame = { fg = '${comment}', sp = '${green}', style = 'underline' },
-        TSDefinition = { sp = '${blue}', style = 'undercurl' },
-        TSDefinitionUsage = { sp = '${yellow}', style = 'undercurl' },
-    }
-})
-onedarkpro.load()
+local onedark = require('onedark')
+onedark.setup()
+onedark.load()
 
 -- Signs
 vim.fn.sign_define('DiagnosticSignError',   { text = '', texthl = 'DiagnosticSignError' })
@@ -26,7 +16,7 @@ require('colorizer').setup({ '*' }, { css = true })
 
 -- Lualine
 require('lualine').setup({
-    options = { theme = 'onedarkpro' },
+    options = { theme = 'onedark' },
     extensions = { 'nvim-tree' },
     sections = {
         lualine_c = {'filename', 'lsp_progress'}
