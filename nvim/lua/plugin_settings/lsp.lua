@@ -47,3 +47,6 @@ require('lsp_signature').setup({
 require('goto-preview').setup({
     default_mappings = true,
 })
+
+-- Lsp Lines
+require("lsp_lines").register_lsp_virtual_lines()
