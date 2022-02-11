@@ -3,7 +3,7 @@ vim.cmd([[
     amenu <silent> 30.01 Debugger.Breakpoint            <cmd>lua require('dap').toggle_breakpoint()<cr>
     amenu <silent> 30.02 Debugger.Start\ /\ Continue    <cmd>lua require('dap').continue()<cr>
     amenu <silent> 30.03 Debugger.Goto                  <cmd>lua require('dap').run_to_cursor()<cr>
-    amenu <silent> 30.03 Debugger.Dashboard             <cmd>lua require('dapui').toggle()<cr>
+    amenu <silent> 30.04 Debugger.Dashboard             <cmd>lua require('dapui').toggle()<cr>
 ]])
 
 -- Configs

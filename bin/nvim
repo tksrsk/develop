@@ -5,9 +5,7 @@ docker run \
     --restart=always \
     -d \
     -e HOST_ROOT=$HOME \
-    -e NVIM_LISTEN_ADDRESS=0.0.0.0:9999 \
     -p 9999:9999 \
-    --expose 9999 \
     -w $PWD \
     -v $HOME:$HOME \
     -v $HOME/.ssh:/root/.ssh \
@@ -18,4 +16,4 @@ docker run \
     -v nvim:/root/.local/share/nvim/ \
     -v project:/project \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    develop nvim --headless
+    develop nvim --headless --listen 0.0.0.0:9999

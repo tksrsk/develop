@@ -14,37 +14,20 @@ vim.fn.sign_define('DapStopped', {text='', texthl='', linehl='DiffDelete', nu
 -- Colorizer
 require('colorizer').setup({ '*' }, { css = true })
 
--- Lualine
-require('lualine').setup({
-    options = { theme = 'onedark' },
-    extensions = { 'nvim-tree' },
-    sections = {
-        lualine_c = {'filename', 'lsp_progress'}
-    }
-})
 
 -- Foldsigns
 require('foldsigns').setup()
 
--- Hop
-require('hop').setup({ create_hl_autocmd = false })
-vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>HopWordBC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>HopWordAC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>k', '<cmd>HopLineBC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>j', '<cmd>HopLineAC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>HopChar1AC<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>HopChar1BC<cr>', {})
-vim.api.nvim_set_keymap('o', 'm', "<cmd>lua require('tsht').nodes()<cr>", {})
-vim.api.nvim_set_keymap('v', 'm', ":lua require('tsht').nodes()<cr>", { noremap = true })
+-- Nvim Cursorline
+require('nvim-cursorline').setup()
 
 -- Indent Blankline
-require("indent_blankline").setup {
-    buftype_exclude = { 'terminal', 'nofile' },
+require("indent_blankline").setup({
     show_current_context = true,
-}
+})
 
 -- Marks
-require('marks').setup({})
+require('marks').setup()
 
 -- Stabilize
 require('stabilize').setup()
@@ -54,4 +37,3 @@ require('dressing').setup()
 
 -- Pretty Fold
 require('pretty-fold').setup()
-require('pretty-fold.preview').setup()

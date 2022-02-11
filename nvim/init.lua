@@ -26,9 +26,9 @@ vim.opt.tagfunc = 'v:lua.vim.lsp.tagfunc'
 vim.opt.timeoutlen = 0
 
 -- Autocmd
-vim.cmd([[
-    au TextYankPost * silent! lua vim.highlight.on_yank { timeout=200 }
-]])
+vim.api.nvim_create_autocmd({ 'TextYankPost' }, {
+    callback = function() vim.highlight.on_yank({ timeout = 200 }) end
+})
 
 -- Loading Plugins
 vim.cmd([[
@@ -38,22 +38,28 @@ vim.cmd([[
 require('packer').startup(function(use)
     use {'wbthomason/packer.nvim', opt = true, setup = "require('plugin_settings.packer')"}
     use {
-        {'editorconfig/editorconfig-vim', config = "require('plugin_settings.edit-support')"},
+        {'gpanders/editorconfig.nvim', config = "require('plugin_settings.edit-support')"},
         {
-            'blackcauldron7/surround.nvim', 'steelsojka/pears.nvim', 'winston0410/commented.nvim',
-            'ahmedkhalf/project.nvim', 'folke/which-key.nvim', 'nacro90/numb.nvim',
-            'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf',
+            'ur4ltz/surround.nvim', 'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'ahmedkhalf/project.nvim',
+            'folke/which-key.nvim', 'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf',
         }
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
+    use { 'michaelb/sniprun', run = 'bash ./install.sh', config = "require('plugin_settings.code-runner')"}
     use {
         {'navarasu/onedark.nvim', config = "require('plugin_settings.ui')"},
         {
-            'norcalli/nvim-colorizer.lua', 'nvim-lualine/lualine.nvim', 'arkav/lualine-lsp-progress',
-            'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline', 'phaazon/hop.nvim',
-            'mfussenegger/nvim-treehopper', 'lukas-reineke/indent-blankline.nvim', 'chentau/marks.nvim',
-            'luukvbaal/stabilize.nvim', 'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim', 'anuvyklack/pretty-fold.nvim',
+            'norcalli/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline', 'lukas-reineke/indent-blankline.nvim',
+            'chentoast/marks.nvim', 'luukvbaal/stabilize.nvim', 'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim', 'anuvyklack/pretty-fold.nvim',
         },
+    }
+    use {
+        {'nvim-lualine/lualine.nvim', config = "require('plugin_settings.statusline')"},
+        {'arkav/lualine-lsp-progress', 'fgheng/winbar.nvim', 'SmiteshP/nvim-gps'},
+    }
+    use {
+        {'rainbowhxch/accelerated-jk.nvim', config = "require('plugin_settings.movement')"},
+        {'phaazon/hop.nvim', 'mfussenegger/nvim-treehopper', 'nacro90/numb.nvim'},
     }
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
@@ -66,15 +72,15 @@ require('packer').startup(function(use)
     use {
         {'hrsh7th/nvim-cmp', config = "require('plugin_settings.completion')"},
         {
-            'onsails/lspkind-nvim', 'hrsh7th/cmp-nvim-lsp', 'dcampos/nvim-snippy',
+            'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'dcampos/nvim-snippy',
             'dcampos/cmp-snippy', 'honza/vim-snippets', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
         },
     }
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.lsp')"},
         {
-            'williamboman/nvim-lsp-installer', 'ray-x/lsp_signature.nvim', 'rmagatti/goto-preview',
-            'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+            'williamboman/nvim-lsp-installer', 'rmagatti/goto-preview',
+            'junnplus/nvim-lsp-setup',
         },
     }
     use {'akinsho/toggleterm.nvim', config = "require('plugin_settings.terminal')"}
@@ -83,12 +89,15 @@ require('packer').startup(function(use)
         {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.treesitter')"},
         {
             'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground',
-            'tk-shirasaka/nvim-treesitter-sql', 'p00f/nvim-ts-rainbow', 'romgrk/nvim-treesitter-context', 'JoosepAlviste/nvim-ts-context-commentstring',
+            'tk-shirasaka/nvim-treesitter-sql', 'p00f/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
         },
     }
     use {
         {'mfussenegger/nvim-dap', config = "require('plugin_settings.debugger')"},
-        {'Pocco81/DAPInstall.nvim', 'rcarriga/nvim-dap-ui'}
+        {
+            {'Pocco81/dap-buddy.nvim', branch = 'dev'},
+            'rcarriga/nvim-dap-ui'
+        }
     }
     use {'nanotee/sqls.nvim', config = "require('plugin_settings.dbms')"}
     use {

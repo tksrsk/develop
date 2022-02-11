@@ -1,7 +1,7 @@
 -- Menu
 vim.cmd([[
     amenu <silent> 10.21 Tools.Git.Status   <cmd>Neogit<cr>
-    amenu <silent> 10.22 Tools.Git.History  <cmd> DiffviewFileHistory<cr>
+    amenu <silent> 10.22 Tools.Git.History  <cmd>DiffviewFileHistory<cr>
 ]])
 
 -- Gitsigns
@@ -23,6 +23,7 @@ require('neogit').setup({
     integrations = { diffview = true },
 })
 
+-- Diffview
 require('diffview').setup({
     enhanced_diff_hl = true,
 })
