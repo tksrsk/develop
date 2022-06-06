@@ -14,4 +14,4 @@ require('lualine').setup({
 require('nvim-gps').setup()
 
 -- Winbar
-require('winbar').setup()
+require('winbar').setup({ enabled = true })

@@ -9,6 +9,7 @@ require('nvim-tree').setup({
     update_cwd = true,
     respect_buf_cwd = true,
     renderer = {
+        full_name = true,
         indent_markers = { enable = true },
         highlight_opened_files = 'name',
     },
