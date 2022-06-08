@@ -24,3 +24,6 @@ require('numb').setup()
 
 -- Matchparen
 require('matchparen').setup()
+
+-- Text case
+require('textcase').setup()

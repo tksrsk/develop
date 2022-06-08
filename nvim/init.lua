@@ -41,7 +41,7 @@ require('packer').startup(function(use)
         {'gpanders/editorconfig.nvim', config = "require('plugin_settings.edit-support')"},
         {
             'ur4ltz/surround.nvim', 'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'ahmedkhalf/project.nvim',
-            'folke/which-key.nvim', 'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf',
+            'folke/which-key.nvim', 'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim',
         }
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
