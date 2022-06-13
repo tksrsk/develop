@@ -8,24 +8,8 @@ end
 require('nvim-lsp-setup').setup({
     on_attach = function() end,
     servers = vim.tbl_deep_extend('keep', {
-        sqls = {
-            on_attach = function (client, bufnr)
-                require('sqls').on_attach(client, bufnr)
-            end
-        },
-        sumneko_lua = {
-            settings = {
-                Lua = {
-                    diagnostics = { globals = { 'vim' } },
-                    workspace = {
-                        library = {
-                            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-                        },
-                    },
-                },
-            }
-        },
+        sqls = { on_attach = require('sqls').on_attach },
+        sumneko_lua = require('lua-dev').setup(),
     }, servers)
 })
 

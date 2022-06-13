@@ -2,7 +2,25 @@
 require('surround').setup({})
 
 -- Smart pairs
-require('pairs'):setup()
+require('pairs'):setup({
+    delete = {
+        empty_line = {
+            bracket_bracket = {
+                one = { strategy = 'delete_all' },
+                multi = { strategy = 'delete_all' },
+            },
+            text_text = {
+                one = { strategy = 'leave_zero_above' },
+                multi = { strategy = 'leave_zero_above' },
+            },
+            text_bracket = {
+                one = { strategy = 'leave_zero_above' },
+                multi = { strategy = 'leave_zero_above' },
+            },
+        },
+    },
+    autojump_strategy = { unbalanced = 'all' }
+})
 
 -- Commented
 require('commented').setup({

@@ -72,15 +72,15 @@ require('packer').startup(function(use)
     use {
         {'hrsh7th/nvim-cmp', config = "require('plugin_settings.completion')"},
         {
-            'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'dcampos/nvim-snippy',
-            'dcampos/cmp-snippy', 'honza/vim-snippets', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
+            'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-nvim-lsp-signature-help',
+            'dcampos/nvim-snippy', 'dcampos/cmp-snippy', 'honza/vim-snippets', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
         },
     }
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.lsp')"},
         {
             'williamboman/nvim-lsp-installer', 'rmagatti/goto-preview',
-            'junnplus/nvim-lsp-setup',
+            'junnplus/nvim-lsp-setup', 'folke/lua-dev.nvim'
         },
     }
     use {'akinsho/toggleterm.nvim', config = "require('plugin_settings.terminal')"}
