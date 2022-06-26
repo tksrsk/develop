@@ -6,9 +6,10 @@ vim.cmd([[
 -- Configs
 require('nvim-tree').setup({
     hijack_cursor = true,
-    update_cwd = true,
+    sync_root_with_cwd = true,
     respect_buf_cwd = true,
     renderer = {
+        highlight_git = true,
         full_name = true,
         indent_markers = { enable = true },
         highlight_opened_files = 'name',
