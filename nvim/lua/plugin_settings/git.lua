@@ -1,7 +1,8 @@
 -- Menu
 vim.cmd([[
     amenu <silent> 10.21 Tools.Git.Status   <cmd>Neogit<cr>
-    amenu <silent> 10.22 Tools.Git.History  <cmd>DiffviewFileHistory<cr>
+    amenu <silent> 10.22 Tools.Git.History  <cmd>DiffviewFileHistory %<cr>
+    vmenu <silent> 10.22 Tools.Git.History  :DiffviewFileHistory<cr>
 ]])
 
 -- Gitsigns

@@ -11,6 +11,7 @@ vim.opt.foldcolumn = 'auto:4'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldnestmax = 4
 vim.opt.inccommand = 'split'
+vim.opt.jumpoptions = 'view'
 vim.opt.list = true
 vim.opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', precedes = '«', nbsp = '%' }
 vim.opt.mouse = 'r'
