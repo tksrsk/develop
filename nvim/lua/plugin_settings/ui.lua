@@ -32,4 +32,8 @@ require('stabilize').setup()
 require('dressing').setup()
 
 -- Pretty Fold
-require('ufo').setup()
+require('ufo').setup({
+    provider_selector = function(bufnr, filetype)
+        return {'treesitter', 'indent'}
+    end
+})

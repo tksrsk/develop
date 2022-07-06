@@ -1,6 +1,3 @@
--- Options
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-
 -- Configs
 require('nvim-treesitter.configs').setup({
     highlight = { enable = true },
