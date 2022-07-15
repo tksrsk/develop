@@ -21,7 +21,6 @@ vim.opt.shiftwidth = 4
 vim.opt.signcolumn = 'auto:3'
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
-vim.opt.tagfunc = 'v:lua.vim.lsp.tagfunc'
 vim.opt.timeoutlen = 0
 
 -- Autocmd
