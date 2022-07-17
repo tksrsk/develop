@@ -14,8 +14,6 @@ vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = 'view'
 vim.opt.list = true
 vim.opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', precedes = '«', nbsp = '%' }
-vim.opt.mouse = 'r'
-vim.opt.mousemodel = 'popup'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 1
