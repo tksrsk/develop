@@ -29,8 +29,9 @@ vim.api.nvim_create_autocmd({ 'TextYankPost' }, {
     callback = function() vim.highlight.on_yank({ timeout = 200 }) end
 })
 
--- Loading Plugins
+-- Exe command
 vim.cmd([[
+    aunmenu PopUp
     packadd packer.nvim
 ]])
 
@@ -50,7 +51,7 @@ require('packer').startup(function(use)
         {
             'norcalli/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline',
             'lukas-reineke/indent-blankline.nvim', 'chentoast/marks.nvim', 'luukvbaal/stabilize.nvim',
-            'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim', 'kevinhwang91/nvim-ufo', 'kevinhwang91/promise-async',
+            'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim', 'anuvyklack/pretty-fold.nvim',
         },
     }
     use {
