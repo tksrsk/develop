@@ -1,6 +1,7 @@
 -- Menu
 vim.cmd([[
     amenu <silent> PopUp.Git\ Stage         <cmd>Gitsigns stage_hunk<cr>
+    amenu <silent> PopUp.Git\ Reset         <cmd>Gitsigns reset_hunk<cr>
     vmenu <silent> PopUp.Git\ History       :DiffviewFileHistory<cr>
     amenu <silent> 10.21 Tools.Git.Status   <cmd>Neogit<cr>
     amenu <silent> 10.22 Tools.Git.History  <cmd>DiffviewFileHistory %<cr>
