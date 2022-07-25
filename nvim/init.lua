@@ -55,7 +55,7 @@ require('packer').startup(function(use)
     }
     use {
         {'nvim-lualine/lualine.nvim', config = "require('plugin_settings.statusline')"},
-        {'arkav/lualine-lsp-progress', 'fgheng/winbar.nvim', 'SmiteshP/nvim-gps'},
+        {'arkav/lualine-lsp-progress', 'SmiteshP/nvim-navic'},
     }
     use {
         {'rainbowhxch/accelerated-jk.nvim', config = "require('plugin_settings.movement')"},
