@@ -18,7 +18,7 @@ require('foldsigns').setup()
 require('nvim-cursorline').setup()
 
 -- Indent Blankline
-require("indent_blankline").setup({
+require('indent_blankline').setup({
     show_current_context = true,
 })
 
@@ -32,5 +32,4 @@ require('stabilize').setup()
 require('dressing').setup()
 
 -- Pretty Fold
-require('pretty-fold').setup({
-})
+require('pretty-fold').setup()
