@@ -1,5 +1,5 @@
 -- Surround
-require('surround').setup({})
+require('nvim-surround').setup()
 
 -- Smart pairs
 require('pairs'):setup({
