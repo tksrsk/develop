@@ -50,7 +50,7 @@ require('packer').startup(function(use)
         {
             'norcalli/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline',
             'lukas-reineke/indent-blankline.nvim', 'chentoast/marks.nvim', 'luukvbaal/stabilize.nvim',
-            'kevinhwang91/nvim-hlslens', 'stevearc/dressing.nvim', 'anuvyklack/pretty-fold.nvim',
+            'kevinhwang91/nvim-hlslens', 'anuvyklack/pretty-fold.nvim',
         },
     }
     use {
@@ -79,8 +79,8 @@ require('packer').startup(function(use)
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.lsp')"},
         {
-            'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim',
-            'rmagatti/goto-preview', 'VonHeikemen/lsp-zero.nvim',
+            'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'rmagatti/goto-preview',
+            'VonHeikemen/lsp-zero.nvim', 'creativenull/diagnosticls-configs-nvim'
         },
     }
     use {'akinsho/toggleterm.nvim', config = "require('plugin_settings.terminal')"}

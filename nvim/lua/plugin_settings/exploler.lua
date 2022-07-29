@@ -11,7 +11,10 @@ require('nvim-tree').setup({
     renderer = {
         highlight_git = true,
         full_name = true,
-        indent_markers = { enable = true },
+        indent_markers = {
+            enable = true,
+            inline_arrows = false,
+        },
         highlight_opened_files = 'name',
     },
     update_focused_file = { enable = true },

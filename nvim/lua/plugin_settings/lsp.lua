@@ -13,7 +13,13 @@ lsp.on_attach(require('nvim-navic').attach)
 lsp.configure('sqls', { on_attach = require('sqls').on_attach })
 lsp.setup()
 
+-- Diagnosticls configs
+local dls = require('diagnosticls-configs')
+dls.init({ default_config = true })
+dls.setup()
+
 -- Goto Preview
 require('goto-preview').setup({
     default_mappings = true,
+    resizing_mappings = true,
 })

@@ -14,6 +14,7 @@ RUN pacman -S --noconfirm ruby
 RUN pacman -S --noconfirm perl
 RUN pacman -S --noconfirm go
 RUN pacman -S --noconfirm mono
+RUN pacman -S --noconfirm luarocks
 
 # Neovim Clients
 RUN pip install --upgrade pip pynvim
