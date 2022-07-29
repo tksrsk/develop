@@ -79,7 +79,8 @@ require('packer').startup(function(use)
     use {
         {'neovim/nvim-lspconfig', config = "require('plugin_settings.lsp')"},
         {
-            'williamboman/nvim-lsp-installer', 'rmagatti/goto-preview', 'VonHeikemen/lsp-zero.nvim',
+            'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim',
+            'rmagatti/goto-preview', 'VonHeikemen/lsp-zero.nvim',
         },
     }
     use {'akinsho/toggleterm.nvim', config = "require('plugin_settings.terminal')"}
