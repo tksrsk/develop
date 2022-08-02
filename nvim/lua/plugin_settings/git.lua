@@ -30,3 +30,6 @@ require('neogit').setup({
 require('diffview').setup({
     enhanced_diff_hl = true,
 })
+
+-- Git Conflict
+require('git-conflict').setup()

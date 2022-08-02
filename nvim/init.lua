@@ -1,5 +1,6 @@
 -- Options
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.conceallevel = 1
 vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic' })
 vim.opt.encoding = 'utf-8'
 vim.opt.expandtab = true
@@ -63,7 +64,7 @@ require('packer').startup(function(use)
     }
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
-        {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim'},
+        {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim', 'akinsho/git-conflict.nvim'},
     }
     use {
         {'Shougo/denite.nvim', config = "require('plugin_settings.fuzzy-finder')"},
