@@ -89,14 +89,13 @@ require('packer').startup(function(use)
     use {
         {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.treesitter')"},
         {
-            'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground',
-            'p00f/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
+            'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects',
+            'nvim-treesitter/playground', 'p00f/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
         },
     }
     use {
         {'mfussenegger/nvim-dap', config = "require('plugin_settings.debugger')"},
         {
-            {'Pocco81/dap-buddy.nvim', branch = 'dev'},
             'rcarriga/nvim-dap-ui'
         }
     }
