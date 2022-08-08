@@ -49,7 +49,7 @@ require('packer').startup(function(use)
     use {
         {'navarasu/onedark.nvim', config = "require('plugin_settings.ui')"},
         {
-            'norcalli/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline',
+            'NvChad/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline',
             'lukas-reineke/indent-blankline.nvim', 'chentoast/marks.nvim', 'luukvbaal/stabilize.nvim',
             'kevinhwang91/nvim-hlslens', 'anuvyklack/pretty-fold.nvim',
         },
