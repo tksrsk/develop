@@ -9,15 +9,13 @@ vim.opt.fileformat = 'unix'
 vim.opt.fileformats = { 'unix', 'dos', 'mac' }
 vim.opt.fillchars = { foldopen = '▾', foldclose = '▸', eob = ' ', diff = '' }
 vim.opt.foldcolumn = 'auto:4'
-vim.opt.foldmethod = 'expr'
+vim.opt.foldlevel = 4
 vim.opt.foldnestmax = 4
 vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = 'view'
 vim.opt.list = true
 vim.opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', precedes = '«', nbsp = '%' }
 vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 1
 vim.opt.shiftwidth = 4
 vim.opt.signcolumn = 'auto:3'
 vim.opt.swapfile = false
@@ -49,14 +47,17 @@ require('packer').startup(function(use)
     use {
         {'navarasu/onedark.nvim', config = "require('plugin_settings.ui')"},
         {
-            'NvChad/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline',
-            'lukas-reineke/indent-blankline.nvim', 'chentoast/marks.nvim', 'luukvbaal/stabilize.nvim',
-            'kevinhwang91/nvim-hlslens', 'anuvyklack/pretty-fold.nvim',
+            'NvChad/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline', 'lukas-reineke/indent-blankline.nvim',
+            'chentoast/marks.nvim', 'luukvbaal/stabilize.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
         },
     }
     use {
+        {'kevinhwang91/nvim-ufo', config = "require('plugin_settings.fold')"},
+        {'kevinhwang91/promise-async'},
+    }
+    use {
         {'nvim-lualine/lualine.nvim', config = "require('plugin_settings.statusline')"},
-        {'arkav/lualine-lsp-progress', 'SmiteshP/nvim-navic'},
+        {'arkav/lualine-lsp-progress'},
     }
     use {
         {'rainbowhxch/accelerated-jk.nvim', config = "require('plugin_settings.movement')"},
@@ -74,7 +75,7 @@ require('packer').startup(function(use)
         {'hrsh7th/nvim-cmp', config = "require('plugin_settings.completion')"},
         {
             'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
-            'saadparwaiz1/cmp_luasnip', 'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets',
+            'hrsh7th/cmp-nvim-lsp-signature-help', 'saadparwaiz1/cmp_luasnip', 'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets',
         },
     }
     use {
@@ -89,7 +90,7 @@ require('packer').startup(function(use)
     use {
         {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.treesitter')"},
         {
-            'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects',
+            'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/nvim-treesitter-context',
             'nvim-treesitter/playground', 'p00f/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
         },
     }

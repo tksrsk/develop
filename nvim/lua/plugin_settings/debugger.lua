@@ -1,9 +1,7 @@
 -- Menu
 vim.cmd([[
     amenu <silent> PopUp.Breakpoint                     <cmd>lua require('dap').toggle_breakpoint()<cr>
-    amenu <silent> PopUp.Goto                           <cmd>lua require('dap').run_to_cursor()<cr>
     amenu <silent> 30.01 Debugger.Start\ /\ Continue    <cmd>lua require('dap').continue()<cr>
-    amenu <silent> 30.02 Debugger.Dashboard             <cmd>lua require('dapui').toggle()<cr>
 ]])
 
 -- Configs
@@ -46,6 +44,25 @@ for _, config in ipairs(dap_config) do
     end
 end
 
+dap.listeners.after.event_stopped['plugin_settings'] = function ()
+    require('dapui').open()
+    vim.cmd([[
+        amenu <silent> PopUp.Goto                  <cmd>lua require('dap').run_to_cursor()<cr>
+        amenu <silent> 30.02 Debugger.Step.Over    <cmd>lua require('dap').step_over()<cr>
+        amenu <silent> 30.03 Debugger.Step.Into    <cmd>lua require('dap').step_into()<cr>
+        amenu <silent> 30.04 Debugger.Step.Out     <cmd>lua require('dap').step_out()<cr>
+    ]])
+end
+
+dap.listeners.after.disconnect['plugin_settings'] = function ()
+    require('dapui').close()
+    vim.cmd([[
+        aunmenu PopUp.Goto
+        aunmenu Debugger.Step.Over
+        aunmenu Debugger.Step.Into
+        aunmenu Debugger.Step.Out
+    ]])
+end
 
 -- Dap UI
 require('dapui').setup()

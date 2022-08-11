@@ -9,9 +9,15 @@ vim.cmd([[
 -- Configs
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
-lsp.on_attach(require('nvim-navic').attach)
 lsp.configure('sqls', { on_attach = require('sqls').on_attach })
 lsp.setup_nvim_cmp({
+    sources = {
+        {name = 'path'},
+        {name = 'nvim_lsp_signature_help'},
+        {name = 'nvim_lsp'},
+        {name = 'buffer'},
+        {name = 'luasnip'},
+    },
     formatting = {
         format = require('lspkind').cmp_format({ with_text = false })
     },

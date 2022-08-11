@@ -28,5 +28,5 @@ require('marks').setup()
 -- Stabilize
 require('stabilize').setup()
 
--- Pretty Fold
-require('pretty-fold').setup()
+-- Numbertoggle
+require('numbertoggle').setup()
