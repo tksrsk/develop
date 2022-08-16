@@ -9,6 +9,10 @@ vim.cmd([[
 
 -- Gitsigns
 require('gitsigns').setup({
+    on_attach = function ()
+        vim.keymap.set('n', '[g', require('gitsigns').prev_hunk, { buffer = 0 })
+        vim.keymap.set('n', ']g', require('gitsigns').next_hunk, { buffer = 0 })
+    end,
     attach_to_untracked = false,
     current_line_blame = true,
     current_line_blame_formatter_opts = {

@@ -1,4 +1,4 @@
-vim.api.nvim_buf_set_keymap(0, 'n', '<cr>', '<plug>RestNvim', { silent = true })
-vim.api.nvim_buf_set_keymap(0, 'n', '<2-leftmouse>', '<plug>RestNvim', { silent = true })
-vim.api.nvim_buf_set_keymap(0, 'n', '<c-cr>', '<plug>RestNvimLast', { silent = true })
-vim.api.nvim_buf_set_keymap(0, 'n', '<c-p>', '<plug>RestNvimPreview', { silent = true })
+vim.keymap.set('n', '<cr>', '<plug>RestNvim', { silent = true, buffer = 0 })
+vim.keymap.set('n', '<2-leftmouse>', '<plug>RestNvim', { silent = true, buffer = 0 })
+vim.keymap.set('n', '<c-cr>', '<plug>RestNvimLast', { silent = true, buffer = 0 })
+vim.keymap.set('n', '<c-p>', '<plug>RestNvimPreview', { silent = true, buffer = 0 })

@@ -1,14 +1,12 @@
 -- Accelerated JK
-vim.api.nvim_set_keymap('n', 'j', '<Plug>(accelerated_jk_gj)', {})
-vim.api.nvim_set_keymap('n', 'k', '<Plug>(accelerated_jk_gk)', {})
+vim.keymap.set('n', 'j', '<Plug>(accelerated_jk_gj)')
+vim.keymap.set('n', 'k', '<Plug>(accelerated_jk_gk)')
 
 -- Hop
 require('hop').setup()
-vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>HopWordMW<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>W', '<cmd>HopAnywhereMW<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>j', '<cmd>HopLineMW<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>HopChar1MW<cr>', {})
+vim.keymap.set('n', '<leader>w', require('hop').hint_words)
+vim.keymap.set('n', '<leader>j', require('hop').hint_lines)
+vim.keymap.set('n', '<leader>f', require('hop').hint_char1)
 
 -- Nvim Treehopper
-vim.api.nvim_set_keymap('o', 'm', "<cmd>lua require('tsht').nodes()<cr>", {})
-vim.api.nvim_set_keymap('v', 'm', ":lua require('tsht').nodes()<cr>", { noremap = true })
+vim.keymap.set({'v', 'o'}, 'm', ":lua require('tsht').nodes()<cr>")

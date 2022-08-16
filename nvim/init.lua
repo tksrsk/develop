@@ -88,7 +88,7 @@ require('packer').startup(function(use)
     use {'akinsho/toggleterm.nvim', config = "require('plugin_settings.terminal')"}
     use {'tk-shirasaka/ejdict.nvim'}
     use {
-        {'nvim-treesitter/nvim-treesitter', config = "require('plugin_settings.treesitter')"},
+        {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = "require('plugin_settings.treesitter')"},
         {
             'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/nvim-treesitter-context',
             'nvim-treesitter/playground', 'p00f/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
