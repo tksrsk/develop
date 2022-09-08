@@ -9,7 +9,7 @@ vim.opt.fileformat = 'unix'
 vim.opt.fileformats = { 'unix', 'dos', 'mac' }
 vim.opt.fillchars = { foldopen = '▾', foldclose = '▸', eob = ' ', diff = '' }
 vim.opt.foldcolumn = 'auto:4'
-vim.opt.foldlevel = 4
+vim.opt.foldlevel = 99
 vim.opt.foldnestmax = 4
 vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = 'view'

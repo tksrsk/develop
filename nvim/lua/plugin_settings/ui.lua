@@ -8,7 +8,9 @@ vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='DiffAdd', nu
 vim.fn.sign_define('DapStopped', {text='', texthl='', linehl='DiffDelete', numhl='DiffDelete'})
 
 -- Colorizer
-require('colorizer').setup({ '*' }, { css = true })
+require('colorizer').setup({
+    user_default_options = { css = true },
+})
 
 
 -- Foldsigns
