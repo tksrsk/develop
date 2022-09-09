@@ -4,7 +4,8 @@ vim.cmd([[
     amenu <silent> PopUp.Git\ Reset         <cmd>Gitsigns reset_hunk<cr>
     vmenu <silent> PopUp.Git\ History       :DiffviewFileHistory<cr>
     amenu <silent> 10.21 Tools.Git.Status   <cmd>Neogit<cr>
-    amenu <silent> 10.22 Tools.Git.History  <cmd>DiffviewFileHistory %<cr>
+    amenu <silent> 10.22 Tools.Git.Diff     <cmd>DiffviewOpen<cr>
+    amenu <silent> 10.23 Tools.Git.History  <cmd>DiffviewFileHistory %<cr>
 ]])
 
 -- Gitsigns
@@ -33,7 +34,7 @@ require('neogit').setup({
 -- Diffview
 require('diffview').setup({
     enhanced_diff_hl = true,
+    view = {
+        merge_tool = { layout = 'diff3_mixed' },
+    }
 })
-
--- Git Conflict
-require('git-conflict').setup()

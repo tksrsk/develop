@@ -45,3 +45,6 @@ require('matchparen').setup()
 
 -- Text case
 require('textcase').setup()
+
+-- Cellwidth
+require('cellwidths').setup({ name = 'default' })

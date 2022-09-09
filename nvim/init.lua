@@ -40,6 +40,7 @@ require('packer').startup(function(use)
         {
             'kylechui/nvim-surround', 'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'ahmedkhalf/project.nvim',
             'folke/which-key.nvim', 'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim',
+            'delphinus/cellwidths.nvim',
         }
     }
     use {'NTBBloodbath/rest.nvim', config = "require('plugin_settings.rest-client')"}
@@ -65,7 +66,7 @@ require('packer').startup(function(use)
     }
     use {
         {'lewis6991/gitsigns.nvim', config = "require('plugin_settings.git')"},
-        {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim', 'akinsho/git-conflict.nvim'},
+        {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim'},
     }
     use {
         {'Shougo/denite.nvim', config = "require('plugin_settings.fuzzy-finder')"},
