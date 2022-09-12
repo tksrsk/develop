@@ -58,7 +58,7 @@ require('packer').startup(function(use)
     }
     use {
         {'nvim-lualine/lualine.nvim', config = "require('plugin_settings.statusline')"},
-        {'arkav/lualine-lsp-progress'},
+        {'WhoIsSethDaniel/lualine-lsp-progress'},
     }
     use {
         {'rainbowhxch/accelerated-jk.nvim', config = "require('plugin_settings.movement')"},
