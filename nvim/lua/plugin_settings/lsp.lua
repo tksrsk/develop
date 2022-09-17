@@ -22,6 +22,7 @@ lsp.setup_nvim_cmp({
         format = require('lspkind').cmp_format({ with_text = false })
     },
 })
+lsp.nvim_workspace()
 lsp.setup()
 
 -- Diagnosticls configs

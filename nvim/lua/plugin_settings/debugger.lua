@@ -8,7 +8,7 @@ vim.cmd([[
 local dap = require('dap')
 local dap_config = {
     {
-        filetype = { 'php'},
+        filetype = { 'php' },
         configurations = {
             type = 'php',
             request = 'launch',
