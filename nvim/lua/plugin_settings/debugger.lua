@@ -48,9 +48,6 @@ dap.listeners.after.event_stopped['plugin_settings'] = function ()
     require('dapui').open()
     vim.cmd([[
         amenu <silent> PopUp.Goto                  <cmd>lua require('dap').run_to_cursor()<cr>
-        amenu <silent> 30.02 Debugger.Step.Over    <cmd>lua require('dap').step_over()<cr>
-        amenu <silent> 30.03 Debugger.Step.Into    <cmd>lua require('dap').step_into()<cr>
-        amenu <silent> 30.04 Debugger.Step.Out     <cmd>lua require('dap').step_out()<cr>
     ]])
 end
 
