@@ -27,8 +27,5 @@ require('indent_blankline').setup({
 -- Marks
 require('marks').setup()
 
--- Stabilize
-require('stabilize').setup()
-
 -- Numbertoggle
 require('numbertoggle').setup()

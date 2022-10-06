@@ -18,6 +18,7 @@ vim.opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', pre
 vim.opt.number = true
 vim.opt.shiftwidth = 4
 vim.opt.signcolumn = 'auto:3'
+vim.opt.splitkeep = 'screen'
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.timeoutlen = 0
@@ -51,7 +52,7 @@ require('packer').startup(function(use)
         {'navarasu/onedark.nvim', config = load_config('ui')},
         {
             'NvChad/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline', 'lukas-reineke/indent-blankline.nvim',
-            'chentoast/marks.nvim', 'luukvbaal/stabilize.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
+            'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
         },
     }
     use {
