@@ -34,7 +34,7 @@ vim.cmd([[
     packadd packer.nvim
 ]])
 
-local load_config = function (config) require('plugin_settings.'..config) end
+local load_config = function (config) pcall(require, 'plugin_settings.'..config) end
 
 require('packer').startup(function(use)
     use {'wbthomason/packer.nvim', opt = true, setup = load_config('packer')}
