@@ -41,10 +41,13 @@ require('packer').startup(function(use)
     use {
         {'gpanders/editorconfig.nvim', config = load_config('edit-support')},
         {
-            'kylechui/nvim-surround', 'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'ahmedkhalf/project.nvim',
-            'folke/which-key.nvim', 'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim',
-            'delphinus/cellwidths.nvim',
+            'kylechui/nvim-surround', 'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'folke/which-key.nvim',
+            'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim',
         }
+    }
+    use {
+        {'rmagatti/auto-session', config = load_config('session')},
+        {'ahmedkhalf/project.nvim'}
     }
     use {'NTBBloodbath/rest.nvim', config = load_config('rest-client')}
     use { 'michaelb/sniprun', run = 'bash ./install.sh', config = load_config('code-runner')}
