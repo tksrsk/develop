@@ -20,23 +20,20 @@ local dap_config = {
     {
         filetype = { 'javascript', 'typescript', 'jasascriptreact', 'typescriptreact' },
         configurations = {
-            type = 'firefox',
+            type = 'chrome',
             request = 'attach',
-            host = 'host.docker.internal',
-            name = 'Listen for firefox',
-            url = 'http://example.com',
-            webRoot = '${workspaceFolder}',
-            pathMappings = {
-                { url = 'http://example.com', path = '${webRoot}/basedir' },
-                { url = 'file://', path = '${webRoot}' },
-                { url = 'webpack:///', path = '${webRoot}/' },
-            },
+            name = 'Listen for chrome',
+            address = 'host.docker.internal',
+            port = 8315,
+            webRoot = function() return '${workspaceFolder}' .. vim.fn.input('Document Root: ${workspaceFolder}') end,
+            urlFilter = 'http://*',
+            trace = true,
         },
     }
 }
 
 dap.adapters.php = { type = 'executable', command = 'php-debug-adapter' }
-dap.adapters.firefox = { type = 'executable', command = 'firefox-debug-adapter' }
+dap.adapters.chrome = { type = 'executable', command = 'chrome-debug-adapter' }
 
 for _, config in ipairs(dap_config) do
     for _, filetype in ipairs(config.filetype) do
