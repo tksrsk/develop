@@ -27,7 +27,6 @@ local dap_config = {
             port = 8315,
             webRoot = function() return '${workspaceFolder}' .. vim.fn.input('Document Root: ${workspaceFolder}') end,
             urlFilter = 'http://*',
-            trace = true,
         },
     }
 }
@@ -41,21 +40,18 @@ for _, config in ipairs(dap_config) do
     end
 end
 
-dap.listeners.after.event_stopped['plugin_settings'] = function ()
-    require('dapui').open()
-    vim.cmd([[
-        amenu <silent> PopUp.Goto                  <cmd>lua require('dap').run_to_cursor()<cr>
-    ]])
-end
-
-dap.listeners.after.disconnect['plugin_settings'] = function ()
-    require('dapui').close()
-    vim.cmd([[
-        aunmenu PopUp.Goto
-        aunmenu Debugger.Step.Over
-        aunmenu Debugger.Step.Into
-        aunmenu Debugger.Step.Out
-    ]])
+dap.listeners.after.event_thread['plugin_settings'] = function (_, body)
+    if body.reason == 'started' then
+        require('dapui').open()
+        vim.cmd([[
+            amenu <silent> PopUp.Goto                  <cmd>lua require('dap').run_to_cursor()<cr>
+        ]])
+    elseif body.reason == 'exited' then
+        require('dapui').close()
+        vim.cmd([[
+            aunmenu PopUp.Goto
+        ]])
+    end
 end
 
 -- Dap UI
