@@ -1,5 +1,6 @@
 -- Auto Session
 require('auto-session').setup({
+    log_level = 'error',
     auto_session_allowed_dirs = {
         '/project/*/*',
         vim.env.HOST_ROOT..'/.config/develop',
