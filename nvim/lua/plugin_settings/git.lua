@@ -1,13 +1,3 @@
--- Menu
-vim.cmd([[
-    amenu <silent> PopUp.Git\ Stage         <cmd>Gitsigns stage_hunk<cr>
-    amenu <silent> PopUp.Git\ Reset         <cmd>Gitsigns reset_hunk<cr>
-    vmenu <silent> PopUp.Git\ History       :DiffviewFileHistory<cr>
-    amenu <silent> 10.21 Tools.Git.Status   <cmd>Neogit<cr>
-    amenu <silent> 10.22 Tools.Git.Diff     <cmd>DiffviewOpen<cr>
-    amenu <silent> 10.23 Tools.Git.History  <cmd>DiffviewFileHistory %<cr>
-]])
-
 -- Gitsigns
 require('gitsigns').setup({
     on_attach = function ()

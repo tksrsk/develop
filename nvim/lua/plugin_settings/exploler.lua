@@ -1,13 +1,18 @@
--- Menu
-vim.cmd([[
-    amenu <silent> 10.11 Tools.Exproler <cmd>NvimTreeToggle<cr>
-]])
-
 -- Configs
 require('nvim-tree').setup({
     hijack_cursor = true,
     sync_root_with_cwd = true,
     respect_buf_cwd = true,
+    view = {
+        float = {
+            enable = true,
+            open_win_config = {
+                border = 'solid',
+                col = 0,
+                height = 999,
+            }
+        }
+    },
     renderer = {
         highlight_git = true,
         full_name = true,

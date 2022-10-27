@@ -1,9 +1,3 @@
--- Menu
-vim.cmd([[
-    amenu <silent> PopUp.Breakpoint                     <cmd>lua require('dap').toggle_breakpoint()<cr>
-    amenu <silent> 30.01 Debugger.Start\ /\ Continue    <cmd>lua require('dap').continue()<cr>
-]])
-
 -- Configs
 local dap = require('dap')
 local dap_config = {
