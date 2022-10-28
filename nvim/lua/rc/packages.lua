@@ -70,7 +70,7 @@ require('packer').startup({
         use {
             {'mfussenegger/nvim-dap', config = load_config('debugger')},
             {
-                'rcarriga/nvim-dap-ui'
+                'rcarriga/nvim-dap-ui', 'mxsdev/nvim-dap-vscode-js'
             }
         }
         use {

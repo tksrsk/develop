@@ -14,19 +14,23 @@ local dap_config = {
     {
         filetype = { 'javascript', 'typescript', 'jasascriptreact', 'typescriptreact' },
         configurations = {
-            type = 'chrome',
+            type = 'pwa-chrome',
             request = 'attach',
             name = 'Listen for chrome',
             address = 'host.docker.internal',
             port = 8315,
             webRoot = function() return '${workspaceFolder}' .. vim.fn.input('Document Root: ${workspaceFolder}') end,
-            urlFilter = 'http://*',
+            urlFilter = function() return 'http://' .. vim.fn.input('URL: http://') .. '*' end,
         },
     }
 }
 
 dap.adapters.php = { type = 'executable', command = 'php-debug-adapter' }
-dap.adapters.chrome = { type = 'executable', command = 'chrome-debug-adapter' }
+
+require('dap-vscode-js').setup({
+    debugger_cmd = { 'js-debug-adapter' },
+    adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
+})
 
 for _, config in ipairs(dap_config) do
     for _, filetype in ipairs(config.filetype) do
