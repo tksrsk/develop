@@ -4,23 +4,34 @@ local dap_config = {
     {
         filetype = { 'php' },
         configurations = {
-            type = 'php',
-            request = 'launch',
-            name = 'Listen for Xdebug',
-            host = 'host.docker.internal',
-            port = 9000,
+            {
+                type = 'php',
+                request = 'launch',
+                name = 'Listen for Xdebug',
+                host = 'host.docker.internal',
+                port = 9000,
+            },
         },
     },
     {
         filetype = { 'javascript', 'typescript', 'jasascriptreact', 'typescriptreact' },
         configurations = {
-            type = 'pwa-chrome',
-            request = 'attach',
-            name = 'Listen for chrome',
-            address = 'host.docker.internal',
-            port = 8315,
-            webRoot = function() return '${workspaceFolder}' .. vim.fn.input('Document Root: ${workspaceFolder}') end,
-            urlFilter = function() return 'http://' .. vim.fn.input('URL: http://') .. '*' end,
+            {
+                type = 'pwa-node',
+                request = 'launch',
+                name = 'Launch file',
+                program = '${file}',
+                cwd = '${workspaceFolder}',
+            },
+            {
+                type = 'pwa-chrome',
+                request = 'attach',
+                name = 'Listen for chrome',
+                address = 'host.docker.internal',
+                port = 8315,
+                webRoot = function() return '${workspaceFolder}' .. vim.fn.input('Document Root: ${workspaceFolder}') end,
+                urlFilter = function() return 'http://' .. vim.fn.input('URL: http://') .. '*' end,
+            },
         },
     }
 }
@@ -34,7 +45,7 @@ require('dap-vscode-js').setup({
 
 for _, config in ipairs(dap_config) do
     for _, filetype in ipairs(config.filetype) do
-        dap.configurations[filetype] = { config.configurations }
+        dap.configurations[filetype] = config.configurations
     end
 end
 

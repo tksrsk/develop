@@ -23,10 +23,7 @@ require('packer').startup({
                 'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
             },
         }
-        use {
-            {'kevinhwang91/nvim-ufo', config = load_config('fold')},
-            {'kevinhwang91/promise-async'},
-        }
+        use {'anuvyklack/pretty-fold.nvim', config = load_config('fold')}
         use {
             {'nvim-lualine/lualine.nvim', config = load_config('statusline')},
             {'WhoIsSethDaniel/lualine-lsp-progress'},
@@ -78,8 +75,8 @@ require('packer').startup({
             {'kyazdani42/nvim-web-devicons'},
         }
         use {
-            {'nvim-orgmode/orgmode', config = load_config('orgmode')},
-            {'akinsho/org-bullets.nvim', 'lukas-reineke/headlines.nvim'}
+            {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('orgmode')},
+            {'AckslD/nvim-FeMaco.lua'}
         }
     end,
     config = {

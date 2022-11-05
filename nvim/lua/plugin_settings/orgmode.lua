@@ -1,13 +1,27 @@
--- Orgmode
-require('orgmode').setup_ts_grammar()
+-- Neorg
+require('neorg').setup({
+    load = {
+        ['core.defaults'] = {},
+        ['core.norg.dirman'] = {
+            config = {
+                workspaces = {
+                    work = '/resources/orgmode/',
+                },
+            }
+        },
+        ['core.norg.concealer'] = {},
+        ['core.norg.completion'] = {
+            config = { engine = 'nvim-cmp' },
+        },
+        ['core.gtd.base'] = {
+            config = { workspace = 'work' },
+        },
+    }
+})
 
-require('orgmode').setup({
-    org_agenda_files = '/resources/orgmode/*',
-    org_default_notes_file = '/resources/orgmode/refile.org',
-    notifications = { enabled = true },
-    mappings = {
-        org = {
-            org_toggle_checkbox = '<space>',
-        }
-    },
+-- Femaco
+require('femaco').setup({
+    ensure_newline = function(base_filetype)
+        return base_filetype == 'norg'
+    end,
 })

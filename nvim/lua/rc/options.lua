@@ -1,6 +1,7 @@
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.concealcursor ='nv'
 vim.opt.conceallevel = 1
-vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic' })
+vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic', 'linematch:20' })
 vim.opt.encoding = 'utf-8'
 vim.opt.expandtab = true
 vim.opt.fileencodings = { 'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis' }
@@ -8,6 +9,8 @@ vim.opt.fileformat = 'unix'
 vim.opt.fileformats = { 'unix', 'dos', 'mac' }
 vim.opt.fillchars = { foldopen = '▾', foldclose = '▸', eob = ' ', diff = '' }
 vim.opt.foldcolumn = 'auto:4'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevel = 99
 vim.opt.foldnestmax = 4
 vim.opt.inccommand = 'split'

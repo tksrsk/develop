@@ -6,9 +6,9 @@ cmp.setup({
     view = { entries = 'native' }
 })
 
-cmp.setup.filetype('org', {
+cmp.setup.filetype('norg', {
     sources = {
-        { name = 'orgmode' },
+        { name = 'neorg' },
         { name = 'buffer' },
         { name = 'path' },
     },
