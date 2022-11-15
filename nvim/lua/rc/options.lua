@@ -24,3 +24,4 @@ vim.opt.splitkeep = 'screen'
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.timeoutlen = 0
+vim.opt.updatetime = 500

@@ -22,11 +22,8 @@ local dls = require('diagnosticls-configs')
 dls.init({ default_config = true })
 dls.setup()
 
--- Goto Preview
-require('goto-preview').setup({
-    default_mappings = true,
-    resizing_mappings = true,
-})
+-- Glance
+require('glance').setup()
 
 -- Lsp Lines
 require('lsp_lines').setup()

@@ -36,6 +36,7 @@ require('packer').startup({
             {'lewis6991/gitsigns.nvim', config = load_config('git')},
             {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim'},
         }
+        use {'kkvh/vim-docker-tools'}
         use {
             {'Shougo/denite.nvim', config = load_config('fuzzy-finder')},
             {'tk-shirasaka/denite-utils'},
@@ -50,7 +51,7 @@ require('packer').startup({
         use {
             {'neovim/nvim-lspconfig', config = load_config('lsp')},
             {
-                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'rmagatti/goto-preview',
+                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'DNLHC/glance.nvim',
                 'VonHeikemen/lsp-zero.nvim', 'creativenull/diagnosticls-configs-nvim',
                 'Maan2003/lsp_lines.nvim', 'nanotee/sqls.nvim'
             },

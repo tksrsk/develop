@@ -10,3 +10,5 @@
     cmd = nvim -d $LOCAL $REMOTE
 [pull]
     rebase = false
+[fetch]
+    prune = true
