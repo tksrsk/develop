@@ -39,7 +39,10 @@ require('packer').startup({
         use {'kkvh/vim-docker-tools'}
         use {
             {'Shougo/denite.nvim', config = load_config('fuzzy-finder')},
-            {'tk-shirasaka/denite-utils'},
+            {
+                'tk-shirasaka/denite-utils', 'nvim-telescope/telescope.nvim',
+                'nvim-telescope/telescope-fzf-native.nvim',
+            },
         }
         use {
             {'hrsh7th/nvim-cmp', config = load_config('completion')},
