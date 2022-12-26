@@ -41,7 +41,8 @@ require('packer').startup({
             {'Shougo/denite.nvim', config = load_config('fuzzy-finder')},
             {
                 'tk-shirasaka/denite-utils', 'nvim-telescope/telescope.nvim',
-                'nvim-telescope/telescope-fzf-native.nvim',
+                'nvim-telescope/telescope-ui-select.nvim',
+                {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
             },
         }
         use {
