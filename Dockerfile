@@ -22,4 +22,5 @@ RUN npm install -g npm neovim
 RUN gem install -N --no-user-install neovim
 
 # Environment Settings
+RUN git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
