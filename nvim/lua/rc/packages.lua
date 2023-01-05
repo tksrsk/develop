@@ -4,10 +4,10 @@ require('packer').startup({
     function(use)
         use {'wbthomason/packer.nvim', opt = true, setup = load_config('packer')}
         use {
-            {'gpanders/editorconfig.nvim', config = load_config('edit-support')},
+            {'kylechui/nvim-surround', config = load_config('edit-support')},
             {
-                'kylechui/nvim-surround', 'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'folke/which-key.nvim',
-                'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim',
+                'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'folke/which-key.nvim', 'monkoose/matchparen.nvim',
+                'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim',
             }
         }
         use {

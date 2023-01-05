@@ -3,6 +3,6 @@ vim.cmd([[
 ]])
 
 require('rc.autocmds')
+require('rc.menus')
 require('rc.options')
 require('rc.packages')
-require('rc.menus')
