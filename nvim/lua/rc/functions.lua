@@ -1,15 +1,20 @@
 local function statuColumnFoldColumns(lnum)
-    local curr = vim.fn.foldlevel(lnum)
+    local open = vim.fn.foldclosed(lnum) == -1
+    local curr = vim.fn.foldlevel(lnum) + (open and 0 or 1)
     local prev = vim.fn.foldlevel(lnum - 1)
     local next = vim.fn.foldlevel(lnum + 1)
+    local hl = curr % 2 == 0 and '%#Type#' or '%#Constant#'
+    local text = ' '
 
     if curr > prev then
-        return vim.fn.foldclosed(lnum) == -1 and '▾' or '▸'
+        text = open and '▾' or '▸'
     elseif curr > next then
-        return vim.fn.foldclosed(lnum) == -1 and '' or ' '
+        text = open and '' or ' '
     else
-        return curr > 0 and '│' or ' '
+        text = curr > 0 and '│' or ' '
     end
+
+    return string.format('%s%s%%##', hl, text)
 end
 
 _G.ScFc = statuColumnFoldColumns
