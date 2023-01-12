@@ -12,7 +12,6 @@ require('colorizer').setup({
     user_default_options = { css = true },
 })
 
-
 -- Foldsigns
 require('foldsigns').setup()
 
@@ -29,6 +28,9 @@ require('marks').setup()
 
 -- Hlslens
 require('hlslens').setup()
+
+-- Statuscol
+require('statuscol').setup()
 
 -- Numbertoggle
 require('numbertoggle').setup()

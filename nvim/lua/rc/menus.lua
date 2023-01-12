@@ -7,7 +7,6 @@ vim.cmd([[
     amenu <silent> PopUp.References                     <cmd>Glance references<cr>
     amenu <silent> PopUp.Type                           <cmd>Glance type_definitions<cr>
     amenu <silent> PopUp.Implementation                 <cmd>Glance implementations<cr>
-    amenu <silent> PopUp.Breakpoint                     <cmd>lua require('dap').toggle_breakpoint()<cr>
     amenu <silent> PopUp.Edit\ Block                    <cmd>FeMaco<cr>
     amenu <silent> PopUp.Run                            <cmd>SnipRun<cr>
     amenu <silent> 10.01 Tools.Exproler                 <cmd>NvimTreeToggle<cr>

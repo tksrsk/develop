@@ -10,7 +10,6 @@ require('gitsigns').setup({
         relative_time = true,
     },
     word_diff = true,
-    show_deleted = true,
     preview_config = { border = 'solid' },
 })
 

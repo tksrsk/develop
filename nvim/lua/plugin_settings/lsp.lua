@@ -24,6 +24,3 @@ dls.setup()
 
 -- Glance
 require('glance').setup()
-
--- Lsp Lines
-require('lsp_lines').setup()

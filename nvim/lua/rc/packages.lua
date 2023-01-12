@@ -20,7 +20,7 @@ require('packer').startup({
             {'navarasu/onedark.nvim', config = load_config('ui')},
             {
                 'NvChad/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline', 'lukas-reineke/indent-blankline.nvim',
-                'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
+                'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'luukvbaal/statuscol.nvim', 'sitiom/nvim-numbertoggle',
             },
         }
         use {'anuvyklack/pretty-fold.nvim', config = load_config('fold')}
@@ -56,8 +56,7 @@ require('packer').startup({
             {'neovim/nvim-lspconfig', config = load_config('lsp')},
             {
                 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'DNLHC/glance.nvim',
-                'VonHeikemen/lsp-zero.nvim', 'creativenull/diagnosticls-configs-nvim',
-                'Maan2003/lsp_lines.nvim', 'nanotee/sqls.nvim'
+                'VonHeikemen/lsp-zero.nvim', 'creativenull/diagnosticls-configs-nvim', 'nanotee/sqls.nvim',
             },
         }
         use {'akinsho/toggleterm.nvim', config = load_config('terminal')}
@@ -66,7 +65,7 @@ require('packer').startup({
             {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = load_config('treesitter')},
             {
                 'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/nvim-treesitter-context',
-                'nvim-treesitter/playground', 'p00f/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
+                'nvim-treesitter/playground', 'mrjones2014/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
             },
         }
         use {
