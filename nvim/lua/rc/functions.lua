@@ -9,7 +9,7 @@ local function statuColumnFoldColumns(lnum)
     if curr > prev then
         text = open and '▾' or '▸'
     elseif curr > next then
-        text = open and '' or ' '
+        text = open and '▴' or ' '
     else
         text = curr > 0 and '│' or ' '
     end

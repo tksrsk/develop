@@ -12,7 +12,6 @@ vim.opt.foldcolumn = 'auto'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevel = 99
-vim.opt.foldnestmax = 4
 vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = 'view'
 vim.opt.list = true

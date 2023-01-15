@@ -14,7 +14,7 @@ require('auto-session').setup({
 
 -- Project
 require('project_nvim').setup({
-    ignore_lsp = { 'bashls', 'sqls' },
+    detection_methods = { "pattern" },
     silent_chdir = false,
     scope_chdir = 'tab',
 })
