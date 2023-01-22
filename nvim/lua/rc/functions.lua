@@ -7,7 +7,9 @@ local function statuColumnFoldColumns()
     local hl = curr % 2 == 0 and '%#Type#' or '%#Constant#'
     local text = ' '
 
-    if curr > prev then
+    if vim.v.virtnum > 0 then
+        text = ' '
+    elseif curr > prev then
         text = open and '╭' or '├'
     elseif curr > next then
         text = open and '╰' or ' '

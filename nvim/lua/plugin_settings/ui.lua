@@ -1,7 +1,5 @@
 -- Onedarkpro
-local onedark = require('onedark')
-onedark.setup()
-onedark.load()
+require('onedark').load()
 
 -- Signs
 vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='DiffAdd', numhl='DiffAdd'})
