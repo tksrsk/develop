@@ -9,3 +9,6 @@ require('lualine').setup({
         lualine_c = { 'filename', 'lsp_progress' }
     },
 })
+
+-- Barbecue
+require('barbecue').setup()

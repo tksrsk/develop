@@ -7,7 +7,7 @@ require('packer').startup({
             {'kylechui/nvim-surround', config = load_config('edit-support')},
             {
                 'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'folke/which-key.nvim', 'monkoose/matchparen.nvim',
-                'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim',
+                'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim', 'delphinus/emcl.nvim',
             }
         }
         use {
@@ -26,7 +26,9 @@ require('packer').startup({
         use {'anuvyklack/pretty-fold.nvim', config = load_config('fold')}
         use {
             {'nvim-lualine/lualine.nvim', config = load_config('statusline')},
-            {'WhoIsSethDaniel/lualine-lsp-progress'},
+            {
+                'WhoIsSethDaniel/lualine-lsp-progress', 'utilyre/barbecue.nvim', 'SmiteshP/nvim-navic',
+            },
         }
         use {
             {'rainbowhxch/accelerated-jk.nvim', config = load_config('movement')},
@@ -64,7 +66,7 @@ require('packer').startup({
         use {
             {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = load_config('treesitter')},
             {
-                'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/nvim-treesitter-context',
+                'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects',
                 'nvim-treesitter/playground', 'mrjones2014/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
             },
         }

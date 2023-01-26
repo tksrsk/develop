@@ -42,3 +42,6 @@ require('textcase').setup()
 
 -- Cellwidth
 require('cellwidths').setup({ name = 'default' })
+
+-- Emcl
+require('emcl').setup()
