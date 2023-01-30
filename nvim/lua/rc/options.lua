@@ -7,7 +7,7 @@ vim.opt.expandtab = true
 vim.opt.fileencodings = { 'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis' }
 vim.opt.fileformat = 'unix'
 vim.opt.fileformats = { 'unix', 'dos', 'mac' }
-vim.opt.fillchars = { foldopen = '╭', foldclose = '├', eob = ' ', diff = '' }
+vim.opt.fillchars = { foldopen = '▾', foldclose = '▸', eob = ' ', diff = '' }
 vim.opt.foldcolumn = 'auto'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
@@ -20,7 +20,6 @@ vim.opt.number = true
 vim.opt.shiftwidth = 4
 vim.opt.signcolumn = 'auto:3'
 vim.opt.splitkeep = 'screen'
-vim.o.statuscolumn = '%@v:lua.ScLa@%{%v:lua.ScLn()%}%T%@v:lua.ScSa@%s%T%@v:lua.ScFa@%{%v:lua.ScFc(v:lnum)%}%{v:lua.ScSp()}%T'
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.timeoutlen = 0
