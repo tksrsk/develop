@@ -1,0 +1,4 @@
+#!/bin/bash
+
+arg=$1
+nvim --server 0.0.0.0:9999 --remote-send "\"<C-\><C-N>:call EnvimConnect(0, 'envim_clipboard', ['${arg}'], 'b')<CR>\""
