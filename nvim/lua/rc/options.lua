@@ -17,6 +17,7 @@ vim.opt.jumpoptions = 'view'
 vim.opt.list = true
 vim.opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', precedes = '«', nbsp = '%' }
 vim.opt.number = true
+vim.opt.sessionoptions:append({ 'winpos', 'localoptions' })
 vim.opt.shiftwidth = 4
 vim.opt.signcolumn = 'auto:3'
 vim.opt.splitkeep = 'screen'
