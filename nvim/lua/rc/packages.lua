@@ -19,15 +19,16 @@ require('packer').startup({
         use {
             {'navarasu/onedark.nvim', config = load_config('ui')},
             {
-                'NvChad/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline', 'lukas-reineke/indent-blankline.nvim',
-                'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'luukvbaal/statuscol.nvim', 'sitiom/nvim-numbertoggle',
+                'NvChad/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline',
+                'lukas-reineke/indent-blankline.nvim', 'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
             },
         }
         use {'anuvyklack/pretty-fold.nvim', config = load_config('fold')}
         use {
             {'nvim-lualine/lualine.nvim', config = load_config('statusline')},
             {
-                'WhoIsSethDaniel/lualine-lsp-progress', 'utilyre/barbecue.nvim', 'SmiteshP/nvim-navic',
+                'WhoIsSethDaniel/lualine-lsp-progress', 'utilyre/barbecue.nvim',
+                'SmiteshP/nvim-navic', 'luukvbaal/statuscol.nvim',
             },
         }
         use {

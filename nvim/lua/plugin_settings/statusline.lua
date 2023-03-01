@@ -12,3 +12,14 @@ require('lualine').setup({
 
 -- Barbecue
 require('barbecue').setup()
+
+-- Statuscol
+local builtin = require('statuscol.builtin')
+require('statuscol').setup({
+    setopt = true,
+    segments = {
+        { text = { builtin.lnumfunc }, click = 'v:lua.ScLa' },
+        { text = { '%s' }, click = 'v:lua.ScSa' },
+        { text = { builtin.foldfunc, ' ' }, click = 'v:lua.ScFa' },
+    },
+})

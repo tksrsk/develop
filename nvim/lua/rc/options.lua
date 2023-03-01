@@ -10,7 +10,7 @@ vim.opt.fileformats = { 'unix', 'dos', 'mac' }
 vim.opt.fillchars = { foldopen = '▾', foldclose = '▸', eob = ' ', diff = '' }
 vim.opt.foldcolumn = 'auto'
 vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldlevel = 99
 vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = 'view'

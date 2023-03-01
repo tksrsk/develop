@@ -27,11 +27,5 @@ require('marks').setup()
 -- Hlslens
 require('hlslens').setup()
 
--- Statuscol
-require('statuscol').setup({
-    setopt = true,
-    foldfunc = 'builtin',
-})
-
 -- Numbertoggle
 require('numbertoggle').setup()
