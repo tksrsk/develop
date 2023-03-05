@@ -1,4 +1,4 @@
 -- Sniprun
 require('sniprun').setup({
-    display = { 'TempFloatingWindow' }
+    display = { 'TerminalWithCode' }
 })

@@ -9,6 +9,8 @@ vim.cmd([[
     amenu <silent> PopUp.Implementation                 <cmd>Glance implementations<cr>
     amenu <silent> PopUp.Edit\ Block                    <cmd>FeMaco<cr>
     amenu <silent> PopUp.Run                            <cmd>SnipRun<cr>
+    amenu <silent> PopUp.Goto                           <cmd>lua require('dap').run_to_cursor()<cr>
+    amenu disable  PopUp.Goto
     amenu <silent> 10.01 Tools.Exproler                 <cmd>NvimTreeToggle<cr>
     amenu <silent> 10.11 Tools.Git.Status               <cmd>Neogit<cr>
     amenu <silent> 10.12 Tools.Git.Diff                 <cmd>DiffviewOpen<cr>

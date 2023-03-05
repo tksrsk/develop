@@ -53,12 +53,12 @@ dap.listeners.after.event_thread['plugin_settings'] = function (_, body)
     if body.reason == 'started' then
         require('dapui').open()
         vim.cmd([[
-            amenu <silent> PopUp.Goto                  <cmd>lua require('dap').run_to_cursor()<cr>
+            amenu enable PopUp.Goto
         ]])
     elseif body.reason == 'exited' then
         require('dapui').close()
         vim.cmd([[
-            aunmenu PopUp.Goto
+            aunmenu disable PopUp.Goto
         ]])
     end
 end
