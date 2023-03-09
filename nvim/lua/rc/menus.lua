@@ -9,6 +9,7 @@ vim.cmd([[
     amenu <silent> PopUp.Implementation                 <cmd>Glance implementations<cr>
     amenu <silent> PopUp.Edit\ Block                    <cmd>FeMaco<cr>
     amenu <silent> PopUp.Run                            <cmd>SnipRun<cr>
+    amenu <silent> PopUp.Task                           <cmd>OverseerRun<cr>
     amenu <silent> PopUp.Goto                           <cmd>lua require('dap').run_to_cursor()<cr>
     amenu disable  PopUp.Goto
     amenu <silent> 10.01 Tools.Exproler                 <cmd>NvimTreeToggle<cr>
@@ -17,6 +18,7 @@ vim.cmd([[
     amenu <silent> 10.13 Tools.Git.History              <cmd>DiffviewFileHistory %<cr>
     amenu <silent> 10.31 Tools.Runner.Close             <cmd>SnipClose<cr>
     amenu <silent> 10.32 Tools.Runner.Reset             <cmd>SnipReset<cr>
+    amenu <silent> 10.33 Tools.Runner.Tasks             <cmd>OverseerToggle<cr>
     amenu <silent> 10.41 Tools.Docker                   <cmd>DockerToolsToggle<cr>
     amenu <silent> 10.51 Tools.Orgmode                  <cmd>Neorg workspace work<cr>
     amenu <silent> 10.61 Tools.Installer.Packer         <cmd>PackerSync<cr>

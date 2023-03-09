@@ -6,7 +6,7 @@ require('lualine').setup({
     },
     extensions = { 'nvim-dap-ui', 'nvim-tree', 'quickfix', 'toggleterm' },
     sections = {
-        lualine_c = { 'filename', 'lsp_progress' }
+        lualine_c = { 'filename', 'overseer', 'lsp_progress' }
     },
 })
 

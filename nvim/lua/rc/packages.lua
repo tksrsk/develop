@@ -15,7 +15,10 @@ require('packer').startup({
             {'ahmedkhalf/project.nvim'}
         }
         use {'rest-nvim/rest.nvim', config = load_config('rest-client')}
-        use { 'michaelb/sniprun', run = 'bash ./install.sh', config = load_config('code-runner')}
+        use {
+            {'michaelb/sniprun', run = 'bash ./install.sh', config = load_config('code-runner')},
+            {'stevearc/overseer.nvim'}
+        }
         use {
             {'navarasu/onedark.nvim', config = load_config('ui')},
             {
