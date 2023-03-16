@@ -15,20 +15,34 @@ require('barbecue').setup()
 
 -- Statuscol
 local builtin = require('statuscol.builtin')
+local C = require('statuscol.ffidef').C
 local function foldfunc (args)
-    local lnum = vim.v.lnum
-    local open = vim.fn.foldclosed(lnum) == -1
-    local curr = vim.fn.foldlevel(lnum) + (open and 0 or 1)
-    local hl = curr % 2 == 0 and '#Type#' or '#Constant#'
-    local foldtext = builtin.foldfunc(args)
+	local width = C.compute_foldcolumn(args.wp, 0)
+	if width == 0 then return '' end
 
-    return foldtext:gsub('#%w+#', hl)
+	local curr = C.fold_info(args.wp, vim.v.lnum)
+	local next = C.fold_info(args.wp, vim.v.lnum + 1)
+    local open = curr.lines == 0
+    local hl = (curr.level + (open and 0 or 1)) % 2 == 0 and '%#Type#' or '%#Constant#'
+    local text = ' '
+
+    if curr.start == vim.v.lnum then
+        text = open and '╭' or '├'
+    elseif curr.level > 0 and curr.start ~= next.start then
+        text = curr.level >= next.level and '╰' or '│'
+    else
+        text = curr.level > 0 and '│' or ' '
+    end
+
+    return string.format(' %s%s%%## ', hl, text)
 end
 require('statuscol').setup({
     setopt = true,
     segments = {
-        { text = { builtin.lnumfunc }, click = 'v:lua.ScLa' },
-        { text = { '%s' }, click = 'v:lua.ScSa' },
-        { text = { foldfunc, ' ' }, click = 'v:lua.ScFa' },
+        { sign = { name = { 'Diagnostic' }, maxwidth = 1, auto = true }, click = 'v:lua.ScSa' },
+        { text = { builtin.lnumfunc }, click = 'v:lua.ScLa', },
+        { sign = { name = { '.*' }, maxwidth = 2, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
+        { sign = { name = { 'GitSigns' }, maxwidth = 1, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
+        { text = { foldfunc }, click = 'v:lua.ScFa' },
     },
 })
