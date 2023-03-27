@@ -1,3 +1,4 @@
+vim.loader.enable()
 vim.cmd([[
     packadd packer.nvim
 ]])
