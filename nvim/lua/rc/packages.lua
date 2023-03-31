@@ -77,8 +77,8 @@ require('packer').startup({
             }
         }
         use {
-            {'kyazdani42/nvim-tree.lua', config = load_config('exploler')},
-            {'kyazdani42/nvim-web-devicons'},
+            {'nvim-tree/nvim-tree.lua', config = load_config('exploler')},
+            {'nvim-tree/nvim-web-devicons'},
         }
         use {
             {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('orgmode')},
