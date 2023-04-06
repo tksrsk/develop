@@ -10,6 +10,7 @@ vim.cmd([[
     amenu <silent> PopUp.Edit\ Block                    <cmd>FeMaco<cr>
     amenu <silent> PopUp.Run                            <cmd>SnipRun<cr>
     amenu <silent> PopUp.Task                           <cmd>OverseerRun<cr>
+    amenu <silent> PopUp.Preview                        <cmd>MarkdownPreviewToggle<cr>
     amenu <silent> PopUp.Goto                           <cmd>lua require('dap').run_to_cursor()<cr>
     amenu disable  PopUp.Goto
     amenu <silent> 10.01 Tools.Exproler                 <cmd>NvimTreeToggle<cr>

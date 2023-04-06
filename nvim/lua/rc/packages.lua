@@ -85,7 +85,7 @@ require('packer').startup({
             {'AckslD/nvim-FeMaco.lua'}
         }
         use {
-            { 'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()', config = load_config('browser-integration') },
+            { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', config = load_config('browser-integration') },
             {'dhruvasagar/vim-open-url'},
         }
     end,
