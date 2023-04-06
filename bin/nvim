@@ -6,6 +6,7 @@ docker run \
     -d \
     -e HOST_ROOT=$HOME \
     -p 9999:9999 \
+    -p 8080:8080 \
     -w $PWD \
     -v $HOME:$HOME \
     -v $HOME/.ssh:/root/.ssh \

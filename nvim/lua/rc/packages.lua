@@ -84,6 +84,10 @@ require('packer').startup({
             {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('orgmode')},
             {'AckslD/nvim-FeMaco.lua'}
         }
+        use {
+            { 'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()', config = load_config('browser-integration') },
+            {'dhruvasagar/vim-open-url'},
+        }
     end,
     config = {
         display = { open_fn = require('packer.util').float },
