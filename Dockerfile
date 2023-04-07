@@ -1,20 +1,20 @@
-FROM archlinux
+FROM greyltc/archlinux-aur
 
 # Install packages
 ADD mirrorlist /etc/pacman.d/mirrorlist
-RUN pacman -Syyu --noconfirm
-RUN pacman -S --noconfirm diffutils procps-ng openssh man-db gawk
-RUN pacman -S --noconfirm gcc clang make cmake automake autoconf pkgconf m4 gettext ninja
-RUN pacman -S --noconfirm neovim fish unzip git wget ripgrep jq
-RUN pacman -S --noconfirm docker docker-compose
-RUN pacman -S --noconfirm php composer
-RUN pacman -S --noconfirm python python-pip
-RUN pacman -S --noconfirm nodejs npm
-RUN pacman -S --noconfirm ruby
-RUN pacman -S --noconfirm perl
-RUN pacman -S --noconfirm go
-RUN pacman -S --noconfirm mono
-RUN pacman -S --noconfirm luarocks
+RUN aur-install -yy
+RUN aur-install diffutils procps-ng openssh man-db gawk
+RUN aur-install gcc clang make cmake automake autoconf pkgconf m4 gettext ninja
+RUN aur-install neovim fish unzip git wget ripgrep jq mariadb-clients postgresql mssql-tools
+RUN aur-install docker docker-compose
+RUN aur-install php composer
+RUN aur-install python python-pip
+RUN aur-install nodejs npm
+RUN aur-install ruby
+RUN aur-install perl
+RUN aur-install go
+RUN aur-install mono
+RUN aur-install luarocks
 
 # Neovim Clients
 RUN pip install --upgrade pip pynvim

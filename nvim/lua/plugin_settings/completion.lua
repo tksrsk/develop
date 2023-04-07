@@ -6,6 +6,13 @@ cmp.setup({
     view = { entries = 'native' }
 })
 
+cmp.setup.filetype({ 'sql', 'mysql', 'plsql' }, {
+    sources = {
+        { name = 'vim-dadbod-completion' },
+        { name = 'buffer' },
+    },
+})
+
 cmp.setup.filetype('norg', {
     sources = {
         { name = 'neorg' },

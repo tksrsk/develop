@@ -4,9 +4,6 @@ lsp.preset({
     name = 'recommended',
     set_lsp_keymaps = { preserve_mappings = false },
 })
-lsp.configure('sqls', {
-    on_attach = require('sqls').on_attach
-})
 lsp.setup_nvim_cmp({
     sources = {
         {name = 'path'},

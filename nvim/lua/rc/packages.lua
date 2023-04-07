@@ -40,6 +40,10 @@ require('packer').startup({
         }
         use {'kkvh/vim-docker-tools'}
         use {
+            {'tpope/vim-dadbod', config = load_config('dbms')},
+            {'kristijanhusak/vim-dadbod-ui'}
+        }
+        use {
             {'Shougo/denite.nvim', config = load_config('fuzzy-finder')},
             {
                 'tk-shirasaka/denite-utils', 'nvim-telescope/telescope.nvim',
@@ -51,14 +55,15 @@ require('packer').startup({
             {'hrsh7th/nvim-cmp', config = load_config('completion')},
             {
                 'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
-                'hrsh7th/cmp-nvim-lsp-signature-help', 'saadparwaiz1/cmp_luasnip', 'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets',
+                'hrsh7th/cmp-nvim-lsp-signature-help', 'saadparwaiz1/cmp_luasnip', 'L3MON4D3/LuaSnip',
+                'rafamadriz/friendly-snippets', 'kristijanhusak/vim-dadbod-completion',
             },
         }
         use {
             {'neovim/nvim-lspconfig', config = load_config('lsp')},
             {
                 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'DNLHC/glance.nvim',
-                'VonHeikemen/lsp-zero.nvim', 'creativenull/diagnosticls-configs-nvim', 'nanotee/sqls.nvim',
+                'VonHeikemen/lsp-zero.nvim', 'creativenull/diagnosticls-configs-nvim',
             },
         }
         use {'akinsho/toggleterm.nvim', config = load_config('terminal')}
