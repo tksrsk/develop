@@ -10,9 +10,6 @@ require('colorizer').setup({
     user_default_options = { css = true },
 })
 
--- Foldsigns
-require('foldsigns').setup()
-
 -- Nvim Cursorline
 require('nvim-cursorline').setup()
 

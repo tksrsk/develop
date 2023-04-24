@@ -19,8 +19,8 @@ require('packer').startup({
         use {
             {'navarasu/onedark.nvim', config = load_config('ui')},
             {
-                'NvChad/nvim-colorizer.lua', 'lewis6991/foldsigns.nvim', 'yamatsum/nvim-cursorline',
-                'lukas-reineke/indent-blankline.nvim', 'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
+                'NvChad/nvim-colorizer.lua', 'yamatsum/nvim-cursorline', 'lukas-reineke/indent-blankline.nvim',
+                'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
             },
         }
         use {
@@ -55,8 +55,7 @@ require('packer').startup({
             {'hrsh7th/nvim-cmp', config = load_config('completion')},
             {
                 'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
-                'hrsh7th/cmp-nvim-lsp-signature-help', 'saadparwaiz1/cmp_luasnip', 'L3MON4D3/LuaSnip',
-                'rafamadriz/friendly-snippets', 'kristijanhusak/vim-dadbod-completion',
+                'hrsh7th/cmp-nvim-lsp-signature-help', 'L3MON4D3/LuaSnip', 'kristijanhusak/vim-dadbod-completion',
             },
         }
         use {
