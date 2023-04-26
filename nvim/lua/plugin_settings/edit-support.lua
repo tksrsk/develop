@@ -13,9 +13,27 @@ require('pairs'):setup({
                 one = { strategy = 'leave_zero_above' },
                 multi = { strategy = 'leave_zero_above' },
             },
+            bracket_text = {
+                one = { strategy = 'delete_all' },
+                multi = { strategy = 'delete_all' },
+            },
             text_bracket = {
                 one = { strategy = 'leave_zero_above' },
                 multi = { strategy = 'leave_zero_above' },
+            },
+        },
+        empty_pre = {
+            text_text = {
+                one = { strategy = 'leave_zero_below' },
+                multi = { strategy = 'leave_zero_below' },
+            },
+            bracket_text = {
+                one = { strategy = 'delete_all' },
+                multi = { strategy = 'delete_all' },
+            },
+            text_bracket = {
+                one = { strategy = 'leave_zero_below' },
+                multi = { strategy = 'leave_zero_below' },
             },
         },
     },
