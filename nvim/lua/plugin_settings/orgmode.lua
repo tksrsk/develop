@@ -13,12 +13,6 @@ require('neorg').setup({
         ['core.completion'] = {
             config = { engine = 'nvim-cmp' },
         },
+        ['core.looking-glass'] = {},
     }
-})
-
--- Femaco
-require('femaco').setup({
-    ensure_newline = function(base_filetype)
-        return base_filetype == 'norg'
-    end,
 })

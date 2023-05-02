@@ -84,10 +84,7 @@ require('packer').startup({
             {'nvim-tree/nvim-tree.lua', config = load_config('exploler')},
             {'nvim-tree/nvim-web-devicons'},
         }
-        use {
-            {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('orgmode')},
-            {'AckslD/nvim-FeMaco.lua'}
-        }
+        use {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('orgmode')}
         use {
             { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', config = load_config('browser-integration') },
             {'dhruvasagar/vim-open-url'},
