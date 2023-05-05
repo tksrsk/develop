@@ -23,6 +23,3 @@ require('marks').setup()
 
 -- Hlslens
 require('hlslens').setup()
-
--- Numbertoggle
-require('numbertoggle').setup()
