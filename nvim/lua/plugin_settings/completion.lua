@@ -2,8 +2,8 @@
 local cmp = require('cmp')
 
 cmp.setup({
-    experimental = { ghost_text = true },
-    view = { entries = 'native' }
+    experimental = { ghost_text = {} },
+    view = { entries = 'native' },
 })
 
 cmp.setup.filetype({ 'sql', 'mysql', 'plsql' }, {

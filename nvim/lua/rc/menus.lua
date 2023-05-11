@@ -16,8 +16,7 @@ vim.cmd([[
     amenu <silent> 10.11 Tools.Git.Status               <cmd>Neogit<cr>
     amenu <silent> 10.12 Tools.Git.Diff                 <cmd>DiffviewOpen<cr>
     amenu <silent> 10.13 Tools.Git.History              <cmd>DiffviewFileHistory %<cr>
-    amenu <silent> 10.21 Tools.Runner.Close             <cmd>SnipClose<cr>
-    amenu <silent> 10.23 Tools.Runner.Tasks             <cmd>OverseerToggle<cr>
+    amenu <silent> 10.21 Tools.Runner                   <cmd>OverseerToggle<cr>
     amenu <silent> 10.31 Tools.DB                       <cmd>DBUIToggle<cr>
     amenu <silent> 10.41 Tools.Docker                   <cmd>DockerToolsToggle<cr>
     amenu <silent> 10.51 Tools.Orgmode                  <cmd>Neorg workspace work<cr>
