@@ -1,6 +1,7 @@
 vim.cmd([[
     aunmenu PopUp
     amenu <silent> PopUp.Git\ Stage                     <cmd>Gitsigns stage_hunk<cr>
+    amenu <silent> PopUp.Git\ Undo\ stage               <cmd>Gitsigns undo_stage_hunk<cr>
     amenu <silent> PopUp.Git\ Reset                     <cmd>Gitsigns reset_hunk<cr>
     vmenu <silent> PopUp.Git\ History                   :DiffviewFileHistory<cr>
     amenu <silent> PopUp.Definition                     <cmd>Glance definitions<cr>
