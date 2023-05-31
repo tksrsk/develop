@@ -1,28 +1,19 @@
--- Configs
+-- Mason
+require('mason').setup();
+require('mason-lspconfig').setup({
+    automatic_installation = true,
+})
+require('mason-null-ls').setup({
+    automatic_installation = true,
+})
+
+-- Lsp Zero
 local lsp = require('lsp-zero')
 lsp.preset({
     name = 'recommended',
-    set_lsp_keymaps = { preserve_mappings = false },
+    manage_nvim_cmp = { set_format = false },
 })
-lsp.setup_nvim_cmp({
-    sources = {
-        {name = 'path'},
-        {name = 'nvim_lsp_signature_help'},
-        {name = 'nvim_lsp'},
-        {name = 'buffer'},
-        {name = 'luasnip'},
-    },
-    formatting = {
-        format = require('lspkind').cmp_format({ with_text = false })
-    },
-})
-lsp.nvim_workspace()
 lsp.setup()
-
--- Diagnosticls configs
-local dls = require('diagnosticls-configs')
-dls.init({ default_config = true })
-dls.setup()
 
 -- Glance
 require('glance').setup()

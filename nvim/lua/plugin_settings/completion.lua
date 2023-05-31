@@ -2,6 +2,16 @@
 local cmp = require('cmp')
 
 cmp.setup({
+    sources = {
+        {name = 'path'},
+        {name = 'nvim_lsp_signature_help'},
+        {name = 'nvim_lsp'},
+        {name = 'buffer'},
+        {name = 'luasnip'},
+    },
+    formatting = {
+        format = require('lspkind').cmp_format({ with_text = false })
+    },
     experimental = { ghost_text = {} },
     view = { entries = 'native' },
 })

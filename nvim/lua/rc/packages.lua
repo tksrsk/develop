@@ -61,8 +61,9 @@ require('packer').startup({
         use {
             {'neovim/nvim-lspconfig', config = load_config('lsp')},
             {
-                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'DNLHC/glance.nvim',
-                'VonHeikemen/lsp-zero.nvim', 'creativenull/diagnosticls-configs-nvim',
+                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim',
+                'jose-elias-alvarez/null-ls.nvim', 'jay-babu/mason-null-ls.nvim',
+                'DNLHC/glance.nvim', 'VonHeikemen/lsp-zero.nvim',
             },
         }
         use {'akinsho/toggleterm.nvim', config = load_config('terminal')}
