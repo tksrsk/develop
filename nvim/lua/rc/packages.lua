@@ -19,7 +19,7 @@ require('packer').startup({
         use {
             {'navarasu/onedark.nvim', config = load_config('ui')},
             {
-                'NvChad/nvim-colorizer.lua', 'yamatsum/nvim-cursorline', 'lukas-reineke/indent-blankline.nvim',
+                'NvChad/nvim-colorizer.lua', 'echasnovski/mini.cursorword', 'lukas-reineke/indent-blankline.nvim',
                 'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
             },
         }

@@ -1,4 +1,4 @@
--- Onedarkpro
+-- Onedark
 require('onedark').load()
 
 -- Signs
@@ -10,8 +10,8 @@ require('colorizer').setup({
     user_default_options = { css = true },
 })
 
--- Nvim Cursorline
-require('nvim-cursorline').setup()
+-- Mini Cursorline
+require('mini.cursorword').setup()
 
 -- Indent Blankline
 require('indent_blankline').setup({

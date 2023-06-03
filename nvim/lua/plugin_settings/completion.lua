@@ -2,6 +2,8 @@
 local cmp = require('cmp')
 
 cmp.setup({
+    preselect = 'item',
+    completion = { completeopt = 'menu,menuone,noinsert' },
     sources = {
         {name = 'path'},
         {name = 'nvim_lsp_signature_help'},
