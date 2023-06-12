@@ -4,3 +4,8 @@ require('project_nvim').setup({
     silent_chdir = false,
     scope_chdir = 'tab',
 })
+
+-- Package Info
+require('package-info').setup({
+    package_manager = 'npm'
+})

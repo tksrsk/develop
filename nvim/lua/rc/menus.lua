@@ -11,6 +11,7 @@ vim.cmd([[
     amenu <silent> PopUp.Preview                        <cmd>MarkdownPreviewToggle<cr>
     amenu <silent> PopUp.Goto                           <cmd>lua require('dap').run_to_cursor()<cr>
     amenu disable  PopUp.Goto
+    amenu <silent> PopUp.Node\ Packages                 <cmd>Telescope package_info<cr>
     amenu <silent> 10.01 Tools.Exproler                 <cmd>NvimTreeToggle<cr>
     amenu <silent> 10.11 Tools.Git.Status               <cmd>Neogit<cr>
     amenu <silent> 10.12 Tools.Git.Diff                 <cmd>DiffviewOpen<cr>

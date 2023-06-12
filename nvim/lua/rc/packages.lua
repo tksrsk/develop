@@ -10,7 +10,10 @@ require('packer').startup({
                 'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim', 'delphinus/emcl.nvim',
             }
         }
-        use {'ahmedkhalf/project.nvim', config = load_config('workspace')}
+        use {
+            {'ahmedkhalf/project.nvim', config = load_config('workspace')},
+            {'vuki656/package-info.nvim', 'MunifTanjim/nui.nvim'}
+        }
         use {'rest-nvim/rest.nvim', config = load_config('rest-client')}
         use {
             {'michaelb/sniprun', run = 'bash ./install.sh', config = load_config('code-runner')},
