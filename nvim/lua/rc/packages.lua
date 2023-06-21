@@ -35,7 +35,7 @@ require('packer').startup({
         }
         use {
             {'rainbowhxch/accelerated-jk.nvim', config = load_config('movement')},
-            {'phaazon/hop.nvim', 'mfussenegger/nvim-treehopper', 'nacro90/numb.nvim'},
+            {'folke/flash.nvim', 'nacro90/numb.nvim'},
         }
         use {
             {'lewis6991/gitsigns.nvim', config = load_config('git')},
