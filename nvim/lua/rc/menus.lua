@@ -19,7 +19,7 @@ vim.cmd([[
     amenu <silent> 10.21 Tools.Runner                   <cmd>OverseerToggle<cr>
     amenu <silent> 10.31 Tools.DB                       <cmd>DBUIToggle<cr>
     amenu <silent> 10.41 Tools.Docker                   <cmd>DockerToolsToggle<cr>
-    amenu <silent> 10.51 Tools.Orgmode                  <cmd>Neorg workspace work<cr>
+    amenu <silent> 10.51 Tools.Orgmode                  <cmd>tabnew \| Neorg workspace work<cr>
     amenu <silent> 10.61 Tools.Installer.Packer         <cmd>PackerSync<cr>
     amenu <silent> 10.61 Tools.Installer.Mason          <cmd>Mason<cr>
     amenu <silent> 20.01 Fuzzy\ Finder.Denite           <cmd>Denite source<cr>

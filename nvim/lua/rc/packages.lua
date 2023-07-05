@@ -39,7 +39,7 @@ require('packer').startup({
         }
         use {
             {'lewis6991/gitsigns.nvim', config = load_config('git')},
-            {'nvim-lua/plenary.nvim', 'TimUntersberger/neogit', 'sindrets/diffview.nvim'},
+            {'nvim-lua/plenary.nvim', 'NeogitOrg/neogit', 'sindrets/diffview.nvim'},
         }
         use {'kkvh/vim-docker-tools'}
         use {
@@ -89,10 +89,7 @@ require('packer').startup({
             {'nvim-tree/nvim-web-devicons'},
         }
         use {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('orgmode')}
-        use {
-            { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install', config = load_config('browser-integration') },
-            {'dhruvasagar/vim-open-url'},
-        }
+        use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', config = load_config('browser-integration')}
     end,
     config = {
         display = { open_fn = require('packer.util').float },
