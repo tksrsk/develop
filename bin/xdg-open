@@ -1,4 +1,4 @@
 #!/bin/bash
 
 arg=$1
-nvim --server 0.0.0.0:9999 --remote-send "\"<C-\><C-N>:silent call EnvimConnect(0, 'envim_openurl', '${arg}', 'b')<CR>\""
+nvim --server $NVIM_SERVER --remote-send "\"<C-\><C-N>:silent call EnvimConnect(0, 'envim_openurl', '${arg}', 'b')<CR>\""
