@@ -1,3 +1,4 @@
+vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.concealcursor = 'nv'
 vim.opt.conceallevel = 1
