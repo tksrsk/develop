@@ -3,9 +3,11 @@ require('mason').setup();
 require('mason-lspconfig').setup({
     automatic_installation = true,
 })
-require('mason-null-ls').setup({
-    automatic_installation = true,
-})
+
+-- Efmls Configs
+local efmls = require('efmls-configs')
+efmls.init({ default_config = true })
+efmls.setup()
 
 -- Lsp Zero
 local lsp = require('lsp-zero')

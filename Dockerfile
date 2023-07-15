@@ -17,9 +17,7 @@ RUN aur-install mono
 RUN aur-install luarocks
 
 # Neovim Clients
-RUN pip install --upgrade pip pynvim
-RUN npm install -g npm neovim
-RUN gem install -N --no-user-install neovim
+RUN aur-install python-neovim-git nodejs-neovim ruby-neovim
 
 # Environment Settings
 RUN git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
