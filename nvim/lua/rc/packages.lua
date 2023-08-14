@@ -74,7 +74,7 @@ require('packer').startup({
             {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = load_config('treesitter')},
             {
                 'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects',
-                'nvim-treesitter/playground', 'mrjones2014/nvim-ts-rainbow', 'JoosepAlviste/nvim-ts-context-commentstring',
+                'nvim-treesitter/playground', 'HiPhish/rainbow-delimiters.nvim', 'JoosepAlviste/nvim-ts-context-commentstring',
             },
         }
         use {

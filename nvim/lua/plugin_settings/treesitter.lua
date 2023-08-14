@@ -26,7 +26,6 @@ require('nvim-treesitter.configs').setup({
         },
     },
     playground = { enable = true },
-    rainbow = { enable = true },
     context_commentstring = { enable = true },
     ensure_installed = 'all',
 })
