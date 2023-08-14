@@ -7,6 +7,7 @@ vim.cmd([[
     amenu <silent> PopUp.Type                           <cmd>Glance type_definitions<cr>
     amenu <silent> PopUp.Implementation                 <cmd>Glance implementations<cr>
     amenu <silent> PopUp.Run                            <cmd>SnipRun<cr>
+    vmenu <silent> PopUp.Run                            :SnipRun<cr>
     amenu <silent> PopUp.Task                           <cmd>OverseerRun<cr>
     amenu <silent> PopUp.Preview                        <cmd>MarkdownPreviewToggle<cr>
     amenu <silent> PopUp.Goto                           <cmd>lua require('dap').run_to_cursor()<cr>

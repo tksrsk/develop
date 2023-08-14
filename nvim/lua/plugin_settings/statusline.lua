@@ -34,7 +34,7 @@ local function foldfunc (args)
         text = curr.level > 0 and '│' or ' '
     end
 
-    return string.format(' %s%s%%## ', hl, text)
+    return string.format('%s%s%%##', hl, text)
 end
 require('statuscol').setup({
     setopt = true,
@@ -44,5 +44,6 @@ require('statuscol').setup({
         { sign = { name = { '.*' }, maxwidth = 2, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
         { sign = { name = { 'GitSigns' }, maxwidth = 1, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
         { text = { foldfunc }, click = 'v:lua.ScFa' },
+        { text = { ' ' } },
     },
 })
