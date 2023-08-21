@@ -1,44 +1,8 @@
 -- Surround
 require('nvim-surround').setup()
 
--- Smart pairs
-require('pairs'):setup({
-    delete = {
-        empty_line = {
-            bracket_bracket = {
-                one = { strategy = 'delete_all' },
-                multi = { strategy = 'delete_all' },
-            },
-            text_text = {
-                one = { strategy = 'leave_zero_above' },
-                multi = { strategy = 'leave_zero_above' },
-            },
-            bracket_text = {
-                one = { strategy = 'delete_all' },
-                multi = { strategy = 'delete_all' },
-            },
-            text_bracket = {
-                one = { strategy = 'leave_zero_above' },
-                multi = { strategy = 'leave_zero_above' },
-            },
-        },
-        empty_pre = {
-            text_text = {
-                one = { strategy = 'leave_zero_below' },
-                multi = { strategy = 'leave_zero_below' },
-            },
-            bracket_text = {
-                one = { strategy = 'delete_all' },
-                multi = { strategy = 'delete_all' },
-            },
-            text_bracket = {
-                one = { strategy = 'leave_zero_below' },
-                multi = { strategy = 'leave_zero_below' },
-            },
-        },
-    },
-    autojump_strategy = { unbalanced = 'all' }
-})
+-- Nvim Insx
+require('insx.preset.standard').setup()
 
 -- Commented
 require('commented').setup({

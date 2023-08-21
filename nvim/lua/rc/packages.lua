@@ -6,7 +6,7 @@ require('packer').startup({
         use {
             {'kylechui/nvim-surround', config = load_config('edit-support')},
             {
-                'ZhiyuanLck/smart-pairs', 'winston0410/commented.nvim', 'folke/which-key.nvim', 'monkoose/matchparen.nvim',
+                'hrsh7th/nvim-insx', 'winston0410/commented.nvim', 'folke/which-key.nvim', 'monkoose/matchparen.nvim',
                 'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim', 'delphinus/emcl.nvim',
             }
         }

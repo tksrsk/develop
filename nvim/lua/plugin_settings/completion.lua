@@ -1,4 +1,4 @@
--- Nvim Compe
+-- Nvim Cmp
 local cmp = require('cmp')
 
 cmp.setup({

@@ -5,9 +5,7 @@ require('mason-lspconfig').setup({
 })
 
 -- Efmls Configs
-local efmls = require('efmls-configs')
-efmls.init({ default_config = true })
-efmls.setup()
+local languages = require('efmls-configs.defaults').languages()
 
 -- Lsp Zero
 local lsp = require('lsp-zero')
@@ -19,6 +17,7 @@ lsp.set_sign_icons({ error = '', warn = '', hint = '', info = '' })
 vim.diagnostic.config({ virtual_text = false })
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').efm.setup({ settings = { languages = languages } })
 
 lsp.setup()
 
