@@ -1,37 +1,20 @@
--- Configs
-require('nvim-tree').setup({
-    hijack_cursor = true,
-    sync_root_with_cwd = true,
-    respect_buf_cwd = true,
-    view = {
-        float = {
-            enable = true,
-            open_win_config = {
-                border = 'solid',
-                col = 0,
-                height = 999,
-            }
-        }
-    },
-    renderer = {
-        highlight_git = true,
-        full_name = true,
-        indent_markers = {
-            enable = true,
-            inline_arrows = false,
+-- Neo Tree
+require('neo-tree').setup({
+    sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
+    source_selector = {
+        winbar = true,
+        sources = {
+            { source = 'filesystem' },
+            { source = 'buffers' },
+            { source = 'git_status' },
+            { source = 'document_symbols' },
         },
-        highlight_opened_files = 'name',
     },
-    update_focused_file = { enable = true },
-    diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-        show_on_open_dirs = false,
+    filesystem = {
+        follow_current_file = { enabled = true },
+        use_libuv_file_watcher = true,
     },
-    git = {
-        enable = true,
-        show_on_dirs = true,
-        show_on_open_dirs = false,
+    buffers = {
+        follow_current_file = { enabled = true },
     },
-    filters = { dotfiles = true },
 })

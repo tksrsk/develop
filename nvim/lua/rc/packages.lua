@@ -74,7 +74,7 @@ require('packer').startup({
             {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = load_config('treesitter')},
             {
                 'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects',
-                'nvim-treesitter/playground', 'HiPhish/rainbow-delimiters.nvim', 'JoosepAlviste/nvim-ts-context-commentstring',
+                'HiPhish/rainbow-delimiters.nvim', 'JoosepAlviste/nvim-ts-context-commentstring',
             },
         }
         use {
@@ -84,7 +84,7 @@ require('packer').startup({
             }
         }
         use {
-            {'nvim-tree/nvim-tree.lua', config = load_config('exploler')},
+            {'nvim-neo-tree/neo-tree.nvim', config = load_config('exploler')},
             {'nvim-tree/nvim-web-devicons'},
         }
         use {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('orgmode')}
