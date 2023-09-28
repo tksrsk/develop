@@ -14,8 +14,8 @@ require('colorizer').setup({
 require('mini.cursorword').setup()
 
 -- Indent Blankline
-require('indent_blankline').setup({
-    show_current_context = true,
+require('ibl').setup({
+    scope = { highlight = { 'Function' } }
 })
 
 -- Marks
