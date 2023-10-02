@@ -15,7 +15,10 @@ require('mini.cursorword').setup()
 
 -- Indent Blankline
 require('ibl').setup({
-    scope = { highlight = { 'Function' } }
+    scope = {
+        highlight = { 'Function' },
+        include = { node_type = { ['*'] = { '*' } } },
+    }
 })
 
 -- Marks
