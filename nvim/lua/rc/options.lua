@@ -12,7 +12,7 @@ vim.opt.fillchars = { fold = ' ', foldopen = '╭', foldclose = '├', eob = ' '
 vim.opt.foldcolumn = 'auto'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldtext = '[[getline(v:foldstart), "NonText"]]'
+vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
 vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = 'view'
 vim.opt.list = true
