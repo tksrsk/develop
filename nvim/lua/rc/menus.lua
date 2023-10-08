@@ -20,12 +20,13 @@ vim.cmd([[
     amenu <silent> 10.21 Tools.Runner                   <cmd>OverseerToggle<cr>
     amenu <silent> 10.31 Tools.DB                       <cmd>DBUIToggle<cr>
     amenu <silent> 10.41 Tools.Docker                   <cmd>DockerToolsToggle<cr>
-    amenu <silent> 10.51 Tools.Orgmode                  <cmd>tabnew \| Neorg workspace work<cr>
+    amenu <silent> 10.51 Tools.Debugger                 <cmd>lua require('dap').continue()<cr>
     amenu <silent> 10.61 Tools.Installer.Packer         <cmd>PackerSync<cr>
-    amenu <silent> 10.61 Tools.Installer.Mason          <cmd>Mason<cr>
-    amenu <silent> 20.01 Fuzzy\ Finder.Denite           <cmd>Denite source<cr>
-    amenu <silent> 20.02 Fuzzy\ Finder.Telescope        <cmd>Telescope<cr>
-    amenu <silent> 20.03 Fuzzy\ Finder.Resume.Denite    <cmd>Denite -resume<cr>
-    amenu <silent> 20.04 Fuzzy\ Finder.Resume.Telescope <cmd>Telescope resume<cr>
-    amenu <silent> 30.01 Debugger.Start\ /\ Continue    <cmd>lua require('dap').continue()<cr>
+    amenu <silent> 10.62 Tools.Installer.Mason          <cmd>Mason<cr>
+    amenu <silent> 20.01 Fuzzy\ Finder.Telescope        <cmd>Telescope<cr>
+    amenu <silent> 20.02 Fuzzy\ Finder.Resume           <cmd>Telescope resume<cr>
+    amenu <silent> 30.01 Note.Orgmode                   <cmd>tabnew \| Neorg workspace work<cr>
+    amenu <silent> 30.11 Note.Zettelkasten.New\ Note    <cmd>ZkNew<cr>
+    amenu <silent> 30.11 Note.Zettelkasten.Notes        <cmd>ZkNotes<cr>
+    amenu <silent> 30.12 Note.Zettelkasten.Tags         <cmd>ZkTags<cr>
 ]])

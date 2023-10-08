@@ -25,6 +25,8 @@ require('nvim-treesitter.configs').setup({
             },
         },
     },
-    context_commentstring = { enable = true },
     ensure_installed = 'all',
 })
+
+-- Ts Context Commentstring
+require('ts_context_commentstring').setup {}

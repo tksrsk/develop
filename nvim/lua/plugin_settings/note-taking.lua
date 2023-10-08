@@ -17,3 +17,8 @@ require('neorg').setup({
         ['core.looking-glass'] = {},
     }
 })
+
+-- Zk
+require('zk').setup({
+    picker = 'telescope'
+})

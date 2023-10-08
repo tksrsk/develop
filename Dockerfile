@@ -5,7 +5,7 @@ ADD mirrorlist /etc/pacman.d/mirrorlist
 RUN aur-install -yy
 RUN aur-install diffutils procps-ng openssh man-db gawk
 RUN aur-install gcc clang make cmake automake autoconf pkgconf m4 gettext ninja
-RUN aur-install neovim fish unzip git wget ripgrep jq mariadb-clients postgresql mssql-tools
+RUN aur-install neovim fish unzip git wget ripgrep jq mariadb-clients postgresql mssql-tools sqlite
 RUN aur-install docker docker-compose
 RUN aur-install php composer
 RUN aur-install python python-pip

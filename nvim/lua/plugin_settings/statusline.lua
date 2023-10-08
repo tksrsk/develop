@@ -42,7 +42,7 @@ require('statuscol').setup({
         { sign = { name = { 'Diagnostic' }, maxwidth = 1, auto = true }, click = 'v:lua.ScSa' },
         { text = { builtin.lnumfunc }, click = 'v:lua.ScLa', },
         { sign = { name = { '.*' }, maxwidth = 2, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
-        { sign = { name = { 'GitSigns' }, maxwidth = 1, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
+        { sign = { namespace = { 'gitsigns' }, maxwidth = 1, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
         { text = { foldfunc }, click = 'v:lua.ScFa' },
         { text = { ' ' } },
     },

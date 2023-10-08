@@ -22,7 +22,7 @@ require('packer').startup({
         use {
             {'navarasu/onedark.nvim', config = load_config('ui')},
             {
-                'NvChad/nvim-colorizer.lua', 'echasnovski/mini.cursorword', 'lukas-reineke/indent-blankline.nvim',
+                'NvChad/nvim-colorizer.lua', 'sontungexpt/stcursorword', 'lukas-reineke/indent-blankline.nvim',
                 'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
             },
         }
@@ -47,9 +47,8 @@ require('packer').startup({
             {'kristijanhusak/vim-dadbod-ui'}
         }
         use {
-            {'Shougo/denite.nvim', config = load_config('fuzzy-finder')},
+            {'nvim-telescope/telescope.nvim', config = load_config('fuzzy-finder')},
             {
-                'tk-shirasaka/denite-utils', 'nvim-telescope/telescope.nvim',
                 'nvim-telescope/telescope-ui-select.nvim',
                 {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
             },
@@ -69,7 +68,6 @@ require('packer').startup({
             },
         }
         use {'akinsho/toggleterm.nvim', config = load_config('terminal')}
-        use {'tk-shirasaka/ejdict.nvim'}
         use {
             {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = load_config('treesitter')},
             {
@@ -87,7 +85,10 @@ require('packer').startup({
             {'nvim-neo-tree/neo-tree.nvim', config = load_config('exploler')},
             {'nvim-tree/nvim-web-devicons'},
         }
-        use {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('orgmode')}
+        use {
+            {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('note-taking')},
+            {'mickael-menu/zk-nvim'}
+        }
         use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', config = load_config('browser-integration')}
     end,
     config = {

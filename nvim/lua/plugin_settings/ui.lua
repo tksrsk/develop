@@ -11,7 +11,7 @@ require('colorizer').setup({
 })
 
 -- Mini Cursorline
-require('mini.cursorword').setup()
+require('stcursorword').setup()
 
 -- Indent Blankline
 require('ibl').setup({
