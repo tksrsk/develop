@@ -25,7 +25,7 @@ vim.cmd([[
     amenu <silent> 10.62 Tools.Installer.Mason          <cmd>Mason<cr>
     amenu <silent> 20.01 Fuzzy\ Finder.Telescope        <cmd>Telescope<cr>
     amenu <silent> 20.02 Fuzzy\ Finder.Resume           <cmd>Telescope resume<cr>
-    amenu <silent> 30.01 Note.Orgmode                   <cmd>tabnew \| Neorg workspace work<cr>
+    amenu <silent> 30.01 Note.Orgmode                   <cmd>Neorg<cr>
     amenu <silent> 30.11 Note.Zettelkasten.New\ Note    <cmd>ZkNew<cr>
     amenu <silent> 30.11 Note.Zettelkasten.Notes        <cmd>ZkNotes<cr>
     amenu <silent> 30.12 Note.Zettelkasten.Tags         <cmd>ZkTags<cr>

@@ -1,7 +1,7 @@
 vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.concealcursor = 'nv'
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 2
 vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic', 'linematch:20' })
 vim.opt.encoding = 'utf-8'
 vim.opt.expandtab = true

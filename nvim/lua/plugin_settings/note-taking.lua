@@ -7,6 +7,7 @@ require('neorg').setup({
                 workspaces = {
                     work = '/resources/orgmode/',
                 },
+                default_workspace = 'work',
             }
         },
         ['core.ui.calendar'] = {},
