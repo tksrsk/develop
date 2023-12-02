@@ -29,4 +29,4 @@ require('nvim-treesitter.configs').setup({
 })
 
 -- Ts Context Commentstring
-require('ts_context_commentstring').setup {}
+require('ts_context_commentstring').setup()

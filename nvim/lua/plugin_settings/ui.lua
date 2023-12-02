@@ -14,12 +14,7 @@ require('colorizer').setup({
 require('stcursorword').setup()
 
 -- Indent Blankline
-require('ibl').setup({
-    scope = {
-        highlight = { 'Function' },
-        include = { node_type = { ['*'] = { '*' } } },
-    }
-})
+require('ibl').setup()
 
 -- Marks
 require('marks').setup()
