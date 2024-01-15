@@ -41,7 +41,6 @@ require('packer').startup({
             {'lewis6991/gitsigns.nvim', config = load_config('git')},
             {'nvim-lua/plenary.nvim', 'NeogitOrg/neogit', 'sindrets/diffview.nvim'},
         }
-        use {'kkvh/vim-docker-tools'}
         use {
             {'tpope/vim-dadbod', config = load_config('dbms')},
             {'kristijanhusak/vim-dadbod-ui'}
