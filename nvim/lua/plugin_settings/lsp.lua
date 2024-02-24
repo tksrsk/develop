@@ -21,3 +21,6 @@ require('mason-lspconfig').setup({
 
 -- Glance
 require('glance').setup()
+
+-- Eagle
+require('eagle').setup({ border = 'solid' })

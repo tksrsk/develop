@@ -62,8 +62,8 @@ require('packer').startup({
         use {
             {'neovim/nvim-lspconfig', config = load_config('lsp')},
             {
-                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim',
-                'creativenull/efmls-configs-nvim', 'DNLHC/glance.nvim', 'VonHeikemen/lsp-zero.nvim',
+                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'creativenull/efmls-configs-nvim',
+                'DNLHC/glance.nvim', 'VonHeikemen/lsp-zero.nvim', 'soulis-1256/eagle.nvim'
             },
         }
         use {'akinsho/toggleterm.nvim', config = load_config('terminal')}
@@ -86,7 +86,7 @@ require('packer').startup({
         }
         use {
             {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('note-taking')},
-            {'mickael-menu/zk-nvim'}
+            {'zk-org/zk-nvim'}
         }
         use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', config = load_config('browser-integration')}
     end,

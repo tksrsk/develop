@@ -22,3 +22,16 @@ vim.api.nvim_create_autocmd({ 'FileType', 'BufEnter', 'WinEnter' }, {
         end
     end
 })
+
+vim.api.nvim_create_autocmd({ 'MenuPopup' }, {
+    group = group,
+    callback = function()
+        local bufnr = vim.fn.bufnr()
+        vim.keymap.set("n", "<MouseMove>", "", { buffer = bufnr })
+        vim.api.nvim_create_autocmd({ 'CursorMoved' }, {
+            group = group,
+            once = true,
+            callback = function() vim.keymap.del("n", "<MouseMove>", { buffer = bufnr }) end
+        })
+    end
+})
