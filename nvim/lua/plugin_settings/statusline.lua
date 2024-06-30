@@ -4,9 +4,16 @@ require('lualine').setup({
         theme = 'auto',
         globalstatus = true,
     },
-    extensions = { 'nvim-dap-ui', 'nvim-tree', 'quickfix', 'toggleterm', 'overseer' },
+    extensions = {
+        'nvim-dap-ui',
+        'neo-tree',
+        'quickfix',
+        'toggleterm',
+        'overseer',
+        'mason'
+    },
     sections = {
-        lualine_c = { 'filename', 'overseer', 'lsp_progress' }
+        lualine_c = { 'filename', 'overseer' }
     },
 })
 
@@ -39,7 +46,7 @@ end
 require('statuscol').setup({
     setopt = true,
     segments = {
-        { sign = { name = { 'Diagnostic' }, maxwidth = 1, auto = true }, click = 'v:lua.ScSa' },
+        { sign = { namespace = { 'diagnostic' }, maxwidth = 1, auto = true }, click = 'v:lua.ScSa' },
         { text = { builtin.lnumfunc }, click = 'v:lua.ScLa', },
         { sign = { name = { '.*' }, maxwidth = 2, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
         { sign = { namespace = { 'gitsigns' }, maxwidth = 1, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },

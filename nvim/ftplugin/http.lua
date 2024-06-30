@@ -1,4 +1,3 @@
-vim.keymap.set('n', '<cr>', '<plug>RestNvim', { silent = true, buffer = 0 })
-vim.keymap.set('n', '<2-leftmouse>', '<plug>RestNvim', { silent = true, buffer = 0 })
-vim.keymap.set('n', '<c-cr>', '<plug>RestNvimLast', { silent = true, buffer = 0 })
-vim.keymap.set('n', '<c-p>', '<plug>RestNvimPreview', { silent = true, buffer = 0 })
+vim.keymap.set('n', '<cr>', '<cmd>lua require("kulala").run()<cr>', { silent = true, buffer = 0 })
+vim.keymap.set('n', '<2-leftmouse>', '<cmd>lua require("kulala").run()<cr>', { silent = true, buffer = 0 })
+vim.keymap.set('n', '<tab>', '<cmd>lua require("kulala").toggle_view()<cr>', { silent = true, buffer = 0 })

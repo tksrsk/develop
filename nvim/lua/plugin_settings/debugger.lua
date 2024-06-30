@@ -49,13 +49,16 @@ for _, config in ipairs(dap_config) do
     end
 end
 
-dap.listeners.after.event_thread['plugin_settings'] = function (_, body)
-    if body.reason == 'started' then
+dap.listeners.after.event_stopped['plugin_settings'] = function (_, body)
+    if body.reason == 'breakpoint' then
         require('dapui').open()
         vim.cmd([[
             amenu enable PopUp.Goto
         ]])
-    elseif body.reason == 'exited' then
+    end
+end
+dap.listeners.after.event_thread['plugin_settings'] = function (_, body)
+    if body.reason == 'exited' then
         require('dapui').close()
         vim.cmd([[
             aunmenu disable PopUp.Goto

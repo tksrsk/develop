@@ -6,15 +6,15 @@ require('packer').startup({
         use {
             {'kylechui/nvim-surround', config = load_config('edit-support')},
             {
-                'hrsh7th/nvim-insx', 'winston0410/commented.nvim', 'folke/which-key.nvim', 'monkoose/matchparen.nvim',
-                'kevinhwang91/nvim-bqf', 'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim', 'delphinus/emcl.nvim',
+                'hrsh7th/nvim-insx', 'folke/which-key.nvim', 'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf',
+                'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim', 'delphinus/emcl.nvim',
             }
         }
         use {
             {'ahmedkhalf/project.nvim', config = load_config('workspace')},
             {'vuki656/package-info.nvim', 'MunifTanjim/nui.nvim'}
         }
-        use {'rest-nvim/rest.nvim', config = load_config('rest-client')}
+        use {'mistweaverco/kulala.nvim', config = load_config('rest-client')}
         use {
             {'michaelb/sniprun', run = 'bash ./install.sh', config = load_config('code-runner')},
             {'stevearc/overseer.nvim'}
@@ -22,16 +22,13 @@ require('packer').startup({
         use {
             {'navarasu/onedark.nvim', config = load_config('ui')},
             {
-                'NvChad/nvim-colorizer.lua', 'sontungexpt/stcursorword', 'lukas-reineke/indent-blankline.nvim',
+                'NvChad/nvim-colorizer.lua', 'sontungexpt/stcursorword', 'shellRaining/hlchunk.nvim',
                 'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
             },
         }
         use {
             {'nvim-lualine/lualine.nvim', config = load_config('statusline')},
-            {
-                'WhoIsSethDaniel/lualine-lsp-progress', 'utilyre/barbecue.nvim',
-                'SmiteshP/nvim-navic', 'luukvbaal/statuscol.nvim',
-            },
+            {'utilyre/barbecue.nvim', 'SmiteshP/nvim-navic', 'luukvbaal/statuscol.nvim'},
         }
         use {
             {'rainbowhxch/accelerated-jk.nvim', config = load_config('movement')},
@@ -69,10 +66,7 @@ require('packer').startup({
         use {'akinsho/toggleterm.nvim', config = load_config('terminal')}
         use {
             {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = load_config('treesitter')},
-            {
-                'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects',
-                'HiPhish/rainbow-delimiters.nvim', 'JoosepAlviste/nvim-ts-context-commentstring',
-            },
+            {'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'HiPhish/rainbow-delimiters.nvim'},
         }
         use {
             {'mfussenegger/nvim-dap', config = load_config('debugger')},
@@ -86,7 +80,7 @@ require('packer').startup({
         }
         use {
             {'nvim-neorg/neorg', run = ':Neorg sync-parsers', config = load_config('note-taking')},
-            {'zk-org/zk-nvim'}
+            {'nvim-neorg/lua-utils.nvim', 'nvim-neotest/nvim-nio', 'pysan3/pathlib.nvim', 'zk-org/zk-nvim'}
         }
         use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', config = load_config('browser-integration')}
     end,

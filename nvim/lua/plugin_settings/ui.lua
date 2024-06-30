@@ -13,8 +13,10 @@ require('colorizer').setup({
 -- Mini Cursorline
 require('stcursorword').setup()
 
--- Indent Blankline
-require('ibl').setup()
+-- Hlchunk
+require('hlchunk').setup({
+    chunk = { enable = true },
+})
 
 -- Marks
 require('marks').setup()
