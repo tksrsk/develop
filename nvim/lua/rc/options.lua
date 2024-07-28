@@ -28,5 +28,4 @@ vim.opt.splitright = true
 vim.opt.swapfile = false
 vim.opt.smoothscroll = true
 vim.opt.tabstop = 4
-vim.opt.timeoutlen = 0
 vim.opt.updatetime = 500
