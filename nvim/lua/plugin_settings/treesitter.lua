@@ -1,6 +1,12 @@
 -- Configs
 require('nvim-treesitter.configs').setup({
-    highlight = { enable = true },
+    highlight = {
+        enable = true,
+        disable = function(_, buf)
+            local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+            return ok and stats and stats.size > 1024 * 1024 or false
+        end,
+    },
     incremental_selection = { enable = true },
     indent = { enable = true },
     refactor = {

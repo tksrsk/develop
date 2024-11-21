@@ -10,7 +10,8 @@ require('lualine').setup({
         'quickfix',
         'toggleterm',
         'overseer',
-        'mason'
+        'mason',
+        'kulala',
     },
     sections = {
         lualine_c = { 'filename', 'overseer' }

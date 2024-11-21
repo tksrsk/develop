@@ -38,10 +38,7 @@ require('packer').startup({
             {'lewis6991/gitsigns.nvim', config = load_config('git')},
             {'nvim-lua/plenary.nvim', 'NeogitOrg/neogit', 'sindrets/diffview.nvim'},
         }
-        use {
-            {'tpope/vim-dadbod', config = load_config('dbms')},
-            {'kristijanhusak/vim-dadbod-ui'}
-        }
+        use {'kndndrj/nvim-dbee', run = function() require('dbee').install('go') end, config = load_config('dbms')}
         use {
             {'nvim-telescope/telescope.nvim', config = load_config('fuzzy-finder')},
             {
@@ -50,17 +47,10 @@ require('packer').startup({
             },
         }
         use {
-            {'hrsh7th/nvim-cmp', config = load_config('completion')},
-            {
-                'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
-                'hrsh7th/cmp-nvim-lsp-signature-help', 'L3MON4D3/LuaSnip', 'kristijanhusak/vim-dadbod-completion',
-            },
-        }
-        use {
             {'neovim/nvim-lspconfig', config = load_config('lsp')},
             {
-                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'creativenull/efmls-configs-nvim',
-                'DNLHC/glance.nvim', 'VonHeikemen/lsp-zero.nvim', 'soulis-1256/eagle.nvim'
+                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'onsails/lspkind.nvim',
+                'creativenull/efmls-configs-nvim', 'DNLHC/glance.nvim', 'soulis-1256/eagle.nvim'
             },
         }
         use {'akinsho/toggleterm.nvim', config = load_config('terminal')}
