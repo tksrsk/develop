@@ -23,7 +23,7 @@ require('packer').startup({
             {'navarasu/onedark.nvim', config = load_config('ui')},
             {
                 'NvChad/nvim-colorizer.lua', 'sontungexpt/stcursorword', 'shellRaining/hlchunk.nvim',
-                'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle',
+                'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle', 'MeanderingProgrammer/render-markdown.nvim'
             },
         }
         use {
@@ -47,9 +47,16 @@ require('packer').startup({
             },
         }
         use {
+            {'hrsh7th/nvim-cmp', config = load_config('completion')},
+            {
+                'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
+                'hrsh7th/cmp-vsnip', 'hrsh7th/vim-vsnip', 'rafamadriz/friendly-snippets', 'sourcegraph/sg.nvim'
+            },
+        }
+        use {
             {'neovim/nvim-lspconfig', config = load_config('lsp')},
             {
-                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'onsails/lspkind.nvim',
+                'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim',
                 'creativenull/efmls-configs-nvim', 'DNLHC/glance.nvim', 'soulis-1256/eagle.nvim'
             },
         }

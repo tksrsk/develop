@@ -12,6 +12,9 @@ require('neorg').setup({
         },
         ['core.ui.calendar'] = {},
         ['core.concealer'] = {},
+        ['core.completion'] = {
+            config = { engine = 'nvim-cmp' },
+        },
         ['core.looking-glass'] = {},
     }
 })

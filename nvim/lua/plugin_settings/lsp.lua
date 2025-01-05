@@ -33,9 +33,6 @@ require('mason-lspconfig').setup({
     },
 })
 
--- Lspkind
-require('lspkind').setup()
-
 -- Glance
 require('glance').setup()
 
