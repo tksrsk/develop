@@ -1,6 +1,6 @@
 vim.cmd([[
     aunmenu PopUp
-    autocmd! nvim_popupmenu
+    autocmd! nvim.popupmenu
     amenu <silent> PopUp.Lsp                            <cmd>popup! ]Lsp<cr>
     amenu <silent> PopUp.Git                            <cmd>popup! ]Git<cr>
     vmenu <silent> PopUp.Git                            <cmd>popup! ]Git<cr>
