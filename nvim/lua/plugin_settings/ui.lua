@@ -1,4 +1,10 @@
+-- Startup
+require('startup').setup()
+
 -- Onedark
+require('onedark').setup({
+    colors = { bg1 = '#181a1f' }
+})
 require('onedark').load()
 
 -- Signs

@@ -20,10 +20,11 @@ require('packer').startup({
             {'stevearc/overseer.nvim'}
         }
         use {
-            {'navarasu/onedark.nvim', config = load_config('ui')},
+            {'max397574/startup.nvim', config = load_config('ui')},
             {
-                'NvChad/nvim-colorizer.lua', 'sontungexpt/stcursorword', 'shellRaining/hlchunk.nvim',
-                'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens', 'sitiom/nvim-numbertoggle', 'MeanderingProgrammer/render-markdown.nvim'
+                'navarasu/onedark.nvim', 'NvChad/nvim-colorizer.lua', 'sontungexpt/stcursorword',
+                'shellRaining/hlchunk.nvim', 'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens',
+                'sitiom/nvim-numbertoggle', 'OXY2DEV/markview.nvim', 'OXY2DEV/helpview.nvim'
             },
         }
         use {
@@ -52,6 +53,10 @@ require('packer').startup({
                 'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
                 'hrsh7th/cmp-vsnip', 'hrsh7th/vim-vsnip', 'rafamadriz/friendly-snippets', 'sourcegraph/sg.nvim'
             },
+        }
+        use {
+            {'yetone/avante.nvim', run = 'make', config = load_config('ai')},
+            {'zbirenbaum/copilot.lua'}
         }
         use {
             {'neovim/nvim-lspconfig', config = load_config('lsp')},

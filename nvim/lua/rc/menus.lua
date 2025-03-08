@@ -9,7 +9,6 @@ vim.cmd([[
     amenu <silent> PopUp.DAP                            <cmd>popup! ]DAP<cr>
     amenu disable  PopUp.DAP
     amenu <silent> PopUp.Node\ Packages                 <cmd>Telescope package_info<cr>
-    amenu <silent> PopUp.Select\ Environment            <cmd>lua require('kulala').set_selected_env()<cr>
     amenu <silent> ]Lsp.Definition                      <cmd>Glance definitions<cr>
     amenu <silent> ]Lsp.References                      <cmd>Glance references<cr>
     amenu <silent> ]Lsp.Type                            <cmd>Glance type_definitions<cr>

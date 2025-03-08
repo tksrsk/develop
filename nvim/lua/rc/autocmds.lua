@@ -15,12 +15,6 @@ vim.api.nvim_create_autocmd({ 'FileType', 'BufEnter', 'WinEnter' }, {
             vim.cmd([[amenu disable PopUp.Preview]])
         end
 
-        if vim.opt.filetype:get() == 'http' then
-            vim.cmd([[amenu enable PopUp.Select\ Environment]])
-        else
-            vim.cmd([[amenu disable PopUp.Select\ Environment]])
-        end
-
         if string.match(vim.api.nvim_buf_get_name(0), 'package.json') then
             vim.cmd([[amenu enable PopUp.Node\ Packages]])
         else
