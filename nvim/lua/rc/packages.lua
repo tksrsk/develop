@@ -56,7 +56,7 @@ require('packer').startup({
         }
         use {
             {'yetone/avante.nvim', run = 'make', config = load_config('ai')},
-            {'zbirenbaum/copilot.lua'}
+            {'zbirenbaum/copilot.lua', 'stevearc/dressing.nvim'}
         }
         use {
             {'neovim/nvim-lspconfig', config = load_config('lsp')},

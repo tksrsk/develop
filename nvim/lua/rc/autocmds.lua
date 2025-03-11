@@ -46,3 +46,31 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
         end
     end,
 })
+
+vim.api.nvim_create_autocmd({ 'TabEnter' }, {
+    group = group,
+    callback = function()
+        local prev = vim.fn.tabpagenr('#')
+        local last = vim.fn.tabpagenr('$')
+        local curr = vim.fn.tabpagenr()
+
+        if prev > 0 then
+            vim.g.prevtab = prev > curr and prev - 1 or prev
+        else
+            vim.g.prevtab = curr == last and curr - 1 or curr
+        end
+    end
+})
+
+vim.api.nvim_create_autocmd({ 'TabClosed' }, {
+    group = group,
+    callback = function()
+        local prev = vim.g.prevtab
+
+        vim.schedule(function()
+            if vim.fn.tabpagenr('#') == 0 then
+                vim.cmd('tabnext ' .. prev)
+            end
+        end)
+    end
+})

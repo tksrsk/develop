@@ -3,7 +3,7 @@ require('startup').setup()
 
 -- Onedark
 require('onedark').setup({
-    colors = { bg1 = '#181a1f' }
+    colors = { bg1 = '#181a1f', bg3 = '#154f7e' }
 })
 require('onedark').load()
 
@@ -32,3 +32,11 @@ require('marks').setup()
 
 -- Hlslens
 require('hlslens').setup()
+
+-- Markview
+require('markview').setup({
+    preview = {
+        filetypes = { 'markdown', 'Avante' },
+        ignore_buftypes = {},
+    },
+})

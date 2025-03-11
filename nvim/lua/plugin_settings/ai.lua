@@ -17,4 +17,5 @@ require('copilot').setup({
 -- Avante
 require('avante').setup({
     provider = 'copilot',
+    copilot = { model = 'claude-3.5-sonnet' },
 })
