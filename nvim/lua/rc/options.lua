@@ -2,7 +2,7 @@ vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.concealcursor = 'nv'
 vim.opt.conceallevel = 2
-vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic', 'linematch:20' })
+vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic', 'linematch:100' })
 vim.opt.encoding = 'utf-8'
 vim.opt.expandtab = true
 vim.opt.fileencodings = { 'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis' }

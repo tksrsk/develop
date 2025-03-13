@@ -18,4 +18,16 @@ require('copilot').setup({
 require('avante').setup({
     provider = 'copilot',
     copilot = { model = 'claude-3.5-sonnet' },
+    system_prompt = function()
+        return require('mcphub').get_hub_instance():get_active_servers_prompt()
+    end,
+    custom_tools = function()
+        return { require('mcphub.extensions.avante').mcp_tool() }
+    end,
+})
+
+-- Mcphub
+require('mcphub').setup({
+    port = 3000,
+    config = '/resources/mcp/mcpservers.json',
 })
