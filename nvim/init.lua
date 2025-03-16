@@ -2,7 +2,6 @@ vim.loader.enable()
 vim.cmd([[
     wshada!
     packadd nohlsearch
-    packadd packer.nvim
 ]])
 
 require('rc.autocmds')

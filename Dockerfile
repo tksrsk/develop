@@ -19,5 +19,5 @@ RUN aur-install mono
 RUN aur-install python-neovim-git nodejs-neovim ruby-neovim
 
 # Environment Settings
-RUN git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
+RUN git clone https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
