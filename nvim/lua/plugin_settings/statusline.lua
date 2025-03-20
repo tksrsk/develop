@@ -14,7 +14,7 @@ require('lualine').setup({
         'kulala',
     },
     sections = {
-        lualine_c = { 'filename', 'overseer' }
+        lualine_c = { 'filename', 'overseer', 'lsp_status' }
     },
 })
 

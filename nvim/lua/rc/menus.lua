@@ -33,7 +33,7 @@ vim.cmd([[
     amenu <silent> 10.21 Tools.Runner                   <cmd>OverseerToggle<cr>
     amenu <silent> 10.31 Tools.DB                       <cmd>lua require('dbee').toggle()<cr>
     amenu <silent> 10.41 Tools.Debugger                 <cmd>lua require('dap').continue()<cr>
-    amenu <silent> 10.51 Tools.Installer.Packer         <cmd>PackerSync<cr>
+    amenu <silent> 10.51 Tools.Installer.Plugins        <cmd>Lazy<cr>
     amenu <silent> 10.52 Tools.Installer.Mason          <cmd>Mason<cr>
     amenu <silent> 10.53 Tools.Installer.MCPHub         <cmd>MCPHub<cr>
     amenu <silent> 20.01 Fuzzy\ Finder.Telescope        <cmd>Telescope<cr>
