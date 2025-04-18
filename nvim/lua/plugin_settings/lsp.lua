@@ -16,19 +16,23 @@ require('mason').setup();
 require('mason-lspconfig').setup({
     automatic_installation = true,
     handlers = {
-        function(server) require('lspconfig')[server].setup({}) end,
-        lua_ls = function() require('lspconfig').lua_ls.setup({
-            settings = {
-                Lua = {
-                    runtime = { version = 'LuaJIT' },
-                    diagnostics = { globals = { 'vim' } },
-                    workspace = { library = { vim.env.VIMRUNTIME } }
+        function(server) vim.lsp.enable(server) end,
+        lua_ls = function()
+            vim.lsp.config('lua_ls', {
+                settings = {
+                    Lua = {
+                        runtime = { version = 'LuaJIT' },
+                        diagnostics = { globals = { 'vim' } },
+                        workspace = { library = { vim.env.VIMRUNTIME } }
+                    }
                 }
-            }
-        }) end,
+            })
+            vim.lsp.enable('lua_ls')
+        end,
         efm = function()
             local languages = require('efmls-configs.defaults').languages()
-            require('lspconfig').efm.setup({ settings = { languages = languages } })
+            vim.lsp.config('efm', { settings = { languages = languages } })
+            vim.lsp.enable('efm')
         end,
     },
 })

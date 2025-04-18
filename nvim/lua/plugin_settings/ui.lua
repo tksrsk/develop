@@ -3,7 +3,11 @@ require('startup').setup()
 
 -- Onedark
 require('onedark').setup({
-    colors = { bg1 = '#181a1f', bg3 = '#154f7e' }
+    colors = { bg1 = '#181a1f', bg3 = '#154f7e' },
+    highlights = {
+        ['@comment'] = { fmt = 'italic,altfont' },
+        ['@spell'] = { fmt = 'altfont' }
+    }
 })
 require('onedark').load()
 
@@ -36,7 +40,7 @@ require('hlslens').setup()
 -- Markview
 require('markview').setup({
     preview = {
-        filetypes = { 'markdown', 'Avante' },
+        filetypes = { 'markdown', 'Avante', 'html.kulala_ui' },
         ignore_buftypes = {},
     },
 })
