@@ -5,8 +5,8 @@ require('dbee').setup({
         require('dbee.sources').FileSource:new('/resources/sql/dbee.json'),
     },
 })
-require('dbee').api.core.register_event_listener('current_connection_changed', function ()
-    vim.schedule(function()
+require('dbee').api.core.register_event_listener('current_connection_changed', vim.schedule_wrap(
+    function ()
         local conn = require('dbee').api.core.get_current_connection()
         local next = { driver = conn.type, dataSourceName = conn.url }
         local settings = vim.lsp.config.sqls.settings
@@ -30,5 +30,5 @@ require('dbee').api.core.register_event_listener('current_connection_changed', f
                 client:request('workspace/executeCommand', { command = 'switchConnections', arguments = { '1' } })
             end
         end
-    end)
-end)
+    end
+))

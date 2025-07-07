@@ -12,6 +12,7 @@ require('lualine').setup({
         'overseer',
         'mason',
         'kulala',
+        'avante',
     },
     sections = {
         lualine_c = { 'filename', 'overseer', 'lsp_status' }

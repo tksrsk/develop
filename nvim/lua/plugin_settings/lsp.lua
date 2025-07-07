@@ -15,7 +15,6 @@ vim.diagnostic.config({
 require('mason').setup();
 require('mason-lspconfig').setup({
     automatic_installation = true,
-    handlers = { function(server) vim.lsp.enable(server) end },
 })
 
 -- Glance

@@ -42,5 +42,6 @@ require('markview').setup({
     preview = {
         filetypes = { 'markdown', 'Avante', 'html.kulala_ui' },
         ignore_buftypes = {},
+        icon_provider = 'devicons',
     },
 })

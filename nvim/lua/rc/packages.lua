@@ -43,7 +43,7 @@ require('lazy').setup({
         { 'ravitemer/mcphub.nvim', build = 'npm install -g mcp-hub@latest' }
     }},
     {'neovim/nvim-lspconfig', config = load_config('lsp'), dependencies = {
-        'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim',
+        'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim',
         'creativenull/efmls-configs-nvim', 'DNLHC/glance.nvim', 'soulis-1256/eagle.nvim'
     }},
     {'akinsho/toggleterm.nvim', config = load_config('terminal')},
