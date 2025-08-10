@@ -1,4 +1,4 @@
 #!/bin/bash
 
-arg=$1
+arg=$(printf '%q' "$1")
 nvim --server $NVIM_SERVER --remote-send "<C-\><C-N>:call EnvimConnect(0, 'envim_openurl', '${arg}')<CR>"

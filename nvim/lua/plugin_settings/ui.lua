@@ -44,4 +44,5 @@ require('markview').setup({
         ignore_buftypes = {},
         icon_provider = 'devicons',
     },
+    experimental = { check_rtp = false },
 })
