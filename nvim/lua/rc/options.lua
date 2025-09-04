@@ -2,6 +2,7 @@ vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.concealcursor = 'nv'
 vim.opt.conceallevel = 2
+vim.opt.completeopt:append({ 'fuzzy', 'noselect' })
 vim.opt.diffopt:append({ 'iwhite', 'internal', 'algorithm:histogram', 'indent-heuristic', 'linematch:100' })
 vim.opt.encoding = 'utf-8'
 vim.opt.expandtab = true
@@ -30,3 +31,4 @@ vim.opt.swapfile = false
 vim.opt.smoothscroll = true
 vim.opt.tabstop = 4
 vim.opt.updatetime = 500
+vim.opt.wrap = false

@@ -1,9 +1,3 @@
--- Copilot
-require('copilot').setup({
-    panel = { enabled = false },
-    suggestion = { enabled = false },
-})
-
 -- Avante
 require('avante').setup({
     provider = 'copilot',
@@ -14,6 +8,24 @@ require('avante').setup({
         return { require('mcphub.extensions.avante').mcp_tool() }
     end,
 })
+
+-- Codecompanion
+require('codecompanion').setup({
+    extensions = {
+        mcphub = {
+            callback = 'mcphub.extensions.codecompanion',
+            opts = {
+                make_vars = true,
+                make_slash_commands = true,
+                show_result_in_chat = true
+            }
+        },
+        vectorcode = { }
+    }
+})
+
+-- Sg
+require('sg').setup()
 
 -- Mcphub
 require('mcphub').setup({

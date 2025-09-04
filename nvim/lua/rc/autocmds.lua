@@ -41,9 +41,13 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     callback = function(args)
         local client, _ = vim.lsp.get_client_by_id(args.data.client_id)
 
-        if client.supports_method('textDocument/foldingRange') then
+        if client:supports_method('textDocument/foldingRange') then
             vim.wo.foldexpr = 'v:lua.vim.lsp.foldexpr()'
         end
+
+        client.server_capabilities.completionProvider = client.server_capabilities.completionProvider or {}
+        client.server_capabilities.completionProvider.triggerCharacters = vim.split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.> ', '')
+        vim.lsp.completion.enable(true, args.data.client_id, args.buf, { autotrigger = true })
     end,
 })
 

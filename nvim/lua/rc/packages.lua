@@ -34,17 +34,13 @@ require('lazy').setup({
         'nvim-telescope/telescope-ui-select.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
     }},
-    {'hrsh7th/nvim-cmp', config = load_config('completion'), dependencies = {
-        'onsails/lspkind.nvim', 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-vsnip', 'hrsh7th/vim-vsnip', 'rafamadriz/friendly-snippets', 'sourcegraph/sg.nvim'
-    }},
     {'yetone/avante.nvim', build = 'make', config = load_config('ai'), dependencies = {
-        'zbirenbaum/copilot.lua', 'stevearc/dressing.nvim',
+        'sourcegraph/sg.nvim', 'olimorris/codecompanion.nvim', 'Davidyz/VectorCode',
         { 'ravitemer/mcphub.nvim', build = 'npm install -g mcp-hub@latest' }
     }},
     {'neovim/nvim-lspconfig', config = load_config('lsp'), dependencies = {
-        'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim',
-        'creativenull/efmls-configs-nvim', 'DNLHC/glance.nvim', 'soulis-1256/eagle.nvim'
+        'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim', 'creativenull/efmls-configs-nvim',
+        'onsails/lspkind.nvim', 'DNLHC/glance.nvim', 'soulis-1256/eagle.nvim', 'rafamadriz/friendly-snippets'
     }},
     {'akinsho/toggleterm.nvim', config = load_config('terminal')},
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', config = load_config('treesitter'), dependencies = {
