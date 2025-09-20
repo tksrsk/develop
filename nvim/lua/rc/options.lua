@@ -12,8 +12,6 @@ vim.opt.fileformats = { 'unix', 'dos', 'mac' }
 vim.opt.fillchars = { fold = ' ', foldopen = '╭', foldclose = '├', eob = ' ', diff = '' }
 vim.opt.foldcolumn = 'auto'
 vim.opt.foldlevel = 999
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldtext = ''
 vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = 'view'

@@ -23,6 +23,21 @@ vim.api.nvim_create_autocmd({ 'FileType', 'BufEnter', 'WinEnter' }, {
     end
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+    group = group,
+    callback = function(args)
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(args.buf))
+
+        if ok and stats and stats.size > 1024 * 1024 then return end
+
+        if pcall(vim.treesitter.start) then
+            vim.wo.foldmethod = 'expr'
+            vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+            vim.bo.indentexpr = 'v:lua.require("nvim-treesitter").indentexpr()'
+        end
+    end
+})
+
 vim.api.nvim_create_autocmd({ 'MenuPopup' }, {
     group = group,
     callback = function()

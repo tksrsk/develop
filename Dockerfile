@@ -18,6 +18,9 @@ RUN aur-install mono
 # Neovim Clients
 RUN aur-install python-neovim-git nodejs-neovim ruby-neovim
 
+# Tree Sitter
+RUN npm install -g tree-sitter-cli
+
 # MCP Tools
 RUN aur-install python-uv
 RUN npm install -g mcp-hub

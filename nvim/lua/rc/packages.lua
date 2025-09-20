@@ -43,8 +43,8 @@ require('lazy').setup({
         'onsails/lspkind.nvim', 'DNLHC/glance.nvim', 'soulis-1256/eagle.nvim', 'rafamadriz/friendly-snippets'
     }},
     {'akinsho/toggleterm.nvim', config = load_config('terminal')},
-    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', config = load_config('treesitter'), dependencies = {
-        'nvim-treesitter/nvim-treesitter-refactor', 'nvim-treesitter/nvim-treesitter-textobjects', 'HiPhish/rainbow-delimiters.nvim'
+    {'nvim-treesitter/nvim-treesitter', branch = 'main', build = ':TSUpdate', config = load_config('treesitter'), dependencies = {
+        'HiPhish/rainbow-delimiters.nvim'
     }},
     {'mfussenegger/nvim-dap', config = load_config('debugger'), dependencies = {
         'rcarriga/nvim-dap-ui', 'mxsdev/nvim-dap-vscode-js'
