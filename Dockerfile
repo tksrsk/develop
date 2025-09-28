@@ -26,5 +26,4 @@ RUN aur-install python-uv
 RUN npm install -g mcp-hub
 
 # Environment Settings
-RUN git clone https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime

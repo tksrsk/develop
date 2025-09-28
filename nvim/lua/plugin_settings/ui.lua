@@ -40,7 +40,8 @@ require('hlslens').setup()
 -- Markview
 require('markview').setup({
     preview = {
-        filetypes = { 'markdown', 'Avante', 'codecompanion', 'html.kulala_ui' },
+        map_gx = false,
+        filetypes = { 'markdown', 'codecompanion', 'html.kulala_ui' },
         ignore_buftypes = {},
         icon_provider = 'devicons',
     },

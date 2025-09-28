@@ -2,6 +2,7 @@ vim.loader.enable()
 vim.cmd([[
     wshada!
     packadd nohlsearch
+    packadd nvim.undotree
 ]])
 
 require('rc.autocmds')

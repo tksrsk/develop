@@ -1,4 +1,7 @@
--- Configs
-require('nvim-treesitter').setup({
-    install_dir = '~/.local/share/nvim/lazy/nvim-treesitter'
+-- Treesitter Modules
+require('treesitter-modules').setup({
+    auto_install = true,
+    fold = { enable = true },
+    highlight = { enable = true },
+    indent = { enable = true },
 })

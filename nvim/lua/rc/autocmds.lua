@@ -9,31 +9,10 @@ vim.api.nvim_create_autocmd({ 'FileType', 'BufEnter', 'WinEnter' }, {
     group = group,
     pattern = { '*' },
     callback = function()
-        if vim.opt.filetype:get() == 'markdown' then
-            vim.cmd([[amenu enable PopUp.Preview]])
-        else
-            vim.cmd([[amenu disable PopUp.Preview]])
-        end
-
         if string.match(vim.api.nvim_buf_get_name(0), 'package.json') then
             vim.cmd([[amenu enable PopUp.Node\ Packages]])
         else
             vim.cmd([[amenu disable PopUp.Node\ Packages]])
-        end
-    end
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-    group = group,
-    callback = function(args)
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(args.buf))
-
-        if ok and stats and stats.size > 1024 * 1024 then return end
-
-        if pcall(vim.treesitter.start) then
-            vim.wo.foldmethod = 'expr'
-            vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-            vim.bo.indentexpr = 'v:lua.require("nvim-treesitter").indentexpr()'
         end
     end
 })
@@ -87,9 +66,26 @@ vim.api.nvim_create_autocmd({ 'TabClosed' }, {
         local prev = vim.g.prevtab
 
         vim.schedule(function()
-            if vim.fn.tabpagenr('#') == 0 then
+            if vim.fn.tabpagenr('#') == 0 and vim.fn.tabpagenr('$') >= prev then
                 vim.cmd('tabnext ' .. prev)
             end
         end)
+    end
+})
+
+vim.api.nvim_create_autocmd({ 'PackChanged' }, {
+    group = group,
+    callback = function(args)
+        if args.data.kind == 'delete' then return end
+
+        if args.data.spec.name == 'nvim-dbee' then
+            require('dbee').install('go')
+        elseif args.data.spec.name == 'telescope-fzf-native.nvim' then
+            vim.system({'make'}, {cwd = args.data.path})
+        elseif args.data.spec.name == 'mcphub.nvim' then
+            vim.system({'npm', 'install', '-g', 'mcp-hub@latest'})
+        elseif args.data.spec.name == 'nvim-treesitter' then
+            vim.cmd('TSUpdate')
+        end
     end
 })

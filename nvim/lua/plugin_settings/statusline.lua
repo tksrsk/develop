@@ -9,13 +9,11 @@ require('lualine').setup({
         'neo-tree',
         'quickfix',
         'toggleterm',
-        'overseer',
         'mason',
         'kulala',
-        'avante',
     },
     sections = {
-        lualine_c = { 'filename', 'overseer', 'lsp_status' }
+        lualine_c = { 'filename', 'lsp_status' }
     },
 })
 

@@ -1,64 +1,109 @@
-local load_config = function (config)
-    return function() pcall(require, 'plugin_settings.'..config) end
-end
+vim.pack.add({
+    -- edit support
+    'https://github.com/kylechui/nvim-surround',
+    'https://github.com/hrsh7th/nvim-insx',
+    'https://github.com/folke/which-key.nvim',
+    'https://github.com/monkoose/matchparen.nvim',
+    'https://github.com/kevinhwang91/nvim-bqf',
+    'https://github.com/johmsalas/text-case.nvim',
+    'https://github.com/delphinus/cellwidths.nvim',
+    'https://github.com/delphinus/emcl.nvim',
 
-vim.opt.rtp:prepend(vim.fn.stdpath('data')..'/lazy/lazy.nvim')
-require('lazy').setup({
-    {'kylechui/nvim-surround', config = load_config('edit-support'), dependencies = {
-        'hrsh7th/nvim-insx', 'folke/which-key.nvim', 'monkoose/matchparen.nvim', 'kevinhwang91/nvim-bqf',
-        'johmsalas/text-case.nvim', 'delphinus/cellwidths.nvim', 'delphinus/emcl.nvim',
-    }},
-    {'ahmedkhalf/project.nvim', config = load_config('workspace'), dependencies = {
-        'vuki656/package-info.nvim', 'MunifTanjim/nui.nvim'
-    }},
-    {'mistweaverco/kulala.nvim', config = load_config('rest-client')},
-    {'michaelb/sniprun', build = 'bash ./install.sh', config = load_config('code-runner'), dependencies = {
-        'stevearc/overseer.nvim'
-    }},
-    {'max397574/startup.nvim', config = load_config('ui'), dependencies = {
-        'navarasu/onedark.nvim', 'NvChad/nvim-colorizer.lua', 'sontungexpt/stcursorword',
-        'shellRaining/hlchunk.nvim', 'chentoast/marks.nvim', 'kevinhwang91/nvim-hlslens',
-        'sitiom/nvim-numbertoggle', 'OXY2DEV/markview.nvim', 'OXY2DEV/helpview.nvim'
-    }},
-    {'nvim-lualine/lualine.nvim', config = load_config('statusline'), dependencies = {
-        'utilyre/barbecue.nvim', 'SmiteshP/nvim-navic', 'luukvbaal/statuscol.nvim'
-    }},
-    {'rainbowhxch/accelerated-jk.nvim', config = load_config('movement'), dependencies = {
-        'folke/flash.nvim', 'nacro90/numb.nvim'
-    }},
-    {'lewis6991/gitsigns.nvim', config = load_config('git'), dependencies = {
-        'nvim-lua/plenary.nvim', 'NeogitOrg/neogit', 'sindrets/diffview.nvim'
-    }},
-    {'kndndrj/nvim-dbee', build = function() require('dbee').install('go') end, config = load_config('dbms')},
-    {'nvim-telescope/telescope.nvim', config = load_config('fuzzy-finder'), dependencies = {
-        'nvim-telescope/telescope-ui-select.nvim',
-        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
-    }},
-    {'yetone/avante.nvim', build = 'make', config = load_config('ai'), dependencies = {
-        'sourcegraph/sg.nvim', 'olimorris/codecompanion.nvim', 'Davidyz/VectorCode',
-        { 'ravitemer/mcphub.nvim', build = 'npm install -g mcp-hub@latest' }
-    }},
-    {'neovim/nvim-lspconfig', config = load_config('lsp'), dependencies = {
-        'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim', 'creativenull/efmls-configs-nvim',
-        'onsails/lspkind.nvim', 'DNLHC/glance.nvim', 'soulis-1256/eagle.nvim', 'rafamadriz/friendly-snippets'
-    }},
-    {'akinsho/toggleterm.nvim', config = load_config('terminal')},
-    {'nvim-treesitter/nvim-treesitter', branch = 'main', build = ':TSUpdate', config = load_config('treesitter'), dependencies = {
-        'HiPhish/rainbow-delimiters.nvim'
-    }},
-    {'mfussenegger/nvim-dap', config = load_config('debugger'), dependencies = {
-        'rcarriga/nvim-dap-ui', 'mxsdev/nvim-dap-vscode-js'
-    }},
-    {'nvim-neo-tree/neo-tree.nvim', config = load_config('exploler'), dependencies = {
-        'nvim-tree/nvim-web-devicons'
-    }},
-    {'nvim-neorg/neorg', build = ':Neorg sync-parsers', config = load_config('note-taking'), dependencies = {
-        'nvim-neorg/lua-utils.nvim', 'nvim-neotest/nvim-nio', 'pysan3/pathlib.nvim', 'zk-org/zk-nvim'
-    }},
-    {'iamcco/markdown-preview.nvim', build = 'cd app && npm install', config = load_config('browser-integration')},
-}, {
-    ui = {
-        border = 'rounded'
-    }
+    -- workspace
+    'https://github.com/ahmedkhalf/project.nvim',
+    'https://github.com/vuki656/package-info.nvim',
+    'https://github.com/MunifTanjim/nui.nvim',
+
+    -- rest client
+    'https://github.com/mistweaverco/kulala.nvim',
+
+    -- ui
+    'https://github.com/max397574/startup.nvim',
+    'https://github.com/navarasu/onedark.nvim',
+    'https://github.com/NvChad/nvim-colorizer.lua',
+    'https://github.com/sontungexpt/stcursorword',
+    'https://github.com/shellRaining/hlchunk.nvim',
+    'https://github.com/chentoast/marks.nvim',
+    'https://github.com/kevinhwang91/nvim-hlslens',
+    'https://github.com/sitiom/nvim-numbertoggle',
+    'https://github.com/OXY2DEV/markview.nvim',
+    'https://github.com/OXY2DEV/helpview.nvim',
+
+    -- statusline
+    'https://github.com/nvim-lualine/lualine.nvim',
+    'https://github.com/utilyre/barbecue.nvim',
+    'https://github.com/SmiteshP/nvim-navic',
+    'https://github.com/luukvbaal/statuscol.nvim',
+
+    -- movement
+    'https://github.com/rainbowhxch/accelerated-jk.nvim',
+    'https://github.com/folke/flash.nvim',
+    'https://github.com/nacro90/numb.nvim',
+
+    -- git
+    'https://github.com/lewis6991/gitsigns.nvim',
+    'https://github.com/nvim-lua/plenary.nvim',
+    'https://github.com/NeogitOrg/neogit',
+    'https://github.com/sindrets/diffview.nvim',
+
+    -- dbms
+    'https://github.com/kndndrj/nvim-dbee',
+
+    -- fuzzy finder
+    'https://github.com/nvim-telescope/telescope.nvim',
+    'https://github.com/nvim-telescope/telescope-ui-select.nvim',
+    'https://github.com/nvim-telescope/telescope-fzf-native.nvim',
+
+    -- ai
+    'https://github.com/olimorris/codecompanion.nvim',
+    'https://github.com/Davidyz/VectorCode',
+    'https://github.com/ravitemer/mcphub.nvim',
+
+    -- lsp
+    'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/mason-org/mason.nvim',
+    'https://github.com/mason-org/mason-lspconfig.nvim',
+    'https://github.com/creativenull/efmls-configs-nvim',
+    'https://github.com/onsails/lspkind.nvim',
+    'https://github.com/DNLHC/glance.nvim',
+    'https://github.com/soulis-1256/eagle.nvim',
+    'https://github.com/rafamadriz/friendly-snippets',
+
+    -- terminal
+    'https://github.com/akinsho/toggleterm.nvim',
+
+    -- treesitter
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+    'https://github.com/MeanderingProgrammer/treesitter-modules.nvim',
+    'https://github.com/HiPhish/rainbow-delimiters.nvim',
+
+    -- debugger
+    'https://github.com/mfussenegger/nvim-dap',
+    'https://github.com/rcarriga/nvim-dap-ui',
+    'https://github.com/mxsdev/nvim-dap-vscode-js',
+    'https://github.com/nvim-neotest/nvim-nio',
+
+    -- exploler
+    'https://github.com/nvim-neo-tree/neo-tree.nvim',
+    'https://github.com/nvim-tree/nvim-web-devicons',
+
+    -- note taking
+    'https://github.com/zk-org/zk-nvim',
 })
 
+require('plugin_settings.edit-support')
+require('plugin_settings.workspace')
+require('plugin_settings.rest-client')
+require('plugin_settings.ui')
+require('plugin_settings.statusline')
+require('plugin_settings.movement')
+require('plugin_settings.git')
+require('plugin_settings.dbms')
+require('plugin_settings.fuzzy-finder')
+require('plugin_settings.ai')
+require('plugin_settings.lsp')
+require('plugin_settings.terminal')
+require('plugin_settings.treesitter')
+require('plugin_settings.debugger')
+require('plugin_settings.exploler')
+require('plugin_settings.note-taking')
