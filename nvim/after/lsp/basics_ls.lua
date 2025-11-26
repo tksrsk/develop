@@ -10,7 +10,7 @@ return {
         },
         snippet = {
             enable = true,
-            sources = {'/root/.local/share/nvim/lazy/friendly-snippets/package.json'},
+            sources = {'/root/.local/share/nvim/site/pack/core/opt/friendly-snippets/package.json'},
             matchStrategy = 'fuzzy',
         },
     }
