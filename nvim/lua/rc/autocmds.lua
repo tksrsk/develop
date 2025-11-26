@@ -33,15 +33,27 @@ vim.api.nvim_create_autocmd({ 'MenuPopup' }, {
 vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     group = group,
     callback = function(args)
-        local client, _ = vim.lsp.get_client_by_id(args.data.client_id)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+        if not client then return end
 
         if client:supports_method('textDocument/foldingRange') then
             vim.wo.foldexpr = 'v:lua.vim.lsp.foldexpr()'
         end
 
-        client.server_capabilities.completionProvider = client.server_capabilities.completionProvider or {}
-        client.server_capabilities.completionProvider.triggerCharacters = vim.split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.> ', '')
-        vim.lsp.completion.enable(true, args.data.client_id, args.buf, { autotrigger = true })
+        if client:supports_method('textDocument/inlayHint') then
+            vim.lsp.inlay_hint.enable(true)
+        end
+
+        if client:supports_method('textDocument/inlineCompletion') then
+            vim.lsp.inline_completion.enable(true)
+        end
+
+        if client:supports_method('textDocument/completion') then
+            client.server_capabilities.completionProvider = client.server_capabilities.completionProvider or {}
+            client.server_capabilities.completionProvider.triggerCharacters = vim.split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.>/ ', '')
+            vim.lsp.completion.enable(true, args.data.client_id, args.buf, { autotrigger = true })
+        end
     end,
 })
 

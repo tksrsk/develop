@@ -1,5 +1,3 @@
-vim.lsp.enable('basics_ls')
-vim.lsp.inline_completion.enable(true)
 vim.keymap.set('i', '<tab>', function()
     if vim.snippet.active({ direction = 1 }) then
         return '<cmd>lua vim.snippet.jump(1)<cr>'
