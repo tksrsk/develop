@@ -27,7 +27,7 @@ vim.cmd([[
     amenu <silent> 10.13 Tools.Git.History              <cmd>DiffviewFileHistory %<cr>
     amenu <silent> 10.21 Tools.DB                       <cmd>lua require('dbee').toggle()<cr>
     amenu <silent> 10.31 Tools.Debugger                 <cmd>lua require('dap').continue()<cr>
-    amenu <silent> 10.41 Tools.AI                       <cmd>CodeCompanionChat Toggle<cr>
+    amenu <silent> 10.41 Tools.AI                       <cmd>lua require('agentic').toggle()<cr>
     amenu <silent> 10.41 Tools.Undotree                 <cmd>Undotree<cr>
     amenu <silent> 10.51 Tools.Installer.Plugins        <cmd>lua vim.pack.update()<cr>
     amenu <silent> 10.52 Tools.Installer.Mason          <cmd>Mason<cr>

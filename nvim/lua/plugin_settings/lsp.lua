@@ -8,7 +8,6 @@ end, { expr = true, replace_keycodes = true })
 
 vim.diagnostic.config({
     virtual_text = false,
-    jump = { float = true },
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = '',

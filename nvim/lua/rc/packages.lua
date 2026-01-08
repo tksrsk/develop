@@ -55,8 +55,7 @@ vim.pack.add({
     'https://github.com/nvim-telescope/telescope-fzf-native.nvim',
 
     -- ai
-    'https://github.com/olimorris/codecompanion.nvim',
-    'https://github.com/Davidyz/VectorCode',
+    'https://github.com/carlos-algms/agentic.nvim',
     'https://github.com/ravitemer/mcphub.nvim',
 
     -- lsp

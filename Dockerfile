@@ -8,7 +8,7 @@ RUN aur-install gcc clang make cmake automake autoconf pkgconf m4 gettext ninja
 RUN aur-install neovim fish unzip git wget ripgrep mariadb-clients postgresql mssql-tools sqlite
 RUN aur-install docker docker-compose
 RUN aur-install php composer
-RUN aur-install python python-pip
+RUN aur-install python python-pip python-uv
 RUN aur-install nodejs npm
 RUN aur-install ruby
 RUN aur-install perl
@@ -21,9 +21,8 @@ RUN aur-install python-neovim-git nodejs-neovim ruby-neovim
 # Tree Sitter
 RUN npm install -g tree-sitter-cli
 
-# MCP Tools
-RUN aur-install python-uv
-RUN npm install -g mcp-hub
+# Ai tools
+RUN npm install -g opencode-ai mcp-hub
 
 # Environment Settings
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
