@@ -96,8 +96,6 @@ vim.api.nvim_create_autocmd({ 'PackChanged' }, {
             vim.system({'make'}, {cwd = args.data.path})
         elseif args.data.spec.name == 'mcphub.nvim' then
             vim.system({'npm', 'install', '-g', 'mcp-hub@latest'})
-        elseif args.data.spec.name == 'nvim-treesitter' then
-            vim.cmd('TSUpdate')
         end
     end
 })

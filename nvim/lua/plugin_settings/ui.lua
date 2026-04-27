@@ -1,6 +1,3 @@
--- Startup
-require('startup').setup()
-
 -- Onedark
 require('onedark').setup({
     colors = { bg1 = '#181a1f', bg3 = '#154f7e' },
@@ -41,9 +38,8 @@ require('hlslens').setup()
 require('markview').setup({
     preview = {
         map_gx = false,
-        filetypes = { 'markdown', 'AgenticChat', 'html.kulala_ui' },
+        filetypes = { 'markdown', 'html.kulala_ui' },
         ignore_buftypes = {},
         icon_provider = 'devicons',
     },
-    experimental = { check_rtp = false },
 })

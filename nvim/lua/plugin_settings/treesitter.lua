@@ -1,7 +1,5 @@
--- Treesitter Modules
-require('treesitter-modules').setup({
+-- Tree Sitter Manager
+require("tree-sitter-manager").setup({
     auto_install = true,
-    fold = { enable = true },
-    highlight = { enable = true },
-    indent = { enable = true },
+    border = 'solid',
 })

@@ -18,7 +18,6 @@ vim.pack.add({
     'https://github.com/mistweaverco/kulala.nvim',
 
     -- ui
-    'https://github.com/max397574/startup.nvim',
     'https://github.com/navarasu/onedark.nvim',
     'https://github.com/NvChad/nvim-colorizer.lua',
     'https://github.com/sontungexpt/stcursorword',
@@ -44,7 +43,7 @@ vim.pack.add({
     'https://github.com/lewis6991/gitsigns.nvim',
     'https://github.com/nvim-lua/plenary.nvim',
     'https://github.com/NeogitOrg/neogit',
-    'https://github.com/sindrets/diffview.nvim',
+    'https://github.com/dlyongemallo/diffview.nvim',
 
     -- dbms
     'https://github.com/kndndrj/nvim-dbee',
@@ -55,7 +54,6 @@ vim.pack.add({
     'https://github.com/nvim-telescope/telescope-fzf-native.nvim',
 
     -- ai
-    'https://github.com/carlos-algms/agentic.nvim',
     'https://github.com/ravitemer/mcphub.nvim',
 
     -- lsp
@@ -72,8 +70,7 @@ vim.pack.add({
     'https://github.com/akinsho/toggleterm.nvim',
 
     -- treesitter
-    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
-    'https://github.com/MeanderingProgrammer/treesitter-modules.nvim',
+    { src = 'https://github.com/romus204/tree-sitter-manager.nvim', version = 'main' },
     'https://github.com/HiPhish/rainbow-delimiters.nvim',
 
     -- debugger
