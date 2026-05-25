@@ -7,9 +7,6 @@ require('insx.preset.standard').setup()
 -- Which Key
 require('which-key').setup({ preset = 'modern' })
 
--- Numb
-require('numb').setup()
-
 -- Matchparen
 require('matchparen').setup()
 

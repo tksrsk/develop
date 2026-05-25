@@ -30,7 +30,6 @@ vim.cmd([[
     amenu <silent> 10.41 Tools.Undotree                 <cmd>Undotree<cr>
     amenu <silent> 10.51 Tools.Installer.Plugins        <cmd>lua vim.pack.update()<cr>
     amenu <silent> 10.52 Tools.Installer.Mason          <cmd>Mason<cr>
-    amenu <silent> 10.53 Tools.Installer.MCPHub         <cmd>MCPHub<cr>
     amenu <silent> 20.01 Fuzzy\ Finder.Telescope        <cmd>Telescope<cr>
     amenu <silent> 20.02 Fuzzy\ Finder.Resume           <cmd>Telescope resume<cr>
     amenu <silent> 30.01 Note.New\ Note                 <cmd>ZkNew<cr>

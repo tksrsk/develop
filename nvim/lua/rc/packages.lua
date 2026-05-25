@@ -53,9 +53,6 @@ vim.pack.add({
     'https://github.com/nvim-telescope/telescope-ui-select.nvim',
     'https://github.com/nvim-telescope/telescope-fzf-native.nvim',
 
-    -- ai
-    'https://github.com/ravitemer/mcphub.nvim',
-
     -- lsp
     'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mason-org/mason.nvim',
@@ -96,7 +93,6 @@ require('plugin_settings.movement')
 require('plugin_settings.git')
 require('plugin_settings.dbms')
 require('plugin_settings.fuzzy-finder')
-require('plugin_settings.ai')
 require('plugin_settings.lsp')
 require('plugin_settings.terminal')
 require('plugin_settings.treesitter')

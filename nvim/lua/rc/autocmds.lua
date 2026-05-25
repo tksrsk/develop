@@ -94,8 +94,6 @@ vim.api.nvim_create_autocmd({ 'PackChanged' }, {
             require('dbee').install('go')
         elseif args.data.spec.name == 'telescope-fzf-native.nvim' then
             vim.system({'make'}, {cwd = args.data.path})
-        elseif args.data.spec.name == 'mcphub.nvim' then
-            vim.system({'npm', 'install', '-g', 'mcp-hub@latest'})
         end
     end
 })
