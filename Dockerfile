@@ -21,5 +21,10 @@ RUN aur-install python-neovim-git nodejs-neovim ruby-neovim
 # Tree Sitter
 RUN npm install -g tree-sitter-cli
 
+# APM (Agent Package Manager)
+ADD apm/ /root/.config/apm
+RUN curl -sSL https://aka.ms/apm-unix | sh
+RUN apm install -g ~/.config/apm && apm compile -g
+
 # Environment Settings
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime

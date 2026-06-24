@@ -1,0 +1,7 @@
+name: develop
+version: 1.0.0
+description: Shared agent skills for all projects
+author: tksrsk
+license: MIT
+target: all
+includes: auto
