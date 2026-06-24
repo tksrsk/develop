@@ -3,9 +3,8 @@
 docker build --force-rm -t develop ~/.config/develop
 docker run \
     -d \
+    --network host \
     -e HOST_ROOT=$HOME \
-    -p 8080:8080 \
-    -p 37373:37373 \
     -w $PWD \
     -v $HOME:$HOME \
     -v $HOME/.ssh:/root/.ssh \

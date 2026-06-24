@@ -30,3 +30,4 @@ vim.opt.smoothscroll = true
 vim.opt.tabstop = 4
 vim.opt.updatetime = 500
 vim.opt.wrap = false
+vim.opt.winborder = 'solid'

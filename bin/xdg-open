@@ -1,4 +1,4 @@
 #!/bin/bash
 
-arg=$(printf '%q' "$1")
-nvim --server $NVIM_SERVER --remote-send "<C-\><C-N>:call EnvimConnect(0, 'envim_openurl', '${arg}')<CR>"
+arg=$(printf '%s' "$1" | sed "s/'/''/g")
+nvim --server "$NVIM_SERVER" --remote-expr "v:lua.envim_connect(0, ['envim_openurl', '${arg}'])"
