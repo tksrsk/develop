@@ -28,7 +28,7 @@ vim.cmd([[
     amenu <silent> 10.21 Tools.DB                       <cmd>lua require('dbee').toggle()<cr>
     amenu <silent> 10.31 Tools.Debugger                 <cmd>lua require('dap').continue()<cr>
     amenu <silent> 10.41 Tools.Undotree                 <cmd>Undotree<cr>
-    amenu <silent> 10.51 Tools.Installer.Plugins        <cmd>lua vim.pack.update()<cr>
+    amenu <silent> 10.51 Tools.Installer.Plugins        <cmd>packupdate<cr>
     amenu <silent> 10.52 Tools.Installer.Mason          <cmd>Mason<cr>
     amenu <silent> 20.01 Fuzzy\ Finder.Telescope        <cmd>Telescope<cr>
     amenu <silent> 20.02 Fuzzy\ Finder.Resume           <cmd>Telescope resume<cr>

@@ -12,7 +12,7 @@ require('gitsigns').setup({
 require('neogit').setup({
     disable_insert_on_commit = false,
     graph_style = 'kitty',
-    kind = "floating",
+    kind = 'floating',
     popup = { kind = 'floating' },
 })
 
