@@ -10,7 +10,6 @@ vim.pack.add({
     'https://github.com/delphinus/emcl.nvim',
 
     -- workspace
-    'https://github.com/ahmedkhalf/project.nvim',
     'https://github.com/vuki656/package-info.nvim',
     'https://github.com/MunifTanjim/nui.nvim',
 
